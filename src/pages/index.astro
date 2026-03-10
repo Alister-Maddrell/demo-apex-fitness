@@ -1,0 +1,416 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Apex Performance Studio — Transform Your Body. Elevate Your Mind.">
+
+  <!-- Hero Section -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden glow-bg-hero">
+    <div class="absolute inset-0 opacity-25">
+      <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&h=1080&fit=crop&q=80" alt="Dark atmospheric gym interior with dramatic lighting on training equipment" class="w-full h-full object-cover" />
+    </div>
+    <div class="absolute inset-0 bg-gradient-to-t from-bg-primary via-bg-primary/70 to-bg-primary/30"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-bg-primary/40 to-transparent"></div>
+
+    <!-- Floating geometric shapes -->
+    <div class="absolute top-1/4 left-10 w-20 h-20 border border-accent-orange/15 rotate-45 animate-float hidden lg:block"></div>
+    <div class="absolute bottom-1/3 right-16 w-16 h-16 border border-accent-lime/15 rotate-12 animate-float-delayed hidden lg:block"></div>
+    <div class="absolute top-1/3 right-1/4 w-3 h-3 bg-accent-orange rounded-full animate-pulse-glow"></div>
+
+    <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
+      <p class="section-overline reveal mb-4">Sydney CBD's Premier Training Studio</p>
+      <h1 class="font-heading text-[clamp(3rem,6vw+1rem,7rem)] text-text-primary leading-[0.95] mb-8 reveal" style="transition-delay: 100ms;">
+        Transform Your Body.<br />
+        <span class="text-accent-orange">Elevate Your Mind.</span>
+      </h1>
+      <p class="font-body text-base sm:text-lg lg:text-xl text-text-body max-w-2xl mx-auto mb-12 reveal" style="transition-delay: 200ms;">
+        Expert coaches. World-class facility. Results guaranteed. Join 500+ members who chose to train differently.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center reveal" style="transition-delay: 300ms;">
+        <a href="/contact" class="btn-primary">
+          Start Free Trial
+        </a>
+        <a href="/classes" class="btn-secondary">
+          View Classes
+        </a>
+      </div>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 reveal" style="transition-delay: 600ms;">
+      <span class="text-text-muted text-[0.65rem] uppercase tracking-[0.2em] font-body">Scroll</span>
+      <div class="w-px h-8 bg-gradient-to-b from-text-muted to-transparent"></div>
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="relative bg-bg-secondary py-20 angle-top">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 text-center">
+        <div class="reveal stagger-1">
+          <span class="font-heading text-[clamp(3rem,4vw,4.5rem)] text-accent-orange leading-none" data-count="500" data-suffix="+">0</span>
+          <p class="section-overline mt-3 !mb-0 !text-text-secondary">Members</p>
+        </div>
+        <div class="reveal stagger-2">
+          <span class="font-heading text-[clamp(3rem,4vw,4.5rem)] text-accent-orange leading-none" data-count="15" data-suffix="">0</span>
+          <p class="section-overline mt-3 !mb-0 !text-text-secondary">Expert Coaches</p>
+        </div>
+        <div class="reveal stagger-3">
+          <span class="font-heading text-[clamp(3rem,4vw,4.5rem)] text-accent-orange leading-none" data-count="12" data-suffix="">0</span>
+          <p class="section-overline mt-3 !mb-0 !text-text-secondary">Years in Sydney</p>
+        </div>
+        <div class="reveal stagger-4">
+          <span class="font-heading text-[clamp(3rem,4vw,4.5rem)] text-accent-orange leading-none" data-count="50" data-suffix="+">0</span>
+          <p class="section-overline mt-3 !mb-0 !text-text-secondary">Classes Per Week</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Class Types Section -->
+  <section class="py-24 lg:py-32 bg-bg-primary">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <p class="section-overline">Training Programs</p>
+        <h2 class="section-title">What We Offer</h2>
+        <div class="section-divider mx-auto"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- HIIT -->
+        <div class="card group overflow-hidden reveal stagger-1">
+          <div class="h-52 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=600&fit=crop&q=80" alt="Athletes performing high-intensity interval training exercises in a gym" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div class="p-7">
+            <h3 class="font-heading text-2xl text-text-primary mb-2">HIIT</h3>
+            <p class="text-sm text-text-body mb-5 leading-relaxed">High-intensity interval training designed to torch calories and build explosive power. 45 minutes of controlled chaos.</p>
+            <a href="/classes" class="font-body text-sm font-semibold text-accent-orange hover:text-accent-orange-hover transition-colors duration-300 uppercase tracking-[0.1em] inline-flex items-center gap-2">Learn More <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span></a>
+          </div>
+        </div>
+
+        <!-- Strength -->
+        <div class="card group overflow-hidden reveal stagger-2">
+          <div class="h-52 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800&h=600&fit=crop&q=80" alt="Person performing barbell exercises for strength and conditioning training" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div class="p-7">
+            <h3 class="font-heading text-2xl text-text-primary mb-2">Strength & Conditioning</h3>
+            <p class="text-sm text-text-body mb-5 leading-relaxed">Progressive overload programming for serious muscle and strength gains. Barbells, dumbbells, kettlebells.</p>
+            <a href="/classes" class="font-body text-sm font-semibold text-accent-orange hover:text-accent-orange-hover transition-colors duration-300 uppercase tracking-[0.1em] inline-flex items-center gap-2">Learn More <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span></a>
+          </div>
+        </div>
+
+        <!-- Boxing -->
+        <div class="card group overflow-hidden reveal stagger-3">
+          <div class="h-52 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=800&h=600&fit=crop&q=80" alt="Boxer training with a heavy bag in a boxing gym" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div class="p-7">
+            <h3 class="font-heading text-2xl text-text-primary mb-2">Boxing</h3>
+            <p class="text-sm text-text-body mb-5 leading-relaxed">Learn technique, build cardio, and relieve stress. Bags, pads, and partner drills in every session.</p>
+            <a href="/classes" class="font-body text-sm font-semibold text-accent-orange hover:text-accent-orange-hover transition-colors duration-300 uppercase tracking-[0.1em] inline-flex items-center gap-2">Learn More <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span></a>
+          </div>
+        </div>
+
+        <!-- Yoga -->
+        <div class="card group overflow-hidden reveal stagger-4">
+          <div class="h-52 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop&q=80" alt="Yoga practitioner in a serene studio performing a flexibility pose" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div class="p-7">
+            <h3 class="font-heading text-2xl text-text-primary mb-2">Yoga & Mobility</h3>
+            <p class="text-sm text-text-body mb-5 leading-relaxed">Restore, recover, and improve flexibility. Vinyasa flow and deep stretch sessions for athletes.</p>
+            <a href="/classes" class="font-body text-sm font-semibold text-accent-orange hover:text-accent-orange-hover transition-colors duration-300 uppercase tracking-[0.1em] inline-flex items-center gap-2">Learn More <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span></a>
+          </div>
+        </div>
+
+        <!-- Personal Training -->
+        <div class="card group overflow-hidden reveal stagger-5">
+          <div class="h-52 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=600&fit=crop&q=80" alt="Personal trainer guiding a client through a workout session" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div class="p-7">
+            <h3 class="font-heading text-2xl text-text-primary mb-2">Personal Training</h3>
+            <p class="text-sm text-text-body mb-5 leading-relaxed">One-on-one sessions tailored to your goals. Nutrition guidance included with every PT package.</p>
+            <a href="/classes" class="font-body text-sm font-semibold text-accent-orange hover:text-accent-orange-hover transition-colors duration-300 uppercase tracking-[0.1em] inline-flex items-center gap-2">Learn More <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span></a>
+          </div>
+        </div>
+
+        <!-- Olympic Lifting -->
+        <div class="card group overflow-hidden reveal stagger-6">
+          <div class="h-52 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800&h=600&fit=crop&q=80" alt="Athlete performing an Olympic weightlifting clean and jerk movement" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div class="p-7">
+            <h3 class="font-heading text-2xl text-text-primary mb-2">Olympic Lifting</h3>
+            <p class="text-sm text-text-body mb-5 leading-relaxed">Master the snatch and clean & jerk with certified Olympic lifting coaches. All levels welcome.</p>
+            <a href="/classes" class="font-body text-sm font-semibold text-accent-orange hover:text-accent-orange-hover transition-colors duration-300 uppercase tracking-[0.1em] inline-flex items-center gap-2">Learn More <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Section -->
+  <section id="pricing" class="relative py-28 lg:py-36 bg-bg-secondary angle-top">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+      <div class="text-center mb-16 reveal">
+        <p class="section-overline">Investment</p>
+        <h2 class="section-title">Membership Options</h2>
+        <div class="section-divider mx-auto"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
+        <!-- Casual -->
+        <div class="card p-8 lg:p-10 flex flex-col reveal stagger-1" data-pricing-card>
+          <h3 class="font-heading text-3xl text-text-primary mb-2">Casual</h3>
+          <div class="mb-6">
+            <span class="font-heading text-[clamp(3rem,4vw,3.75rem)] text-accent-orange leading-none">$30</span>
+            <span class="text-text-muted text-sm ml-1">/session</span>
+          </div>
+          <ul class="space-y-3.5 mb-10 flex-1">
+            <li class="flex items-start gap-3 text-sm text-text-body">
+              <span class="text-accent-orange mt-0.5 flex-shrink-0">&#10003;</span> Drop-in to any group class
+            </li>
+            <li class="flex items-start gap-3 text-sm text-text-body">
+              <span class="text-accent-orange mt-0.5 flex-shrink-0">&#10003;</span> Locker and towel hire
+            </li>
+            <li class="flex items-start gap-3 text-sm text-text-body">
+              <span class="text-accent-orange mt-0.5 flex-shrink-0">&#10003;</span> Post-workout shake bar access
+            </li>
+          </ul>
+          <a href="/contact" class="btn-secondary w-full justify-center">
+            Get Started
+          </a>
+        </div>
+
+        <!-- Monthly (Featured) -->
+        <div class="card-featured card p-8 lg:p-10 flex flex-col relative md:scale-105 reveal stagger-2" data-pricing-card>
+          <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent-lime text-bg-primary font-body font-bold text-[0.65rem] uppercase tracking-[0.15em] px-5 py-1.5 rounded-full whitespace-nowrap">Most Popular</span>
+          <h3 class="font-heading text-3xl text-text-primary mb-2">Monthly</h3>
+          <div class="mb-6">
+            <span class="font-heading text-[clamp(3rem,4vw,3.75rem)] text-accent-orange leading-none">$149</span>
+            <span class="text-text-muted text-sm ml-1">/month</span>
+          </div>
+          <ul class="space-y-3.5 mb-10 flex-1">
+            <li class="flex items-start gap-3 text-sm text-text-body">
+              <span class="text-accent-orange mt-0.5 flex-shrink-0">&#10003;</span> Everything in Casual
+            </li>
+            <li class="flex items-start gap-3 text-sm text-text-body">
+              <span class="text-accent-orange mt-0.5 flex-shrink-0">&#10003;</span> Unlimited group classes
+            </li>
+            <li class="flex items-start gap-3 text-sm text-text-body">
+              <span class="text-accent-orange mt-0.5 flex-shrink-0">&#10003;</span> Free body composition scan monthly
+            </li>
+            <li class="flex items-start gap-3 text-sm text-text-body">
+              <span class="text-accent-orange mt-0.5 flex-shrink-0">&#10003;</span> 10% off PT sessions
+            </li>
+            <li class="flex items-start gap-3 text-sm text-text-body">
+              <span class="text-accent-orange mt-0.5 flex-shrink-0">&#10003;</span> Access to members app
+            </li>
+          </ul>
+          <a href="/contact" class="btn-primary w-full justify-center">
+            Start Free Trial
+          </a>
+        </div>
+
+        <!-- Annual -->
+        <div class="card p-8 lg:p-10 flex flex-col reveal stagger-3" data-pricing-card>
+          <h3 class="font-heading text-3xl text-text-primary mb-2">Annual</h3>
+          <div class="mb-2">
+            <span class="font-heading text-[clamp(3rem,4vw,3.75rem)] text-accent-orange leading-none">$129</span>
+            <span class="text-text-muted text-sm ml-1">/month</span>
+          </div>
+          <p class="text-xs text-text-muted mb-6">Billed $1,548 yearly</p>
+          <ul class="space-y-3.5 mb-10 flex-1">
+            <li class="flex items-start gap-3 text-sm text-text-body">
+              <span class="text-accent-orange mt-0.5 flex-shrink-0">&#10003;</span> Everything in Monthly
+            </li>
+            <li class="flex items-start gap-3 text-sm text-text-body">
+              <span class="text-accent-orange mt-0.5 flex-shrink-0">&#10003;</span> 2 free PT sessions per month
+            </li>
+            <li class="flex items-start gap-3 text-sm text-text-body">
+              <span class="text-accent-orange mt-0.5 flex-shrink-0">&#10003;</span> Priority class booking
+            </li>
+            <li class="flex items-start gap-3 text-sm text-text-body">
+              <span class="text-accent-orange mt-0.5 flex-shrink-0">&#10003;</span> Free merchandise pack
+            </li>
+            <li class="flex items-start gap-3 text-sm text-text-body">
+              <span class="text-accent-orange mt-0.5 flex-shrink-0">&#10003;</span> Exclusive member events
+            </li>
+          </ul>
+          <a href="/contact" class="btn-secondary w-full justify-center">
+            Commit Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transformations Section -->
+  <section class="py-24 lg:py-32 bg-bg-primary">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <p class="section-overline">Success Stories</p>
+        <h2 class="section-title">Real Results</h2>
+        <div class="section-divider mx-auto"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Transformation 1 -->
+        <div class="card overflow-hidden reveal stagger-1">
+          <div class="ba-slider relative h-72" data-before-after>
+            <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=600&h=450&fit=crop&q=80" alt="Jake's fitness transformation after photo showing muscular physique" class="ba-after" />
+            <div class="ba-before" style="width: 50%;">
+              <img src="https://images.unsplash.com/photo-1507398941214-572c25f4b1dc?w=600&h=450&fit=crop&q=80" alt="Jake's fitness transformation before photo" />
+            </div>
+            <div class="ba-handle" style="left: 50%;"></div>
+            <span class="ba-label left-3">Before</span>
+            <span class="ba-label right-3">After</span>
+          </div>
+          <div class="p-7">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-heading text-xl text-text-primary">Jake M.</h3>
+              <span class="bg-accent-orange-subtle text-accent-orange text-xs font-body font-semibold px-3 py-1 rounded-full">12 Weeks</span>
+            </div>
+            <p class="text-sm text-text-body italic leading-relaxed">"I lost 15kg and gained confidence I never thought I'd have. The coaches at Apex changed my life."</p>
+          </div>
+        </div>
+
+        <!-- Transformation 2 -->
+        <div class="card overflow-hidden reveal stagger-2">
+          <div class="ba-slider relative h-72" data-before-after>
+            <img src="https://images.unsplash.com/photo-1518310952931-b1de897abd40?w=600&h=450&fit=crop&q=80" alt="Sarah's fitness transformation after photo showing athletic build" class="ba-after" />
+            <div class="ba-before" style="width: 50%;">
+              <img src="https://images.unsplash.com/photo-1519505907962-0a6cb0167c73?w=600&h=450&fit=crop&q=80" alt="Sarah's fitness transformation before photo" />
+            </div>
+            <div class="ba-handle" style="left: 50%;"></div>
+            <span class="ba-label left-3">Before</span>
+            <span class="ba-label right-3">After</span>
+          </div>
+          <div class="p-7">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-heading text-xl text-text-primary">Sarah L.</h3>
+              <span class="bg-accent-orange-subtle text-accent-orange text-xs font-body font-semibold px-3 py-1 rounded-full">6 Months</span>
+            </div>
+            <p class="text-sm text-text-body italic leading-relaxed">"From couch to competing in my first CrossFit comp. This place pushes you in the best way."</p>
+          </div>
+        </div>
+
+        <!-- Transformation 3 -->
+        <div class="card overflow-hidden reveal stagger-3">
+          <div class="ba-slider relative h-72" data-before-after>
+            <img src="https://images.unsplash.com/photo-1550345332-09e3ac987658?w=600&h=450&fit=crop&q=80" alt="David's fitness transformation after photo showing defined muscles" class="ba-after" />
+            <div class="ba-before" style="width: 50%;">
+              <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=600&h=450&fit=crop&q=80" alt="David's fitness transformation before photo" />
+            </div>
+            <div class="ba-handle" style="left: 50%;"></div>
+            <span class="ba-label left-3">Before</span>
+            <span class="ba-label right-3">After</span>
+          </div>
+          <div class="p-7">
+            <div class="flex items-center justify-between mb-3">
+              <h3 class="font-heading text-xl text-text-primary">David R.</h3>
+              <span class="bg-accent-orange-subtle text-accent-orange text-xs font-body font-semibold px-3 py-1 rounded-full">8 Weeks</span>
+            </div>
+            <p class="text-sm text-text-body italic leading-relaxed">"The PT program was exactly what I needed. Structured, challenging, and the results speak for themselves."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="py-24 lg:py-32 bg-bg-secondary angle-top-reverse">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+      <div class="text-center mb-16 reveal">
+        <p class="section-overline">Testimonials</p>
+        <h2 class="section-title">What Our Members Say</h2>
+        <div class="section-divider mx-auto"></div>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="card p-8 reveal stagger-1">
+          <div class="w-10 h-[3px] bg-accent-orange mb-6"></div>
+          <p class="text-text-body text-sm mb-8 leading-relaxed">Best gym I've ever been to. The coaches actually care about your form and progress, not just counting reps.</p>
+          <div class="border-t border-white/5 pt-5">
+            <p class="text-text-primary font-body font-semibold text-sm">Michelle T.</p>
+            <p class="text-text-muted text-xs mt-0.5">Monthly Member</p>
+          </div>
+        </div>
+
+        <div class="card p-8 reveal stagger-2">
+          <div class="w-10 h-[3px] bg-accent-orange mb-6"></div>
+          <p class="text-text-body text-sm mb-8 leading-relaxed">The 6am HIIT class is the best way to start the day. Addictive atmosphere and incredible community.</p>
+          <div class="border-t border-white/5 pt-5">
+            <p class="text-text-primary font-body font-semibold text-sm">Tom K.</p>
+            <p class="text-text-muted text-xs mt-0.5">Annual Member</p>
+          </div>
+        </div>
+
+        <div class="card p-8 reveal stagger-3">
+          <div class="w-10 h-[3px] bg-accent-orange mb-6"></div>
+          <p class="text-text-body text-sm mb-8 leading-relaxed">I've tried every gym in the CBD. Apex is the only one that's kept me consistent for over 2 years.</p>
+          <div class="border-t border-white/5 pt-5">
+            <p class="text-text-primary font-body font-semibold text-sm">Priya S.</p>
+            <p class="text-text-muted text-xs mt-0.5">Annual Member</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="relative py-28 lg:py-36 glow-bg-cta overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-accent-orange/5 to-accent-lime/3"></div>
+    <div class="relative max-w-4xl mx-auto px-4 text-center">
+      <p class="section-overline reveal mb-4">No Commitment. No Excuses.</p>
+      <h2 class="font-heading text-[clamp(2.25rem,4vw+1rem,4.5rem)] text-text-primary leading-[1.05] mb-10 reveal" style="transition-delay: 100ms;">
+        Your First Week Is Free.
+      </h2>
+      <div class="reveal" style="transition-delay: 200ms;">
+        <a href="/contact" class="btn-primary">
+          Claim Your Free Trial
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before/After Slider Script -->
+  <script>
+    document.querySelectorAll('[data-before-after]').forEach(slider => {
+      let isDragging = false;
+
+      const handle = slider.querySelector('.ba-handle') as HTMLElement;
+      const before = slider.querySelector('.ba-before') as HTMLElement;
+
+      const updatePosition = (clientX: number) => {
+        const rect = slider.getBoundingClientRect();
+        let x = clientX - rect.left;
+        x = Math.max(0, Math.min(x, rect.width));
+        const percent = (x / rect.width) * 100;
+        if (before) before.style.width = percent + '%';
+        if (handle) handle.style.left = percent + '%';
+      };
+
+      slider.addEventListener('mousedown', (e: Event) => {
+        isDragging = true;
+        updatePosition((e as MouseEvent).clientX);
+      });
+      document.addEventListener('mousemove', (e: MouseEvent) => {
+        if (isDragging) updatePosition(e.clientX);
+      });
+      document.addEventListener('mouseup', () => isDragging = false);
+
+      slider.addEventListener('touchstart', (e: Event) => {
+        isDragging = true;
+        updatePosition((e as TouchEvent).touches[0].clientX);
+      });
+      document.addEventListener('touchmove', (e: TouchEvent) => {
+        if (isDragging) updatePosition(e.touches[0].clientX);
+      });
+      document.addEventListener('touchend', () => isDragging = false);
+    });
+  </script>
+</Layout>

@@ -1,0 +1,280 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+const currentPath = Astro.url.pathname;
+
+const navLinks = [
+  { href: '/', label: 'Home' },
+  { href: '/classes', label: 'Classes' },
+  { href: '/contact', label: 'Contact' },
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Apex Performance Studio — Sydney CBD's premier performance training studio. Expert coaches. World-class facility. Results guaranteed." />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <title>{title}</title>
+</head>
+<body class="bg-bg-primary text-text-body">
+
+  <!-- Navigation -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-transparent" style="will-change: transform, background-color;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20 lg:h-24 transition-all duration-500">
+      <!-- Logo -->
+      <a href="/" class="font-heading text-2xl lg:text-3xl text-text-primary tracking-wider uppercase relative z-60">
+        <span class="text-accent-orange">APEX</span> PERFORMANCE
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <div class="hidden md:flex items-center gap-10">
+        {navLinks.map(link => (
+          <a
+            href={link.href}
+            class={`font-body text-[0.8rem] uppercase tracking-[0.15em] font-semibold transition-colors duration-300 hover:text-accent-orange ${
+              currentPath === link.href || currentPath === link.href + '/' ? 'text-accent-orange' : 'text-text-secondary'
+            }`}
+          >
+            {link.label}
+          </a>
+        ))}
+      </div>
+
+      <!-- CTA Button (desktop) -->
+      <a href="/contact" class="hidden md:inline-flex btn-primary !py-3 !px-7 !text-xs">
+        Start Free Trial
+      </a>
+
+      <!-- Mobile Hamburger -->
+      <button id="mobile-menu-btn" class="md:hidden relative z-60 w-10 h-10 flex items-center justify-center" aria-label="Toggle menu">
+        <div id="hamburger-lines" class="w-6 flex flex-col gap-[5px] transition-all duration-300">
+          <span class="block h-[2px] w-full bg-text-primary transition-all duration-300 origin-center"></span>
+          <span class="block h-[2px] w-full bg-text-primary transition-all duration-300"></span>
+          <span class="block h-[2px] w-full bg-text-primary transition-all duration-300 origin-center"></span>
+        </div>
+      </button>
+    </div>
+
+    <!-- Mobile Menu (full-screen overlay) -->
+    <div id="mobile-menu" class="fixed inset-0 bg-bg-primary/98 backdrop-blur-md z-50 flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-400 md:hidden">
+      <div class="flex flex-col items-center gap-8">
+        {navLinks.map((link, i) => (
+          <a
+            href={link.href}
+            class={`font-heading text-4xl uppercase tracking-wider transition-all duration-300 hover:text-accent-orange mobile-nav-link opacity-0 translate-y-4`}
+            style={`transition-delay: ${100 + i * 80}ms;`}
+          >
+            {currentPath === link.href || currentPath === link.href + '/' ? (
+              <span class="text-accent-orange">{link.label}</span>
+            ) : (
+              <span class="text-text-primary">{link.label}</span>
+            )}
+          </a>
+        ))}
+        <a href="/contact" class="btn-primary mt-4 mobile-nav-link opacity-0 translate-y-4" style="transition-delay: 340ms;">
+          Start Free Trial
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-bg-footer pt-20 pb-8 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Footer top: Logo + tagline -->
+      <div class="mb-14">
+        <a href="/" class="font-heading text-3xl text-text-primary tracking-wider uppercase">
+          <span class="text-accent-orange">APEX</span> PERFORMANCE
+        </a>
+        <p class="text-text-muted text-sm mt-2 max-w-sm">Transform your body. Elevate your mind. Sydney CBD's premier performance training studio since 2014.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
+        <!-- Quick Links -->
+        <div>
+          <h4 class="font-body text-xs font-semibold uppercase tracking-[0.15em] text-text-secondary mb-5">Quick Links</h4>
+          <ul class="space-y-3 font-body text-sm">
+            <li><a href="/" class="text-text-muted hover:text-accent-orange transition-colors duration-300">Home</a></li>
+            <li><a href="/classes" class="text-text-muted hover:text-accent-orange transition-colors duration-300">Classes & Coaching</a></li>
+            <li><a href="/contact" class="text-text-muted hover:text-accent-orange transition-colors duration-300">Contact</a></li>
+            <li><a href="/contact" class="text-text-muted hover:text-accent-orange transition-colors duration-300">Free Trial</a></li>
+          </ul>
+        </div>
+
+        <!-- Class Schedule -->
+        <div>
+          <h4 class="font-body text-xs font-semibold uppercase tracking-[0.15em] text-text-secondary mb-5">Class Schedule</h4>
+          <ul class="space-y-3 font-body text-sm">
+            <li class="text-text-muted">HIIT — Daily 6am & 12pm</li>
+            <li class="text-text-muted">Boxing — Mon/Wed/Fri</li>
+            <li class="text-text-muted">Strength — Daily</li>
+            <li class="text-text-muted">Yoga — Mon/Wed/Fri/Sat/Sun</li>
+            <li class="text-text-muted">Olympic Lifting — Tue/Thu/Sat</li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h4 class="font-body text-xs font-semibold uppercase tracking-[0.15em] text-text-secondary mb-5">Contact Info</h4>
+          <ul class="space-y-3 font-body text-sm">
+            <li class="text-text-muted">115 Elizabeth Street, Sydney NSW 2000</li>
+            <li><a href="tel:0431555290" class="text-text-muted hover:text-accent-orange transition-colors duration-300">0431 555 290</a></li>
+            <li><a href="mailto:info@apexperformance.com.au" class="text-text-muted hover:text-accent-orange transition-colors duration-300">info@apexperformance.com.au</a></li>
+            <li class="text-text-muted">Mon–Fri 5am–9pm</li>
+            <li class="text-text-muted">Sat 6am–5pm · Sun 7am–2pm</li>
+          </ul>
+        </div>
+
+        <!-- Social & Newsletter -->
+        <div>
+          <h4 class="font-body text-xs font-semibold uppercase tracking-[0.15em] text-text-secondary mb-5">Stay Connected</h4>
+          <p class="text-sm text-text-muted mb-3">Follow us <a href="https://instagram.com/apexperformancesydney" target="_blank" rel="noopener" class="text-accent-orange hover:underline">@apexperformancesydney</a></p>
+          <p class="text-sm text-text-muted mb-4">Get training tips & exclusive offers:</p>
+          <form class="flex gap-2" onsubmit="event.preventDefault();">
+            <input type="email" placeholder="Your email" class="bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-text-muted flex-1 focus:outline-none focus:border-accent-orange transition-colors duration-300" />
+            <button type="submit" class="bg-accent-orange text-white font-bold text-sm px-5 py-2.5 rounded-lg hover:brightness-110 transition-all duration-300">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-text-muted">
+        <p>&copy; 2014–2026 Apex Performance Studio. All rights reserved.</p>
+        <p>ABN: 55 123 987 654</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script>
+    // ── Nav scroll effect ──
+    const navbar = document.getElementById('navbar');
+    const navInner = navbar?.querySelector(':scope > div') as HTMLElement;
+
+    const updateNav = () => {
+      if (!navbar || !navInner) return;
+      if (window.scrollY > 60) {
+        navbar.classList.add('shadow-lg', 'shadow-black/20');
+        navbar.classList.remove('bg-transparent');
+        navbar.style.backgroundColor = 'rgba(13, 13, 13, 0.95)';
+        navbar.style.backdropFilter = 'blur(12px)';
+        navbar.style.webkitBackdropFilter = 'blur(12px)';
+        navInner.style.height = '64px';
+      } else {
+        navbar.classList.remove('shadow-lg', 'shadow-black/20');
+        navbar.classList.add('bg-transparent');
+        navbar.style.backgroundColor = '';
+        navbar.style.backdropFilter = '';
+        navbar.style.webkitBackdropFilter = '';
+        navInner.style.height = '';
+      }
+    };
+    window.addEventListener('scroll', updateNav, { passive: true });
+    updateNav();
+
+    // ── Mobile menu toggle ──
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const hamburgerLines = document.getElementById('hamburger-lines');
+    let menuOpen = false;
+
+    mobileMenuBtn?.addEventListener('click', () => {
+      menuOpen = !menuOpen;
+      if (!mobileMenu || !hamburgerLines) return;
+
+      const spans = hamburgerLines.querySelectorAll('span');
+
+      if (menuOpen) {
+        mobileMenu.classList.remove('opacity-0', 'pointer-events-none');
+        mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
+        document.body.style.overflow = 'hidden';
+
+        // Hamburger → X
+        if (spans[0]) { spans[0].style.transform = 'translateY(7px) rotate(45deg)'; }
+        if (spans[1]) { spans[1].style.opacity = '0'; }
+        if (spans[2]) { spans[2].style.transform = 'translateY(-7px) rotate(-45deg)'; }
+
+        // Stagger links in
+        mobileMenu.querySelectorAll('.mobile-nav-link').forEach(link => {
+          link.classList.remove('opacity-0', 'translate-y-4');
+          link.classList.add('opacity-100', 'translate-y-0');
+        });
+      } else {
+        mobileMenu.classList.add('opacity-0', 'pointer-events-none');
+        mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
+        document.body.style.overflow = '';
+
+        // X → Hamburger
+        spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+
+        // Reset links
+        mobileMenu.querySelectorAll('.mobile-nav-link').forEach(link => {
+          link.classList.add('opacity-0', 'translate-y-4');
+          link.classList.remove('opacity-100', 'translate-y-0');
+        });
+      }
+    });
+
+    // Close mobile menu on link click
+    mobileMenu?.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        if (menuOpen) mobileMenuBtn?.click();
+      });
+    });
+
+    // ── Scroll-triggered reveal animations ──
+    const revealObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            revealObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    );
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+    // ── Animated counter ──
+    const counterObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
+          const el = entry.target as HTMLElement;
+          const target = parseInt(el.dataset.count || '0');
+          const suffix = el.dataset.suffix || '';
+          const duration = 2000;
+          const start = performance.now();
+
+          const animate = (now: number) => {
+            const elapsed = now - start;
+            const progress = Math.min(elapsed / duration, 1);
+            const eased = 1 - Math.pow(1 - progress, 3);
+            el.textContent = Math.floor(target * eased) + suffix;
+            if (progress < 1) requestAnimationFrame(animate);
+          };
+
+          requestAnimationFrame(animate);
+          counterObserver.unobserve(el);
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
+  </script>
+</body>
+</html>

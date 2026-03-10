@@ -1,0 +1,350 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Classes & Coaching — Apex Performance Studio">
+
+  <!-- Page Header -->
+  <section class="relative pt-36 pb-20 bg-bg-primary overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-b from-accent-orange/3 to-transparent"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <p class="section-overline reveal">Expert-Led Training</p>
+      <h1 class="font-heading text-[clamp(3rem,5vw+1rem,5.5rem)] text-text-primary leading-[0.95] mb-6 reveal" style="transition-delay: 100ms;">Classes & Coaching</h1>
+      <div class="section-divider mx-auto reveal" style="transition-delay: 200ms;"></div>
+      <p class="font-body text-lg text-text-body max-w-2xl mx-auto mt-6 reveal" style="transition-delay: 300ms;">From high-intensity group sessions to personalised one-on-one training. Find what drives you.</p>
+    </div>
+  </section>
+
+  <!-- Weekly Timetable -->
+  <section class="py-20 bg-bg-secondary angle-top">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+      <div class="text-center mb-12 reveal">
+        <p class="section-overline">Timetable</p>
+        <h2 class="section-title">Weekly Schedule</h2>
+        <div class="section-divider mx-auto"></div>
+      </div>
+
+      <!-- Legend -->
+      <div class="flex flex-wrap gap-4 lg:gap-6 justify-center mb-10 reveal">
+        <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-[#FF6B2C]"></span><span class="text-xs text-text-body font-body font-medium">HIIT</span></div>
+        <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-[#3B82F6]"></span><span class="text-xs text-text-body font-body font-medium">Strength</span></div>
+        <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-[#EF4444]"></span><span class="text-xs text-text-body font-body font-medium">Boxing</span></div>
+        <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-[#AAFF00]"></span><span class="text-xs text-text-body font-body font-medium">Yoga</span></div>
+        <div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-[#A855F7]"></span><span class="text-xs text-text-body font-body font-medium">Olympic Lifting</span></div>
+      </div>
+
+      <!-- Desktop Timetable -->
+      <div class="overflow-x-auto hidden md:block reveal" data-timetable>
+        <table class="w-full border-collapse text-sm">
+          <thead>
+            <tr>
+              <th class="p-3 text-left font-heading text-text-muted text-lg">Time</th>
+              <th class="p-3 text-center font-heading text-text-primary text-lg">Mon</th>
+              <th class="p-3 text-center font-heading text-text-primary text-lg">Tue</th>
+              <th class="p-3 text-center font-heading text-text-primary text-lg">Wed</th>
+              <th class="p-3 text-center font-heading text-text-primary text-lg">Thu</th>
+              <th class="p-3 text-center font-heading text-text-primary text-lg">Fri</th>
+              <th class="p-3 text-center font-heading text-text-primary text-lg">Sat</th>
+              <th class="p-3 text-center font-heading text-text-primary text-lg">Sun</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t border-white/5">
+              <td class="p-3 font-body text-text-muted font-semibold">6:00 AM</td>
+              <td class="p-2"><div class="class-hiit rounded-lg p-2.5 text-center"><span class="text-text-primary text-xs font-body font-semibold">HIIT</span></div></td>
+              <td class="p-2"><div class="class-strength rounded-lg p-2.5 text-center"><span class="text-text-primary text-xs font-body font-semibold">Strength</span></div></td>
+              <td class="p-2"><div class="class-boxing rounded-lg p-2.5 text-center"><span class="text-text-primary text-xs font-body font-semibold">Boxing</span></div></td>
+              <td class="p-2"><div class="class-hiit rounded-lg p-2.5 text-center"><span class="text-text-primary text-xs font-body font-semibold">HIIT</span></div></td>
+              <td class="p-2"><div class="class-strength rounded-lg p-2.5 text-center"><span class="text-text-primary text-xs font-body font-semibold">Strength</span></div></td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+            </tr>
+            <tr class="border-t border-white/5">
+              <td class="p-3 font-body text-text-muted font-semibold">7:00 AM</td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+              <td class="p-2"><div class="class-hiit rounded-lg p-2.5 text-center"><span class="text-text-primary text-xs font-body font-semibold">HIIT</span></div></td>
+              <td class="p-2"></td>
+            </tr>
+            <tr class="border-t border-white/5">
+              <td class="p-3 font-body text-text-muted font-semibold">8:00 AM</td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+              <td class="p-2"><div class="class-yoga rounded-lg p-2.5 text-center"><span class="text-text-primary text-xs font-body font-semibold">Yoga</span></div></td>
+            </tr>
+            <tr class="border-t border-white/5">
+              <td class="p-3 font-body text-text-muted font-semibold">9:00 AM</td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+              <td class="p-2"><div class="class-olympic rounded-lg p-2.5 text-center"><span class="text-text-primary text-xs font-body font-semibold">Olympic Lifting</span></div></td>
+              <td class="p-2"></td>
+            </tr>
+            <tr class="border-t border-white/5">
+              <td class="p-3 font-body text-text-muted font-semibold">10:00 AM</td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+              <td class="p-2"><div class="class-boxing rounded-lg p-2.5 text-center"><span class="text-text-primary text-xs font-body font-semibold">Boxing</span></div></td>
+            </tr>
+            <tr class="border-t border-white/5">
+              <td class="p-3 font-body text-text-muted font-semibold">11:00 AM</td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+              <td class="p-2"><div class="class-yoga rounded-lg p-2.5 text-center"><span class="text-text-primary text-xs font-body font-semibold">Yoga</span></div></td>
+              <td class="p-2"></td>
+            </tr>
+            <tr class="border-t border-white/5">
+              <td class="p-3 font-body text-text-muted font-semibold">12:00 PM</td>
+              <td class="p-2"><div class="class-boxing rounded-lg p-2.5 text-center"><span class="text-text-primary text-xs font-body font-semibold">Boxing</span></div></td>
+              <td class="p-2"><div class="class-hiit rounded-lg p-2.5 text-center"><span class="text-text-primary text-xs font-body font-semibold">HIIT</span></div></td>
+              <td class="p-2"><div class="class-yoga rounded-lg p-2.5 text-center"><span class="text-text-primary text-xs font-body font-semibold">Yoga</span></div></td>
+              <td class="p-2"><div class="class-strength rounded-lg p-2.5 text-center"><span class="text-text-primary text-xs font-body font-semibold">Strength</span></div></td>
+              <td class="p-2"><div class="class-hiit rounded-lg p-2.5 text-center"><span class="text-text-primary text-xs font-body font-semibold">HIIT</span></div></td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+            </tr>
+            <tr class="border-t border-white/5">
+              <td class="p-3 font-body text-text-muted font-semibold">5:30 PM</td>
+              <td class="p-2"><div class="class-strength rounded-lg p-2.5 text-center"><span class="text-text-primary text-xs font-body font-semibold">Strength</span></div></td>
+              <td class="p-2"><div class="class-boxing rounded-lg p-2.5 text-center"><span class="text-text-primary text-xs font-body font-semibold">Boxing</span></div></td>
+              <td class="p-2"><div class="class-hiit rounded-lg p-2.5 text-center"><span class="text-text-primary text-xs font-body font-semibold">HIIT</span></div></td>
+              <td class="p-2"><div class="class-olympic rounded-lg p-2.5 text-center"><span class="text-text-primary text-xs font-body font-semibold">Olympic Lifting</span></div></td>
+              <td class="p-2"><div class="class-boxing rounded-lg p-2.5 text-center"><span class="text-text-primary text-xs font-body font-semibold">Boxing</span></div></td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+            </tr>
+            <tr class="border-t border-white/5">
+              <td class="p-3 font-body text-text-muted font-semibold">6:30 PM</td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+              <td class="p-2"><div class="class-yoga rounded-lg p-2.5 text-center"><span class="text-text-primary text-xs font-body font-semibold">Yoga</span></div></td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+            </tr>
+            <tr class="border-t border-white/5">
+              <td class="p-3 font-body text-text-muted font-semibold">7:00 PM</td>
+              <td class="p-2"><div class="class-yoga rounded-lg p-2.5 text-center"><span class="text-text-primary text-xs font-body font-semibold">Yoga</span></div></td>
+              <td class="p-2"><div class="class-olympic rounded-lg p-2.5 text-center"><span class="text-text-primary text-xs font-body font-semibold">Olympic Lifting</span></div></td>
+              <td class="p-2"><div class="class-strength rounded-lg p-2.5 text-center"><span class="text-text-primary text-xs font-body font-semibold">Strength</span></div></td>
+              <td class="p-2"><div class="class-boxing rounded-lg p-2.5 text-center"><span class="text-text-primary text-xs font-body font-semibold">Boxing</span></div></td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+              <td class="p-2"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Mobile Timetable -->
+      <div class="md:hidden space-y-6" data-timetable>
+        <div class="reveal stagger-1">
+          <h3 class="font-heading text-xl text-text-primary mb-3">Monday</h3>
+          <div class="space-y-2">
+            <div class="class-hiit rounded-lg p-3.5 flex justify-between items-center"><span class="text-text-primary text-sm font-body font-semibold">HIIT</span><span class="text-text-body text-xs font-body">6:00 AM</span></div>
+            <div class="class-boxing rounded-lg p-3.5 flex justify-between items-center"><span class="text-text-primary text-sm font-body font-semibold">Boxing</span><span class="text-text-body text-xs font-body">12:00 PM</span></div>
+            <div class="class-strength rounded-lg p-3.5 flex justify-between items-center"><span class="text-text-primary text-sm font-body font-semibold">Strength</span><span class="text-text-body text-xs font-body">5:30 PM</span></div>
+            <div class="class-yoga rounded-lg p-3.5 flex justify-between items-center"><span class="text-text-primary text-sm font-body font-semibold">Yoga</span><span class="text-text-body text-xs font-body">7:00 PM</span></div>
+          </div>
+        </div>
+        <div class="reveal stagger-2">
+          <h3 class="font-heading text-xl text-text-primary mb-3">Tuesday</h3>
+          <div class="space-y-2">
+            <div class="class-strength rounded-lg p-3.5 flex justify-between items-center"><span class="text-text-primary text-sm font-body font-semibold">Strength</span><span class="text-text-body text-xs font-body">6:00 AM</span></div>
+            <div class="class-hiit rounded-lg p-3.5 flex justify-between items-center"><span class="text-text-primary text-sm font-body font-semibold">HIIT</span><span class="text-text-body text-xs font-body">12:00 PM</span></div>
+            <div class="class-boxing rounded-lg p-3.5 flex justify-between items-center"><span class="text-text-primary text-sm font-body font-semibold">Boxing</span><span class="text-text-body text-xs font-body">5:30 PM</span></div>
+            <div class="class-olympic rounded-lg p-3.5 flex justify-between items-center"><span class="text-text-primary text-sm font-body font-semibold">Olympic Lifting</span><span class="text-text-body text-xs font-body">7:00 PM</span></div>
+          </div>
+        </div>
+        <div class="reveal stagger-3">
+          <h3 class="font-heading text-xl text-text-primary mb-3">Wednesday</h3>
+          <div class="space-y-2">
+            <div class="class-boxing rounded-lg p-3.5 flex justify-between items-center"><span class="text-text-primary text-sm font-body font-semibold">Boxing</span><span class="text-text-body text-xs font-body">6:00 AM</span></div>
+            <div class="class-yoga rounded-lg p-3.5 flex justify-between items-center"><span class="text-text-primary text-sm font-body font-semibold">Yoga</span><span class="text-text-body text-xs font-body">12:00 PM</span></div>
+            <div class="class-hiit rounded-lg p-3.5 flex justify-between items-center"><span class="text-text-primary text-sm font-body font-semibold">HIIT</span><span class="text-text-body text-xs font-body">5:30 PM</span></div>
+            <div class="class-strength rounded-lg p-3.5 flex justify-between items-center"><span class="text-text-primary text-sm font-body font-semibold">Strength</span><span class="text-text-body text-xs font-body">7:00 PM</span></div>
+          </div>
+        </div>
+        <div class="reveal stagger-4">
+          <h3 class="font-heading text-xl text-text-primary mb-3">Thursday</h3>
+          <div class="space-y-2">
+            <div class="class-hiit rounded-lg p-3.5 flex justify-between items-center"><span class="text-text-primary text-sm font-body font-semibold">HIIT</span><span class="text-text-body text-xs font-body">6:00 AM</span></div>
+            <div class="class-strength rounded-lg p-3.5 flex justify-between items-center"><span class="text-text-primary text-sm font-body font-semibold">Strength</span><span class="text-text-body text-xs font-body">12:00 PM</span></div>
+            <div class="class-olympic rounded-lg p-3.5 flex justify-between items-center"><span class="text-text-primary text-sm font-body font-semibold">Olympic Lifting</span><span class="text-text-body text-xs font-body">5:30 PM</span></div>
+            <div class="class-boxing rounded-lg p-3.5 flex justify-between items-center"><span class="text-text-primary text-sm font-body font-semibold">Boxing</span><span class="text-text-body text-xs font-body">7:00 PM</span></div>
+          </div>
+        </div>
+        <div class="reveal stagger-5">
+          <h3 class="font-heading text-xl text-text-primary mb-3">Friday</h3>
+          <div class="space-y-2">
+            <div class="class-strength rounded-lg p-3.5 flex justify-between items-center"><span class="text-text-primary text-sm font-body font-semibold">Strength</span><span class="text-text-body text-xs font-body">6:00 AM</span></div>
+            <div class="class-hiit rounded-lg p-3.5 flex justify-between items-center"><span class="text-text-primary text-sm font-body font-semibold">HIIT</span><span class="text-text-body text-xs font-body">12:00 PM</span></div>
+            <div class="class-boxing rounded-lg p-3.5 flex justify-between items-center"><span class="text-text-primary text-sm font-body font-semibold">Boxing</span><span class="text-text-body text-xs font-body">5:30 PM</span></div>
+            <div class="class-yoga rounded-lg p-3.5 flex justify-between items-center"><span class="text-text-primary text-sm font-body font-semibold">Yoga</span><span class="text-text-body text-xs font-body">6:30 PM</span></div>
+          </div>
+        </div>
+        <div class="reveal stagger-6">
+          <h3 class="font-heading text-xl text-text-primary mb-3">Saturday</h3>
+          <div class="space-y-2">
+            <div class="class-hiit rounded-lg p-3.5 flex justify-between items-center"><span class="text-text-primary text-sm font-body font-semibold">HIIT</span><span class="text-text-body text-xs font-body">7:00 AM</span></div>
+            <div class="class-olympic rounded-lg p-3.5 flex justify-between items-center"><span class="text-text-primary text-sm font-body font-semibold">Olympic Lifting</span><span class="text-text-body text-xs font-body">9:00 AM</span></div>
+            <div class="class-yoga rounded-lg p-3.5 flex justify-between items-center"><span class="text-text-primary text-sm font-body font-semibold">Yoga</span><span class="text-text-body text-xs font-body">11:00 AM</span></div>
+          </div>
+        </div>
+        <div class="reveal">
+          <h3 class="font-heading text-xl text-text-primary mb-3">Sunday</h3>
+          <div class="space-y-2">
+            <div class="class-yoga rounded-lg p-3.5 flex justify-between items-center"><span class="text-text-primary text-sm font-body font-semibold">Yoga</span><span class="text-text-body text-xs font-body">8:00 AM</span></div>
+            <div class="class-boxing rounded-lg p-3.5 flex justify-between items-center"><span class="text-text-primary text-sm font-body font-semibold">Boxing</span><span class="text-text-body text-xs font-body">10:00 AM</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trainer Profiles -->
+  <section class="py-24 lg:py-32 bg-bg-primary">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 reveal">
+        <p class="section-overline">Our Team</p>
+        <h2 class="section-title">Meet Your Coaches</h2>
+        <div class="section-divider mx-auto"></div>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Marcus Reid -->
+        <div class="card group overflow-hidden reveal stagger-1">
+          <div class="h-72 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?w=400&h=400&fit=crop&q=80" alt="Marcus Reid, Head Coach specialising in Strength and Conditioning" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          </div>
+          <div class="p-7">
+            <h3 class="font-heading text-2xl text-text-primary">Marcus Reid</h3>
+            <p class="text-accent-orange font-body text-sm font-semibold mb-1">Head Coach — Strength & Conditioning</p>
+            <p class="text-text-muted text-xs font-body mb-3">14 Years Experience</p>
+            <p class="text-text-body text-sm leading-relaxed">"Former professional rugby player. Believes everyone has an athlete inside them."</p>
+          </div>
+        </div>
+
+        <!-- Sophie Chen -->
+        <div class="card group overflow-hidden reveal stagger-2">
+          <div class="h-72 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1548690312-e3b507d8c110?w=400&h=400&fit=crop&q=80" alt="Sophie Chen, HIIT and Boxing coach in action" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          </div>
+          <div class="p-7">
+            <h3 class="font-heading text-2xl text-text-primary">Sophie Chen</h3>
+            <p class="text-accent-orange font-body text-sm font-semibold mb-1">HIIT & Boxing</p>
+            <p class="text-text-muted text-xs font-body mb-3">8 Years Experience</p>
+            <p class="text-text-body text-sm leading-relaxed">"Certified in sports science and boxing coaching. Brings the energy every single session."</p>
+          </div>
+        </div>
+
+        <!-- James Okafor -->
+        <div class="card group overflow-hidden reveal stagger-3">
+          <div class="h-72 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1583468982228-19f19164aee2?w=400&h=400&fit=crop&q=80" alt="James Okafor, Olympic Lifting coach demonstrating technique" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          </div>
+          <div class="p-7">
+            <h3 class="font-heading text-2xl text-text-primary">James Okafor</h3>
+            <p class="text-accent-orange font-body text-sm font-semibold mb-1">Olympic Lifting</p>
+            <p class="text-text-muted text-xs font-body mb-3">10 Years Experience</p>
+            <p class="text-text-body text-sm leading-relaxed">"Commonwealth Games qualifier. Passionate about teaching proper Olympic technique."</p>
+          </div>
+        </div>
+
+        <!-- Anika Patel -->
+        <div class="card group overflow-hidden reveal stagger-4">
+          <div class="h-72 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?w=400&h=400&fit=crop&q=80" alt="Anika Patel, Yoga and Mobility instructor in a studio" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          </div>
+          <div class="p-7">
+            <h3 class="font-heading text-2xl text-text-primary">Anika Patel</h3>
+            <p class="text-accent-orange font-body text-sm font-semibold mb-1">Yoga & Mobility</p>
+            <p class="text-text-muted text-xs font-body mb-3">6 Years Experience</p>
+            <p class="text-text-body text-sm leading-relaxed">"500hr certified yoga instructor specialising in athlete recovery and flexibility."</p>
+          </div>
+        </div>
+
+        <!-- Ryan Torres -->
+        <div class="card group overflow-hidden reveal stagger-5">
+          <div class="h-72 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1597347316205-36f6c451902a?w=400&h=400&fit=crop&q=80" alt="Ryan Torres, Personal Training coach working with a client" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          </div>
+          <div class="p-7">
+            <h3 class="font-heading text-2xl text-text-primary">Ryan Torres</h3>
+            <p class="text-accent-orange font-body text-sm font-semibold mb-1">Personal Training</p>
+            <p class="text-text-muted text-xs font-body mb-3">9 Years Experience</p>
+            <p class="text-text-body text-sm leading-relaxed">"Specialises in body recomposition and nutrition-integrated training programs."</p>
+          </div>
+        </div>
+
+        <!-- Megan Walsh -->
+        <div class="card group overflow-hidden reveal stagger-6">
+          <div class="h-72 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?w=400&h=400&fit=crop&q=80" alt="Megan Walsh, Boxing and HIIT coach during a training session" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+          </div>
+          <div class="p-7">
+            <h3 class="font-heading text-2xl text-text-primary">Megan Walsh</h3>
+            <p class="text-accent-orange font-body text-sm font-semibold mb-1">Boxing & HIIT</p>
+            <p class="text-text-muted text-xs font-body mb-3">5 Years Experience</p>
+            <p class="text-text-body text-sm leading-relaxed">"National amateur boxing champion. Her classes are tough, fun, and never boring."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="py-24 glow-bg-cta angle-top">
+    <div class="max-w-4xl mx-auto px-4 text-center pt-8">
+      <p class="section-overline reveal">Take The First Step</p>
+      <h2 class="font-heading text-[clamp(2rem,4vw+1rem,4rem)] text-text-primary mb-10 reveal" style="transition-delay: 100ms;">Ready To Find Your Class?</h2>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center reveal" style="transition-delay: 200ms;">
+        <a href="/contact" class="btn-primary">
+          Book a Free Consultation
+        </a>
+        <a href="/#pricing" class="btn-secondary">
+          View Pricing
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Video Section -->
+  <section class="py-24 bg-bg-primary">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12 reveal">
+        <p class="section-overline">Our Space</p>
+        <h2 class="section-title">Take A Virtual Tour</h2>
+        <div class="section-divider mx-auto"></div>
+      </div>
+      <div class="relative aspect-video rounded-xl overflow-hidden group cursor-pointer card reveal">
+        <img src="https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=1200&h=675&fit=crop&q=80" alt="Wide angle view of the Apex Performance Studio gym interior with modern equipment" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+        <div class="absolute inset-0 bg-black/50 flex items-center justify-center group-hover:bg-black/40 transition-colors duration-500">
+          <div class="w-20 h-20 rounded-full bg-accent-orange/90 flex items-center justify-center glow-orange group-hover:scale-110 transition-transform duration-500">
+            <svg class="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Layout>
