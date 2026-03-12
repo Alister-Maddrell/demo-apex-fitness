@@ -26,6 +26,9 @@ import Layout from '../layouts/Layout.astro';
       <p class="font-body text-base sm:text-lg lg:text-xl text-text-body max-w-2xl mx-auto mb-12 reveal" style="transition-delay: 200ms;">
         Expert coaches. World-class facility. Results guaranteed. Join 500+ members who chose to train differently.
       </p>
+      <p class="font-body text-accent-lime text-sm font-bold uppercase tracking-[0.2em] mb-6 reveal" style="transition-delay: 280ms;">
+        &#9733; Your first week is FREE — no commitment required
+      </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center reveal" style="transition-delay: 300ms;">
         <a href="/contact" class="btn-primary">
           Start Free Trial
@@ -149,6 +152,18 @@ import Layout from '../layouts/Layout.astro';
           </div>
         </div>
       </div>
+    </div>
+  </section>
+
+  <!-- Mid-Page Free Trial Banner -->
+  <section class="relative py-16 lg:py-20 bg-bg-secondary angle-top overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-accent-orange/10 via-transparent to-accent-lime/10"></div>
+    <div class="relative max-w-4xl mx-auto px-4 text-center reveal">
+      <div class="inline-flex items-center gap-3 bg-white/[0.04] border border-white/10 rounded-full px-8 py-5 md:px-12 md:py-6">
+        <span class="font-heading text-[clamp(1.5rem,3vw,2.5rem)] text-text-primary leading-none">Your first week is <span class="text-accent-orange">FREE.</span></span>
+        <a href="/contact" class="hidden sm:inline-flex btn-primary !py-2.5 !px-6 !text-sm whitespace-nowrap">Claim Now</a>
+      </div>
+      <a href="/contact" class="sm:hidden inline-flex btn-primary mt-4 !text-sm">Claim Your Free Week</a>
     </div>
   </section>
 
