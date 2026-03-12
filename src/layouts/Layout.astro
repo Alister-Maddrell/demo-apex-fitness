@@ -30,8 +30,8 @@ const navLinks = [
   <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-transparent" style="will-change: transform, background-color;">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20 lg:h-24 transition-all duration-500">
       <!-- Logo -->
-      <a href="/" class="font-heading text-2xl lg:text-3xl text-text-primary tracking-wider uppercase relative z-60">
-        <span class="text-accent-orange">APEX</span> PERFORMANCE
+      <a href="/" class="font-heading text-2xl lg:text-3xl text-text-primary tracking-wider uppercase relative z-60 group">
+        <span class="text-gradient-warm">APEX</span> <span class="text-text-secondary group-hover:text-text-primary transition-colors duration-300">PERFORMANCE</span>
       </a>
 
       <!-- Desktop Nav Links -->
@@ -39,11 +39,14 @@ const navLinks = [
         {navLinks.map(link => (
           <a
             href={link.href}
-            class={`font-body text-[0.8rem] uppercase tracking-[0.15em] font-semibold transition-colors duration-300 hover:text-accent-orange ${
+            class={`font-display text-[0.75rem] uppercase tracking-[0.18em] font-semibold transition-all duration-300 hover:text-accent-orange relative ${
               currentPath === link.href || currentPath === link.href + '/' ? 'text-accent-orange' : 'text-text-secondary'
             }`}
           >
             {link.label}
+            {(currentPath === link.href || currentPath === link.href + '/') && (
+              <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-accent-orange to-transparent rounded-full"></span>
+            )}
           </a>
         ))}
       </div>
@@ -64,22 +67,27 @@ const navLinks = [
     </div>
 
     <!-- Mobile Menu (full-screen overlay) -->
-    <div id="mobile-menu" class="fixed inset-0 bg-bg-primary/98 backdrop-blur-md z-50 flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-400 md:hidden">
-      <div class="flex flex-col items-center gap-8">
+    <div id="mobile-menu" class="fixed inset-0 bg-bg-primary/98 backdrop-blur-xl z-50 flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-400 md:hidden">
+      <!-- Decorative background for mobile menu -->
+      <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-1/4 right-10 w-64 h-64 rounded-full bg-accent-orange/3 blur-3xl"></div>
+        <div class="absolute bottom-1/3 left-10 w-48 h-48 rounded-full bg-accent-lime/2 blur-3xl"></div>
+      </div>
+      <div class="relative flex flex-col items-center gap-8">
         {navLinks.map((link, i) => (
           <a
             href={link.href}
-            class={`font-heading text-4xl uppercase tracking-wider transition-all duration-300 hover:text-accent-orange mobile-nav-link opacity-0 translate-y-4`}
+            class={`font-heading text-5xl uppercase tracking-wider transition-all duration-300 hover:text-accent-orange mobile-nav-link opacity-0 translate-y-4`}
             style={`transition-delay: ${100 + i * 80}ms;`}
           >
             {currentPath === link.href || currentPath === link.href + '/' ? (
-              <span class="text-accent-orange">{link.label}</span>
+              <span class="text-gradient-warm">{link.label}</span>
             ) : (
               <span class="text-text-primary">{link.label}</span>
             )}
           </a>
         ))}
-        <a href="/contact" class="btn-primary mt-4 mobile-nav-link opacity-0 translate-y-4" style="transition-delay: 340ms;">
+        <a href="/contact" class="btn-primary mt-6 mobile-nav-link opacity-0 translate-y-4" style="transition-delay: 340ms;">
           Start Free Trial
         </a>
       </div>
@@ -91,44 +99,48 @@ const navLinks = [
   </main>
 
   <!-- Footer -->
-  <footer class="bg-bg-footer pt-20 pb-8 border-t border-white/5">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+  <footer class="relative bg-bg-footer pt-24 pb-8 border-t border-white/5 overflow-hidden">
+    <!-- Ambient glow -->
+    <div class="absolute top-0 left-1/4 w-96 h-48 bg-accent-orange/3 blur-[100px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
       <!-- Footer top: Logo + tagline -->
-      <div class="mb-14">
+      <div class="mb-16">
         <a href="/" class="font-heading text-3xl text-text-primary tracking-wider uppercase">
-          <span class="text-accent-orange">APEX</span> PERFORMANCE
+          <span class="text-gradient-warm">APEX</span> PERFORMANCE
         </a>
-        <p class="text-text-muted text-sm mt-2 max-w-sm">Transform your body. Elevate your mind. Sydney CBD's premier performance training studio since 2014.</p>
+        <p class="text-text-muted text-sm mt-3 max-w-sm leading-relaxed">Transform your body. Elevate your mind. Sydney CBD's premier performance training studio since 2014.</p>
+        <div class="w-16 h-px bg-gradient-to-r from-accent-orange/40 to-transparent mt-6"></div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
         <!-- Quick Links -->
         <div>
-          <h4 class="font-body text-xs font-semibold uppercase tracking-[0.15em] text-text-secondary mb-5">Quick Links</h4>
-          <ul class="space-y-3 font-body text-sm">
-            <li><a href="/" class="text-text-muted hover:text-accent-orange transition-colors duration-300">Home</a></li>
-            <li><a href="/classes" class="text-text-muted hover:text-accent-orange transition-colors duration-300">Classes & Coaching</a></li>
-            <li><a href="/contact" class="text-text-muted hover:text-accent-orange transition-colors duration-300">Contact</a></li>
-            <li><a href="/contact" class="text-text-muted hover:text-accent-orange transition-colors duration-300">Free Trial</a></li>
+          <h4 class="font-display text-xs font-semibold uppercase tracking-[0.18em] text-text-secondary mb-6">Quick Links</h4>
+          <ul class="space-y-3.5 font-body text-sm">
+            <li><a href="/" class="text-text-muted hover:text-accent-orange transition-all duration-300 hover:translate-x-1 inline-block">Home</a></li>
+            <li><a href="/classes" class="text-text-muted hover:text-accent-orange transition-all duration-300 hover:translate-x-1 inline-block">Classes & Coaching</a></li>
+            <li><a href="/contact" class="text-text-muted hover:text-accent-orange transition-all duration-300 hover:translate-x-1 inline-block">Contact</a></li>
+            <li><a href="/contact" class="text-text-muted hover:text-accent-orange transition-all duration-300 hover:translate-x-1 inline-block">Free Trial</a></li>
           </ul>
         </div>
 
         <!-- Class Schedule -->
         <div>
-          <h4 class="font-body text-xs font-semibold uppercase tracking-[0.15em] text-text-secondary mb-5">Class Schedule</h4>
-          <ul class="space-y-3 font-body text-sm">
-            <li class="text-text-muted">HIIT — Daily 6am & 12pm</li>
-            <li class="text-text-muted">Boxing — Mon/Wed/Fri</li>
-            <li class="text-text-muted">Strength — Daily</li>
-            <li class="text-text-muted">Yoga — Mon/Wed/Fri/Sat/Sun</li>
-            <li class="text-text-muted">Olympic Lifting — Tue/Thu/Sat</li>
+          <h4 class="font-display text-xs font-semibold uppercase tracking-[0.18em] text-text-secondary mb-6">Class Schedule</h4>
+          <ul class="space-y-3.5 font-body text-sm">
+            <li class="text-text-muted flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-orange/60"></span>HIIT — Daily 6am & 12pm</li>
+            <li class="text-text-muted flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-red-500/60"></span>Boxing — Mon/Wed/Fri</li>
+            <li class="text-text-muted flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500/60"></span>Strength — Daily</li>
+            <li class="text-text-muted flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-lime/60"></span>Yoga — Mon/Wed/Fri/Sat/Sun</li>
+            <li class="text-text-muted flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-500/60"></span>Olympic Lifting — Tue/Thu/Sat</li>
           </ul>
         </div>
 
         <!-- Contact Info -->
         <div>
-          <h4 class="font-body text-xs font-semibold uppercase tracking-[0.15em] text-text-secondary mb-5">Contact Info</h4>
-          <ul class="space-y-3 font-body text-sm">
+          <h4 class="font-display text-xs font-semibold uppercase tracking-[0.18em] text-text-secondary mb-6">Contact Info</h4>
+          <ul class="space-y-3.5 font-body text-sm">
             <li class="text-text-muted">115 Elizabeth Street, Sydney NSW 2000</li>
             <li><a href="tel:0431555290" class="text-text-muted hover:text-accent-orange transition-colors duration-300">0431 555 290</a></li>
             <li><a href="mailto:info@apexperformance.com.au" class="text-text-muted hover:text-accent-orange transition-colors duration-300">info@apexperformance.com.au</a></li>
@@ -139,19 +151,21 @@ const navLinks = [
 
         <!-- Social & Newsletter -->
         <div>
-          <h4 class="font-body text-xs font-semibold uppercase tracking-[0.15em] text-text-secondary mb-5">Stay Connected</h4>
+          <h4 class="font-display text-xs font-semibold uppercase tracking-[0.18em] text-text-secondary mb-6">Stay Connected</h4>
           <p class="text-sm text-text-muted mb-3">Follow us <a href="https://instagram.com/apexperformancesydney" target="_blank" rel="noopener" class="text-accent-orange hover:underline">@apexperformancesydney</a></p>
-          <p class="text-sm text-text-muted mb-4">Get training tips & exclusive offers:</p>
+          <p class="text-sm text-text-muted mb-5">Get training tips & exclusive offers:</p>
           <form class="flex gap-2" onsubmit="event.preventDefault();">
-            <input type="email" placeholder="Your email" class="bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm text-white placeholder-text-muted flex-1 focus:outline-none focus:border-accent-orange transition-colors duration-300" />
-            <button type="submit" class="bg-accent-orange text-white font-bold text-sm px-5 py-2.5 rounded-lg hover:brightness-110 transition-all duration-300">Join</button>
+            <input type="email" placeholder="Your email" class="bg-white/[0.04] border border-white/8 rounded-xl px-4 py-3 text-sm text-white placeholder-text-muted flex-1 focus:outline-none focus:border-accent-orange/60 focus:ring-1 focus:ring-accent-orange/20 transition-all duration-300 backdrop-blur-sm" />
+            <button type="submit" class="bg-gradient-to-r from-accent-orange to-[#E85A1E] text-white font-display font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-xl hover:brightness-110 transition-all duration-300 hover:shadow-lg hover:shadow-accent-orange/20">Join</button>
           </form>
         </div>
       </div>
 
-      <div class="border-t border-white/5 pt-8 flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-text-muted">
+      <!-- Bottom bar -->
+      <div class="hr-gradient mb-8"></div>
+      <div class="flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-text-muted">
         <p>&copy; 2014–2026 Apex Performance Studio. All rights reserved.</p>
-        <p>ABN: 55 123 987 654</p>
+        <p class="font-display tracking-wider">ABN: 55 123 987 654</p>
       </div>
     </div>
   </footer>
@@ -167,9 +181,10 @@ const navLinks = [
       if (window.scrollY > 60) {
         navbar.classList.add('shadow-lg', 'shadow-black/20');
         navbar.classList.remove('bg-transparent');
-        navbar.style.backgroundColor = 'rgba(13, 13, 13, 0.95)';
-        navbar.style.backdropFilter = 'blur(12px)';
-        navbar.style.webkitBackdropFilter = 'blur(12px)';
+        navbar.style.backgroundColor = 'rgba(11, 11, 15, 0.92)';
+        navbar.style.backdropFilter = 'blur(16px)';
+        navbar.style.webkitBackdropFilter = 'blur(16px)';
+        navbar.style.borderBottom = '1px solid rgba(255,255,255,0.04)';
         navInner.style.height = '64px';
       } else {
         navbar.classList.remove('shadow-lg', 'shadow-black/20');
@@ -177,6 +192,7 @@ const navLinks = [
         navbar.style.backgroundColor = '';
         navbar.style.backdropFilter = '';
         navbar.style.webkitBackdropFilter = '';
+        navbar.style.borderBottom = '';
         navInner.style.height = '';
       }
     };
@@ -200,12 +216,10 @@ const navLinks = [
         mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
         document.body.style.overflow = 'hidden';
 
-        // Hamburger → X
         if (spans[0]) { spans[0].style.transform = 'translateY(7px) rotate(45deg)'; }
         if (spans[1]) { spans[1].style.opacity = '0'; }
         if (spans[2]) { spans[2].style.transform = 'translateY(-7px) rotate(-45deg)'; }
 
-        // Stagger links in
         mobileMenu.querySelectorAll('.mobile-nav-link').forEach(link => {
           link.classList.remove('opacity-0', 'translate-y-4');
           link.classList.add('opacity-100', 'translate-y-0');
@@ -215,10 +229,8 @@ const navLinks = [
         mobileMenu.classList.remove('opacity-100', 'pointer-events-auto');
         document.body.style.overflow = '';
 
-        // X → Hamburger
         spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
 
-        // Reset links
         mobileMenu.querySelectorAll('.mobile-nav-link').forEach(link => {
           link.classList.add('opacity-0', 'translate-y-4');
           link.classList.remove('opacity-100', 'translate-y-0');
@@ -226,7 +238,6 @@ const navLinks = [
       }
     });
 
-    // Close mobile menu on link click
     mobileMenu?.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => {
         if (menuOpen) mobileMenuBtn?.click();
@@ -243,7 +254,7 @@ const navLinks = [
           }
         });
       },
-      { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+      { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
     );
 
     document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));

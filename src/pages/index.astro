@@ -4,34 +4,63 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Apex Performance Studio — Transform Your Body. Elevate Your Mind.">
 
-  <!-- Hero Section -->
-  <section class="relative min-h-screen flex items-center justify-center overflow-hidden glow-bg-hero">
+  <!-- ═══════════════════════════════════════
+       HERO SECTION — Multi-layered depth
+       ═══════════════════════════════════════ -->
+  <section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <!-- Layer 1: Ambient colour washes -->
+    <div class="absolute inset-0 glow-bg-hero"></div>
+    <!-- Layer 2: Gradient mesh -->
     <div class="absolute inset-0 gradient-mesh"></div>
+    <!-- Layer 3: Speed line texture -->
     <div class="absolute inset-0 speed-lines"></div>
-    <div class="absolute inset-0 opacity-25">
+    <!-- Layer 4: Dot grid pattern -->
+    <div class="absolute inset-0 dot-grid"></div>
+    <!-- Layer 5: Background image -->
+    <div class="absolute inset-0 opacity-20">
       <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&h=1080&fit=crop&q=80" alt="Dark atmospheric gym interior with dramatic lighting on training equipment" class="w-full h-full object-cover" />
     </div>
-    <div class="absolute inset-0 bg-gradient-to-t from-bg-primary via-bg-primary/70 to-bg-primary/30"></div>
-    <div class="absolute inset-0 bg-gradient-to-r from-bg-primary/40 to-transparent"></div>
+    <!-- Layer 6: Gradient overlays for depth -->
+    <div class="absolute inset-0 bg-gradient-to-t from-bg-primary via-bg-primary/60 to-bg-primary/20"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-bg-primary/50 via-transparent to-bg-primary/30"></div>
+    <!-- Layer 7: Vignette -->
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(11,11,15,0.6)_100%)]"></div>
 
     <!-- Floating geometric shapes -->
-    <div class="absolute top-1/4 left-10 w-20 h-20 border border-accent-orange/15 rotate-45 animate-float hidden lg:block"></div>
-    <div class="absolute bottom-1/3 right-16 w-16 h-16 border border-accent-lime/15 rotate-12 animate-float-delayed hidden lg:block"></div>
+    <div class="absolute top-1/4 left-10 w-24 h-24 border border-accent-orange/10 rotate-45 animate-float hidden lg:block rounded-sm"></div>
+    <div class="absolute bottom-1/3 right-16 w-16 h-16 border border-accent-lime/10 rotate-12 animate-float-delayed hidden lg:block rounded-sm"></div>
     <div class="absolute top-1/3 right-1/4 w-3 h-3 bg-accent-orange rounded-full animate-pulse-glow"></div>
+    <div class="absolute bottom-1/4 left-1/5 w-2 h-2 bg-accent-amber rounded-full animate-pulse-glow hidden lg:block" style="animation-delay: 1.5s;"></div>
+    <!-- Decorative vertical line -->
+    <div class="absolute left-[8%] top-[20%] h-32 deco-line-v hidden lg:block"></div>
+    <div class="absolute right-[12%] bottom-[25%] h-24 deco-line-v hidden lg:block"></div>
+    <!-- Large ambient orb -->
+    <div class="absolute top-[10%] right-[20%] w-[400px] h-[400px] rounded-full bg-accent-orange/[0.02] blur-[80px] animate-float-slow hidden lg:block"></div>
 
     <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
-      <p class="section-overline reveal mb-4">Sydney CBD's Premier Training Studio</p>
-      <h1 class="font-heading text-[clamp(3.5rem,8vw+1rem,9rem)] text-text-primary leading-[0.9] mb-8 reveal" style="transition-delay: 100ms;">
+      <!-- Overline with decorative dashes -->
+      <div class="flex items-center justify-center gap-4 mb-5 reveal">
+        <span class="w-8 h-px bg-accent-orange/40 hidden sm:block"></span>
+        <p class="section-overline !mb-0">Sydney CBD's Premier Training Studio</p>
+        <span class="w-8 h-px bg-accent-orange/40 hidden sm:block"></span>
+      </div>
+
+      <h1 class="font-heading text-[clamp(3.5rem,8vw+1rem,9.5rem)] text-text-primary leading-[0.88] mb-8 reveal" style="transition-delay: 100ms;">
         Transform Your Body.<br />
-        <span class="text-accent-orange">Elevate Your Mind.</span>
+        <span class="text-gradient-warm">Elevate Your Mind.</span>
       </h1>
-      <p class="font-body text-base sm:text-lg lg:text-xl text-text-body max-w-2xl mx-auto mb-12 reveal" style="transition-delay: 200ms;">
-        Expert coaches. World-class facility. Results guaranteed. Join 500+ members who chose to train differently.
+
+      <p class="font-body text-base sm:text-lg lg:text-xl text-text-body max-w-2xl mx-auto mb-6 reveal leading-relaxed" style="transition-delay: 200ms;">
+        Expert coaches. World-class facility. Results guaranteed. Join <span class="text-text-secondary font-medium">500+</span> members who chose to train differently.
       </p>
-      <p class="font-body text-accent-lime text-sm font-bold uppercase tracking-[0.2em] mb-6 reveal" style="transition-delay: 280ms;">
-        &#9733; Your first week is FREE — no commitment required
-      </p>
-      <div class="flex flex-col sm:flex-row gap-4 justify-center reveal" style="transition-delay: 300ms;">
+
+      <!-- Trust badge -->
+      <div class="inline-flex items-center gap-2 badge-lime mb-8 reveal" style="transition-delay: 260ms;">
+        <span class="text-accent-lime">&#9733;</span>
+        <span class="font-display text-accent-lime text-xs font-semibold uppercase tracking-[0.15em]">Your first week is FREE — no commitment required</span>
+      </div>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center reveal" style="transition-delay: 320ms;">
         <a href="/contact" class="btn-primary">
           Start Free Trial
         </a>
@@ -42,166 +71,225 @@ import Layout from '../layouts/Layout.astro';
     </div>
 
     <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 reveal" style="transition-delay: 600ms;">
-      <span class="text-text-muted text-[0.65rem] uppercase tracking-[0.2em] font-body">Scroll</span>
-      <div class="w-px h-8 bg-gradient-to-b from-text-muted to-transparent"></div>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 reveal" style="transition-delay: 700ms;">
+      <span class="text-text-muted text-[0.6rem] uppercase tracking-[0.25em] font-display">Scroll</span>
+      <div class="w-px h-10 bg-gradient-to-b from-text-muted/60 to-transparent"></div>
     </div>
   </section>
 
-  <!-- Stats Bar -->
-  <section class="relative bg-bg-secondary py-20 angle-top">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+  <!-- ═══════════════════════════════════════
+       STATS BAR — Refined with better depth
+       ═══════════════════════════════════════ -->
+  <section class="relative bg-bg-secondary py-24 angle-top">
+    <!-- Ambient glow behind stats -->
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[200px] bg-accent-orange/[0.03] blur-[80px] rounded-full"></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 relative">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 text-center">
-        <div class="reveal stagger-1">
-          <span class="font-heading text-[clamp(3rem,4vw,4.5rem)] text-accent-orange leading-none" data-count="500" data-suffix="+">0</span><span class="live-dot inline-block ml-2"></span>
-          <p class="section-overline mt-3 !mb-0 !text-text-secondary">Members</p>
+        <div class="reveal stagger-1 relative">
+          <span class="font-heading text-[clamp(3rem,4vw,4.5rem)] text-gradient-warm leading-none" data-count="500" data-suffix="+">0</span><span class="live-dot inline-block ml-2 align-top mt-4"></span>
+          <p class="font-display text-[0.7rem] font-semibold uppercase tracking-[0.2em] mt-4 text-text-muted">Active Members</p>
         </div>
-        <div class="reveal stagger-2">
-          <span class="font-heading text-[clamp(3rem,4vw,4.5rem)] text-accent-orange leading-none" data-count="15" data-suffix="">0</span>
-          <p class="section-overline mt-3 !mb-0 !text-text-secondary">Expert Coaches</p>
+        <div class="reveal stagger-2 relative">
+          <span class="font-heading text-[clamp(3rem,4vw,4.5rem)] text-gradient-warm leading-none" data-count="15" data-suffix="">0</span>
+          <p class="font-display text-[0.7rem] font-semibold uppercase tracking-[0.2em] mt-4 text-text-muted">Expert Coaches</p>
         </div>
-        <div class="reveal stagger-3">
-          <span class="font-heading text-[clamp(3rem,4vw,4.5rem)] text-accent-orange leading-none" data-count="12" data-suffix="">0</span>
-          <p class="section-overline mt-3 !mb-0 !text-text-secondary">Years in Sydney</p>
+        <div class="reveal stagger-3 relative">
+          <span class="font-heading text-[clamp(3rem,4vw,4.5rem)] text-gradient-warm leading-none" data-count="12" data-suffix="">0</span>
+          <p class="font-display text-[0.7rem] font-semibold uppercase tracking-[0.2em] mt-4 text-text-muted">Years in Sydney</p>
         </div>
-        <div class="reveal stagger-4">
-          <span class="font-heading text-[clamp(3rem,4vw,4.5rem)] text-accent-orange leading-none" data-count="50" data-suffix="+">0</span>
-          <p class="section-overline mt-3 !mb-0 !text-text-secondary">Classes Per Week</p>
+        <div class="reveal stagger-4 relative">
+          <span class="font-heading text-[clamp(3rem,4vw,4.5rem)] text-gradient-warm leading-none" data-count="50" data-suffix="+">0</span>
+          <p class="font-display text-[0.7rem] font-semibold uppercase tracking-[0.2em] mt-4 text-text-muted">Classes Per Week</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Diagonal Stripe Transition -->
-  <div class="relative h-16 overflow-hidden">
+  <!-- Section Transition -->
+  <div class="section-transition">
     <div class="absolute inset-0 speed-lines"></div>
   </div>
 
-  <!-- Class Types Section -->
-  <section class="py-28 lg:py-40 bg-bg-primary">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16 reveal">
-        <p class="section-number text-red-500/60 mb-2">01 // CLASSES</p>
+  <!-- ═══════════════════════════════════════
+       CLASS TYPES — Enhanced cards
+       ═══════════════════════════════════════ -->
+  <section class="relative py-28 lg:py-40 bg-bg-primary overflow-hidden">
+    <!-- Background decoration -->
+    <div class="absolute top-20 right-0 w-[500px] h-[500px] bg-accent-orange/[0.015] blur-[120px] rounded-full pointer-events-none"></div>
+    <div class="absolute bottom-20 left-0 w-[400px] h-[400px] bg-accent-lime/[0.01] blur-[100px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center mb-20 reveal">
+        <p class="section-number text-accent-orange/40 mb-3">01 // CLASSES</p>
         <p class="section-overline">Training Programs</p>
         <h2 class="section-title">What We Offer</h2>
         <div class="section-divider mx-auto"></div>
+        <p class="section-subtitle mt-6">Six distinct disciplines, one purpose: to push you beyond what you thought possible.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7">
         <!-- HIIT -->
         <div class="card group overflow-hidden reveal stagger-1">
-          <div class="h-52 overflow-hidden">
+          <div class="h-56 overflow-hidden relative">
             <img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=800&h=600&fit=crop&q=80" alt="Athletes performing high-intensity interval training exercises in a gym" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-bg-elevated via-transparent to-transparent opacity-80"></div>
+            <span class="absolute top-4 left-4 badge-orange">High Intensity</span>
           </div>
-          <div class="p-7">
+          <div class="p-8">
             <h3 class="font-heading text-2xl text-text-primary mb-2">HIIT</h3>
-            <p class="text-sm text-text-body mb-5 leading-relaxed">High-intensity interval training designed to torch calories and build explosive power. 45 minutes of controlled chaos.</p>
-            <a href="/classes" class="font-body text-sm font-semibold text-accent-orange hover:text-accent-orange-hover transition-colors duration-300 uppercase tracking-[0.1em] inline-flex items-center gap-2">Learn More <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span></a>
+            <p class="text-sm text-text-body mb-6 leading-relaxed">High-intensity interval training designed to torch calories and build explosive power. 45 minutes of controlled chaos.</p>
+            <div class="flex items-center justify-between">
+              <a href="/classes" class="font-display text-sm font-semibold text-accent-orange hover:text-accent-orange-hover transition-colors duration-300 uppercase tracking-[0.1em] inline-flex items-center gap-2">Learn More <span class="transition-transform duration-300 group-hover:translate-x-1.5">&rarr;</span></a>
+              <span class="text-text-muted text-xs font-display">45 min</span>
+            </div>
           </div>
         </div>
 
         <!-- Strength -->
         <div class="card group overflow-hidden reveal stagger-2">
-          <div class="h-52 overflow-hidden">
+          <div class="h-56 overflow-hidden relative">
             <img src="https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=800&h=600&fit=crop&q=80" alt="Person performing barbell exercises for strength and conditioning training" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-bg-elevated via-transparent to-transparent opacity-80"></div>
+            <span class="absolute top-4 left-4 badge-orange">Build Power</span>
           </div>
-          <div class="p-7">
+          <div class="p-8">
             <h3 class="font-heading text-2xl text-text-primary mb-2">Strength & Conditioning</h3>
-            <p class="text-sm text-text-body mb-5 leading-relaxed">Progressive overload programming for serious muscle and strength gains. Barbells, dumbbells, kettlebells.</p>
-            <a href="/classes" class="font-body text-sm font-semibold text-accent-orange hover:text-accent-orange-hover transition-colors duration-300 uppercase tracking-[0.1em] inline-flex items-center gap-2">Learn More <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span></a>
+            <p class="text-sm text-text-body mb-6 leading-relaxed">Progressive overload programming for serious muscle and strength gains. Barbells, dumbbells, kettlebells.</p>
+            <div class="flex items-center justify-between">
+              <a href="/classes" class="font-display text-sm font-semibold text-accent-orange hover:text-accent-orange-hover transition-colors duration-300 uppercase tracking-[0.1em] inline-flex items-center gap-2">Learn More <span class="transition-transform duration-300 group-hover:translate-x-1.5">&rarr;</span></a>
+              <span class="text-text-muted text-xs font-display">60 min</span>
+            </div>
           </div>
         </div>
 
         <!-- Boxing -->
         <div class="card group overflow-hidden reveal stagger-3">
-          <div class="h-52 overflow-hidden">
+          <div class="h-56 overflow-hidden relative">
             <img src="https://images.unsplash.com/photo-1549719386-74dfcbf7dbed?w=800&h=600&fit=crop&q=80" alt="Boxer training with a heavy bag in a boxing gym" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-bg-elevated via-transparent to-transparent opacity-80"></div>
+            <span class="absolute top-4 left-4 badge-orange">Cardio + Skill</span>
           </div>
-          <div class="p-7">
+          <div class="p-8">
             <h3 class="font-heading text-2xl text-text-primary mb-2">Boxing</h3>
-            <p class="text-sm text-text-body mb-5 leading-relaxed">Learn technique, build cardio, and relieve stress. Bags, pads, and partner drills in every session.</p>
-            <a href="/classes" class="font-body text-sm font-semibold text-accent-orange hover:text-accent-orange-hover transition-colors duration-300 uppercase tracking-[0.1em] inline-flex items-center gap-2">Learn More <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span></a>
+            <p class="text-sm text-text-body mb-6 leading-relaxed">Learn technique, build cardio, and relieve stress. Bags, pads, and partner drills in every session.</p>
+            <div class="flex items-center justify-between">
+              <a href="/classes" class="font-display text-sm font-semibold text-accent-orange hover:text-accent-orange-hover transition-colors duration-300 uppercase tracking-[0.1em] inline-flex items-center gap-2">Learn More <span class="transition-transform duration-300 group-hover:translate-x-1.5">&rarr;</span></a>
+              <span class="text-text-muted text-xs font-display">50 min</span>
+            </div>
           </div>
         </div>
 
         <!-- Yoga -->
         <div class="card group overflow-hidden reveal stagger-4">
-          <div class="h-52 overflow-hidden">
+          <div class="h-56 overflow-hidden relative">
             <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop&q=80" alt="Yoga practitioner in a serene studio performing a flexibility pose" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-bg-elevated via-transparent to-transparent opacity-80"></div>
+            <span class="absolute top-4 left-4 badge-lime">Recovery</span>
           </div>
-          <div class="p-7">
+          <div class="p-8">
             <h3 class="font-heading text-2xl text-text-primary mb-2">Yoga & Mobility</h3>
-            <p class="text-sm text-text-body mb-5 leading-relaxed">Restore, recover, and improve flexibility. Vinyasa flow and deep stretch sessions for athletes.</p>
-            <a href="/classes" class="font-body text-sm font-semibold text-accent-orange hover:text-accent-orange-hover transition-colors duration-300 uppercase tracking-[0.1em] inline-flex items-center gap-2">Learn More <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span></a>
+            <p class="text-sm text-text-body mb-6 leading-relaxed">Restore, recover, and improve flexibility. Vinyasa flow and deep stretch sessions for athletes.</p>
+            <div class="flex items-center justify-between">
+              <a href="/classes" class="font-display text-sm font-semibold text-accent-orange hover:text-accent-orange-hover transition-colors duration-300 uppercase tracking-[0.1em] inline-flex items-center gap-2">Learn More <span class="transition-transform duration-300 group-hover:translate-x-1.5">&rarr;</span></a>
+              <span class="text-text-muted text-xs font-display">60 min</span>
+            </div>
           </div>
         </div>
 
         <!-- Personal Training -->
         <div class="card group overflow-hidden reveal stagger-5">
-          <div class="h-52 overflow-hidden">
+          <div class="h-56 overflow-hidden relative">
             <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=800&h=600&fit=crop&q=80" alt="Personal trainer guiding a client through a workout session" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-bg-elevated via-transparent to-transparent opacity-80"></div>
+            <span class="absolute top-4 left-4 badge-orange">1-on-1</span>
           </div>
-          <div class="p-7">
+          <div class="p-8">
             <h3 class="font-heading text-2xl text-text-primary mb-2">Personal Training</h3>
-            <p class="text-sm text-text-body mb-5 leading-relaxed">One-on-one sessions tailored to your goals. Nutrition guidance included with every PT package.</p>
-            <a href="/classes" class="font-body text-sm font-semibold text-accent-orange hover:text-accent-orange-hover transition-colors duration-300 uppercase tracking-[0.1em] inline-flex items-center gap-2">Learn More <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span></a>
+            <p class="text-sm text-text-body mb-6 leading-relaxed">One-on-one sessions tailored to your goals. Nutrition guidance included with every PT package.</p>
+            <div class="flex items-center justify-between">
+              <a href="/classes" class="font-display text-sm font-semibold text-accent-orange hover:text-accent-orange-hover transition-colors duration-300 uppercase tracking-[0.1em] inline-flex items-center gap-2">Learn More <span class="transition-transform duration-300 group-hover:translate-x-1.5">&rarr;</span></a>
+              <span class="text-text-muted text-xs font-display">55 min</span>
+            </div>
           </div>
         </div>
 
         <!-- Olympic Lifting -->
         <div class="card group overflow-hidden reveal stagger-6">
-          <div class="h-52 overflow-hidden">
+          <div class="h-56 overflow-hidden relative">
             <img src="https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=800&h=600&fit=crop&q=80" alt="Athlete performing an Olympic weightlifting clean and jerk movement" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+            <div class="absolute inset-0 bg-gradient-to-t from-bg-elevated via-transparent to-transparent opacity-80"></div>
+            <span class="absolute top-4 left-4 badge-orange">Technical</span>
           </div>
-          <div class="p-7">
+          <div class="p-8">
             <h3 class="font-heading text-2xl text-text-primary mb-2">Olympic Lifting</h3>
-            <p class="text-sm text-text-body mb-5 leading-relaxed">Master the snatch and clean & jerk with certified Olympic lifting coaches. All levels welcome.</p>
-            <a href="/classes" class="font-body text-sm font-semibold text-accent-orange hover:text-accent-orange-hover transition-colors duration-300 uppercase tracking-[0.1em] inline-flex items-center gap-2">Learn More <span class="transition-transform duration-300 group-hover:translate-x-1">&rarr;</span></a>
+            <p class="text-sm text-text-body mb-6 leading-relaxed">Master the snatch and clean & jerk with certified Olympic lifting coaches. All levels welcome.</p>
+            <div class="flex items-center justify-between">
+              <a href="/classes" class="font-display text-sm font-semibold text-accent-orange hover:text-accent-orange-hover transition-colors duration-300 uppercase tracking-[0.1em] inline-flex items-center gap-2">Learn More <span class="transition-transform duration-300 group-hover:translate-x-1.5">&rarr;</span></a>
+              <span class="text-text-muted text-xs font-display">60 min</span>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Mid-Page Free Trial Banner -->
+  <!-- ═══════════════════════════════════════
+       MID-PAGE FREE TRIAL BANNER
+       ═══════════════════════════════════════ -->
   <section class="relative py-16 lg:py-20 bg-bg-secondary angle-top overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-r from-accent-orange/10 via-transparent to-accent-lime/10"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-accent-orange/[0.06] via-transparent to-accent-lime/[0.04]"></div>
+    <div class="absolute inset-0 dot-grid"></div>
     <div class="relative max-w-4xl mx-auto px-4 text-center reveal">
-      <div class="inline-flex items-center gap-3 bg-white/[0.04] border border-white/10 rounded-full px-8 py-5 md:px-12 md:py-6">
-        <span class="font-heading text-[clamp(1.5rem,3vw,2.5rem)] text-text-primary leading-none">Your first week is <span class="text-accent-orange">FREE.</span></span>
-        <a href="/contact" class="hidden sm:inline-flex btn-primary !py-2.5 !px-6 !text-sm whitespace-nowrap">Claim Now</a>
+      <div class="inline-flex items-center gap-4 glass-card px-10 py-7 md:px-14 md:py-8 animate-border-glow">
+        <span class="font-heading text-[clamp(1.5rem,3vw,2.5rem)] text-text-primary leading-none">Your first week is <span class="text-gradient-warm">FREE.</span></span>
+        <a href="/contact" class="hidden sm:inline-flex btn-primary !py-2.5 !px-7 !text-xs whitespace-nowrap">Claim Now</a>
       </div>
-      <a href="/contact" class="sm:hidden inline-flex btn-primary mt-4 !text-sm">Claim Your Free Week</a>
+      <a href="/contact" class="sm:hidden inline-flex btn-primary mt-5 !text-sm">Claim Your Free Week</a>
     </div>
   </section>
 
-  <!-- Pricing Section -->
-  <section id="pricing" class="relative py-28 lg:py-36 bg-bg-secondary angle-top">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-      <div class="text-center mb-16 reveal">
-        <p class="section-number text-red-500/60 mb-2">02 // PRICING</p>
+  <!-- ═══════════════════════════════════════
+       PRICING SECTION — Layered cards
+       ═══════════════════════════════════════ -->
+  <section id="pricing" class="relative py-28 lg:py-36 bg-bg-secondary angle-top overflow-hidden">
+    <!-- Background blurs -->
+    <div class="absolute top-1/3 left-[10%] w-[350px] h-[350px] bg-accent-orange/[0.02] blur-[100px] rounded-full pointer-events-none"></div>
+    <div class="absolute bottom-1/4 right-[15%] w-[300px] h-[300px] bg-accent-amber/[0.015] blur-[80px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 relative">
+      <div class="text-center mb-20 reveal">
+        <p class="section-number text-accent-orange/40 mb-3">02 // PRICING</p>
         <p class="section-overline">Investment</p>
         <h2 class="section-title">Membership Options</h2>
         <div class="section-divider mx-auto"></div>
+        <p class="section-subtitle mt-6">Flexible plans designed to match your commitment. No lock-in contracts on monthly plans.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 items-stretch">
         <!-- Casual -->
         <div class="card p-8 lg:p-10 flex flex-col reveal stagger-1" data-pricing-card>
-          <h3 class="font-heading text-3xl text-text-primary mb-2">Casual</h3>
-          <div class="mb-6">
-            <span class="font-heading text-[clamp(3rem,4vw,3.75rem)] text-accent-orange leading-none">$30</span>
-            <span class="text-text-muted text-sm ml-1">/session</span>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/8 flex items-center justify-center">
+              <span class="text-lg">&#9889;</span>
+            </div>
+            <h3 class="font-heading text-3xl text-text-primary">Casual</h3>
           </div>
-          <ul class="space-y-3.5 mb-10 flex-1">
+          <div class="mb-6">
+            <span class="font-heading text-[clamp(3rem,4vw,3.75rem)] text-gradient-warm leading-none">$30</span>
+            <span class="text-text-muted text-sm ml-1 font-display">/session</span>
+          </div>
+          <div class="hr-gradient mb-6"></div>
+          <ul class="space-y-4 mb-10 flex-1">
             <li class="flex items-start gap-3 text-sm text-text-body">
-              <span class="text-accent-orange mt-0.5 flex-shrink-0">&#10003;</span> Drop-in to any group class
+              <span class="text-accent-orange mt-0.5 flex-shrink-0 text-xs">&#10003;</span> Drop-in to any group class
             </li>
             <li class="flex items-start gap-3 text-sm text-text-body">
-              <span class="text-accent-orange mt-0.5 flex-shrink-0">&#10003;</span> Locker and towel hire
+              <span class="text-accent-orange mt-0.5 flex-shrink-0 text-xs">&#10003;</span> Locker and towel hire
             </li>
             <li class="flex items-start gap-3 text-sm text-text-body">
-              <span class="text-accent-orange mt-0.5 flex-shrink-0">&#10003;</span> Post-workout shake bar access
+              <span class="text-accent-orange mt-0.5 flex-shrink-0 text-xs">&#10003;</span> Post-workout shake bar access
             </li>
           </ul>
           <a href="/contact" class="btn-secondary w-full justify-center">
@@ -210,29 +298,35 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <!-- Monthly (Featured) -->
-        <div class="card-featured card glow-hover p-8 lg:p-10 flex flex-col relative md:scale-105 reveal stagger-2" data-pricing-card style="box-shadow: 0 0 30px rgba(249,115,22,0.15), 0 8px 32px rgba(0,0,0,0.3);">
+        <div class="card-featured card glow-hover p-8 lg:p-10 flex flex-col relative md:scale-[1.04] reveal stagger-2" data-pricing-card style="box-shadow: 0 0 40px rgba(255,107,44,0.12), 0 12px 40px rgba(0,0,0,0.3);">
           <span class="popular-ribbon">Most Popular</span>
-          <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent-lime text-bg-primary font-body font-bold text-[0.65rem] uppercase tracking-[0.15em] px-5 py-1.5 rounded-full whitespace-nowrap">Most Popular</span>
-          <h3 class="font-heading text-3xl text-text-primary mb-2">Monthly</h3>
-          <div class="mb-6">
-            <span class="font-heading text-[clamp(3rem,4vw,3.75rem)] text-accent-orange leading-none">$149</span>
-            <span class="text-text-muted text-sm ml-1">/month</span>
+          <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gradient-to-r from-accent-lime to-[#8FD400] text-bg-primary font-display font-bold text-[0.6rem] uppercase tracking-[0.15em] px-6 py-1.5 rounded-full whitespace-nowrap shadow-lg shadow-accent-lime/20">Most Popular</span>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-accent-orange/10 border border-accent-orange/20 flex items-center justify-center">
+              <span class="text-lg">&#128293;</span>
+            </div>
+            <h3 class="font-heading text-3xl text-text-primary">Monthly</h3>
           </div>
-          <ul class="space-y-3.5 mb-10 flex-1">
+          <div class="mb-6">
+            <span class="font-heading text-[clamp(3rem,4vw,3.75rem)] text-gradient-warm leading-none">$149</span>
+            <span class="text-text-muted text-sm ml-1 font-display">/month</span>
+          </div>
+          <div class="hr-gradient mb-6"></div>
+          <ul class="space-y-4 mb-10 flex-1">
             <li class="flex items-start gap-3 text-sm text-text-body">
-              <span class="text-accent-orange mt-0.5 flex-shrink-0">&#10003;</span> Everything in Casual
+              <span class="text-accent-orange mt-0.5 flex-shrink-0 text-xs">&#10003;</span> Everything in Casual
             </li>
             <li class="flex items-start gap-3 text-sm text-text-body">
-              <span class="text-accent-orange mt-0.5 flex-shrink-0">&#10003;</span> Unlimited group classes
+              <span class="text-accent-orange mt-0.5 flex-shrink-0 text-xs">&#10003;</span> Unlimited group classes
             </li>
             <li class="flex items-start gap-3 text-sm text-text-body">
-              <span class="text-accent-orange mt-0.5 flex-shrink-0">&#10003;</span> Free body composition scan monthly
+              <span class="text-accent-orange mt-0.5 flex-shrink-0 text-xs">&#10003;</span> Free body composition scan monthly
             </li>
             <li class="flex items-start gap-3 text-sm text-text-body">
-              <span class="text-accent-orange mt-0.5 flex-shrink-0">&#10003;</span> 10% off PT sessions
+              <span class="text-accent-orange mt-0.5 flex-shrink-0 text-xs">&#10003;</span> 10% off PT sessions
             </li>
             <li class="flex items-start gap-3 text-sm text-text-body">
-              <span class="text-accent-orange mt-0.5 flex-shrink-0">&#10003;</span> Access to members app
+              <span class="text-accent-orange mt-0.5 flex-shrink-0 text-xs">&#10003;</span> Access to members app
             </li>
           </ul>
           <a href="/contact" class="btn-primary w-full justify-center">
@@ -242,27 +336,33 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Annual -->
         <div class="card p-8 lg:p-10 flex flex-col reveal stagger-3" data-pricing-card>
-          <h3 class="font-heading text-3xl text-text-primary mb-2">Annual</h3>
-          <div class="mb-2">
-            <span class="font-heading text-[clamp(3rem,4vw,3.75rem)] text-accent-orange leading-none">$129</span>
-            <span class="text-text-muted text-sm ml-1">/month</span>
+          <div class="flex items-center gap-3 mb-6">
+            <div class="w-10 h-10 rounded-xl bg-white/[0.04] border border-white/8 flex items-center justify-center">
+              <span class="text-lg">&#127942;</span>
+            </div>
+            <h3 class="font-heading text-3xl text-text-primary">Annual</h3>
           </div>
-          <p class="text-xs text-text-muted mb-6">Billed $1,548 yearly</p>
-          <ul class="space-y-3.5 mb-10 flex-1">
+          <div class="mb-2">
+            <span class="font-heading text-[clamp(3rem,4vw,3.75rem)] text-gradient-warm leading-none">$129</span>
+            <span class="text-text-muted text-sm ml-1 font-display">/month</span>
+          </div>
+          <p class="text-xs text-text-muted mb-6 font-display">Billed $1,548 yearly · <span class="text-accent-lime font-semibold">Save $240</span></p>
+          <div class="hr-gradient mb-6"></div>
+          <ul class="space-y-4 mb-10 flex-1">
             <li class="flex items-start gap-3 text-sm text-text-body">
-              <span class="text-accent-orange mt-0.5 flex-shrink-0">&#10003;</span> Everything in Monthly
+              <span class="text-accent-orange mt-0.5 flex-shrink-0 text-xs">&#10003;</span> Everything in Monthly
             </li>
             <li class="flex items-start gap-3 text-sm text-text-body">
-              <span class="text-accent-orange mt-0.5 flex-shrink-0">&#10003;</span> 2 free PT sessions per month
+              <span class="text-accent-orange mt-0.5 flex-shrink-0 text-xs">&#10003;</span> 2 free PT sessions per month
             </li>
             <li class="flex items-start gap-3 text-sm text-text-body">
-              <span class="text-accent-orange mt-0.5 flex-shrink-0">&#10003;</span> Priority class booking
+              <span class="text-accent-orange mt-0.5 flex-shrink-0 text-xs">&#10003;</span> Priority class booking
             </li>
             <li class="flex items-start gap-3 text-sm text-text-body">
-              <span class="text-accent-orange mt-0.5 flex-shrink-0">&#10003;</span> Free merchandise pack
+              <span class="text-accent-orange mt-0.5 flex-shrink-0 text-xs">&#10003;</span> Free merchandise pack
             </li>
             <li class="flex items-start gap-3 text-sm text-text-body">
-              <span class="text-accent-orange mt-0.5 flex-shrink-0">&#10003;</span> Exclusive member events
+              <span class="text-accent-orange mt-0.5 flex-shrink-0 text-xs">&#10003;</span> Exclusive member events
             </li>
           </ul>
           <a href="/contact" class="btn-secondary w-full justify-center">
@@ -273,19 +373,24 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- Diagonal Stripe Transition -->
-  <div class="relative h-16 overflow-hidden">
+  <!-- Section Transition -->
+  <div class="section-transition">
     <div class="absolute inset-0 speed-lines"></div>
   </div>
 
-  <!-- Transformations Section -->
-  <section class="py-28 lg:py-40 bg-bg-primary">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16 reveal">
-        <p class="section-number text-red-500/60 mb-2">03 // TRANSFORMATIONS</p>
+  <!-- ═══════════════════════════════════════
+       TRANSFORMATIONS — Before/After
+       ═══════════════════════════════════════ -->
+  <section class="relative py-28 lg:py-40 bg-bg-primary overflow-hidden">
+    <div class="absolute bottom-0 right-0 w-[500px] h-[500px] bg-accent-orange/[0.015] blur-[120px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center mb-20 reveal">
+        <p class="section-number text-accent-orange/40 mb-3">03 // TRANSFORMATIONS</p>
         <p class="section-overline">Success Stories</p>
         <h2 class="section-title">Real Results</h2>
         <div class="section-divider mx-auto"></div>
+        <p class="section-subtitle mt-6">Proof is in the progress. Drag the slider to see real member transformations.</p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -300,11 +405,12 @@ import Layout from '../layouts/Layout.astro';
             <span class="ba-label left-3">Before</span>
             <span class="ba-label right-3">After</span>
           </div>
-          <div class="p-7">
+          <div class="p-8">
             <div class="flex items-center justify-between mb-3">
               <h3 class="font-heading text-xl text-text-primary">Jake M.</h3>
-              <span class="bg-accent-orange-subtle text-accent-orange text-xs font-body font-semibold px-3 py-1 rounded-full">12 Weeks</span>
+              <span class="badge-orange">12 Weeks</span>
             </div>
+            <div class="star-rating mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <p class="text-sm text-text-body italic leading-relaxed">"I lost 15kg and gained confidence I never thought I'd have. The coaches at Apex changed my life."</p>
           </div>
         </div>
@@ -320,11 +426,12 @@ import Layout from '../layouts/Layout.astro';
             <span class="ba-label left-3">Before</span>
             <span class="ba-label right-3">After</span>
           </div>
-          <div class="p-7">
+          <div class="p-8">
             <div class="flex items-center justify-between mb-3">
               <h3 class="font-heading text-xl text-text-primary">Sarah L.</h3>
-              <span class="bg-accent-orange-subtle text-accent-orange text-xs font-body font-semibold px-3 py-1 rounded-full">6 Months</span>
+              <span class="badge-orange">6 Months</span>
             </div>
+            <div class="star-rating mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <p class="text-sm text-text-body italic leading-relaxed">"From couch to competing in my first CrossFit comp. This place pushes you in the best way."</p>
           </div>
         </div>
@@ -340,11 +447,12 @@ import Layout from '../layouts/Layout.astro';
             <span class="ba-label left-3">Before</span>
             <span class="ba-label right-3">After</span>
           </div>
-          <div class="p-7">
+          <div class="p-8">
             <div class="flex items-center justify-between mb-3">
               <h3 class="font-heading text-xl text-text-primary">David R.</h3>
-              <span class="bg-accent-orange-subtle text-accent-orange text-xs font-body font-semibold px-3 py-1 rounded-full">8 Weeks</span>
+              <span class="badge-orange">8 Weeks</span>
             </div>
+            <div class="star-rating mb-3">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
             <p class="text-sm text-text-body italic leading-relaxed">"The PT program was exactly what I needed. Structured, challenging, and the results speak for themselves."</p>
           </div>
         </div>
@@ -352,63 +460,100 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- Testimonials Section -->
-  <section class="py-28 lg:py-40 bg-bg-secondary angle-top-reverse">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-      <div class="text-center mb-16 reveal">
-        <p class="section-number text-red-500/60 mb-2">04 // TESTIMONIALS</p>
-        <p class="section-overline">Testimonials</p>
-        <h2 class="section-title">What Our Members Say</h2>
+  <!-- ═══════════════════════════════════════
+       TESTIMONIALS — Enhanced with depth
+       ═══════════════════════════════════════ -->
+  <section class="relative py-28 lg:py-40 bg-bg-secondary angle-top-reverse overflow-hidden">
+    <div class="absolute inset-0 dot-grid"></div>
+    <div class="absolute top-1/4 left-[5%] w-[400px] h-[300px] bg-accent-amber/[0.02] blur-[100px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 relative">
+      <div class="text-center mb-20 reveal">
+        <p class="section-number text-accent-orange/40 mb-3">04 // TESTIMONIALS</p>
+        <p class="section-overline">What Members Say</p>
+        <h2 class="section-title">Trusted By 500+</h2>
         <div class="section-divider mx-auto"></div>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-        <div class="card p-8 reveal stagger-1">
-          <div class="w-10 h-[3px] bg-accent-orange mb-6"></div>
+        <div class="card p-8 relative reveal stagger-1 corner-deco">
+          <div class="star-rating mb-5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <p class="text-text-body text-sm mb-8 leading-relaxed">Best gym I've ever been to. The coaches actually care about your form and progress, not just counting reps.</p>
-          <div class="border-t border-white/5 pt-5">
-            <p class="text-text-primary font-body font-semibold text-sm">Michelle T.</p>
-            <p class="text-text-muted text-xs mt-0.5">Monthly Member</p>
+          <div class="hr-gradient mb-5"></div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent-orange/20 to-accent-amber/10 flex items-center justify-center border border-accent-orange/15">
+              <span class="font-heading text-sm text-accent-orange">MT</span>
+            </div>
+            <div>
+              <p class="text-text-primary font-display font-semibold text-sm">Michelle T.</p>
+              <p class="text-text-muted text-xs font-display mt-0.5">Monthly Member · 14 months</p>
+            </div>
           </div>
         </div>
 
-        <div class="card p-8 reveal stagger-2">
-          <div class="w-10 h-[3px] bg-accent-orange mb-6"></div>
+        <div class="card p-8 relative reveal stagger-2 corner-deco">
+          <div class="star-rating mb-5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <p class="text-text-body text-sm mb-8 leading-relaxed">The 6am HIIT class is the best way to start the day. Addictive atmosphere and incredible community.</p>
-          <div class="border-t border-white/5 pt-5">
-            <p class="text-text-primary font-body font-semibold text-sm">Tom K.</p>
-            <p class="text-text-muted text-xs mt-0.5">Annual Member</p>
+          <div class="hr-gradient mb-5"></div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent-orange/20 to-accent-amber/10 flex items-center justify-center border border-accent-orange/15">
+              <span class="font-heading text-sm text-accent-orange">TK</span>
+            </div>
+            <div>
+              <p class="text-text-primary font-display font-semibold text-sm">Tom K.</p>
+              <p class="text-text-muted text-xs font-display mt-0.5">Annual Member · 2 years</p>
+            </div>
           </div>
         </div>
 
-        <div class="card p-8 reveal stagger-3">
-          <div class="w-10 h-[3px] bg-accent-orange mb-6"></div>
+        <div class="card p-8 relative reveal stagger-3 corner-deco">
+          <div class="star-rating mb-5">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <p class="text-text-body text-sm mb-8 leading-relaxed">I've tried every gym in the CBD. Apex is the only one that's kept me consistent for over 2 years.</p>
-          <div class="border-t border-white/5 pt-5">
-            <p class="text-text-primary font-body font-semibold text-sm">Priya S.</p>
-            <p class="text-text-muted text-xs mt-0.5">Annual Member</p>
+          <div class="hr-gradient mb-5"></div>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-br from-accent-orange/20 to-accent-amber/10 flex items-center justify-center border border-accent-orange/15">
+              <span class="font-heading text-sm text-accent-orange">PS</span>
+            </div>
+            <div>
+              <p class="text-text-primary font-display font-semibold text-sm">Priya S.</p>
+              <p class="text-text-muted text-xs font-display mt-0.5">Annual Member · 2.5 years</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Diagonal Stripe Transition -->
-  <div class="relative h-16 overflow-hidden">
+  <!-- Section Transition -->
+  <div class="section-transition">
     <div class="absolute inset-0 speed-lines"></div>
   </div>
 
-  <!-- CTA Banner -->
-  <section class="relative py-28 lg:py-36 glow-bg-cta overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-r from-accent-orange/5 to-accent-lime/3"></div>
+  <!-- ═══════════════════════════════════════
+       FINAL CTA BANNER
+       ═══════════════════════════════════════ -->
+  <section class="relative py-32 lg:py-40 glow-bg-cta overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-accent-orange/[0.04] to-accent-lime/[0.02]"></div>
+    <div class="absolute inset-0 dot-grid"></div>
+    <!-- Large decorative shapes -->
+    <div class="absolute -top-20 -right-20 w-80 h-80 border border-accent-orange/5 rotate-45 rounded-3xl hidden lg:block"></div>
+    <div class="absolute -bottom-10 -left-10 w-60 h-60 border border-accent-lime/5 rotate-12 rounded-3xl hidden lg:block"></div>
+
     <div class="relative max-w-4xl mx-auto px-4 text-center">
-      <p class="section-overline reveal mb-4">No Commitment. No Excuses.</p>
-      <h2 class="font-heading text-[clamp(2.25rem,4vw+1rem,4.5rem)] text-text-primary leading-[1.05] mb-10 reveal" style="transition-delay: 100ms;">
-        Your First Week Is Free.
+      <div class="flex items-center justify-center gap-4 mb-4 reveal">
+        <span class="w-10 h-px bg-accent-orange/30 hidden sm:block"></span>
+        <p class="section-overline !mb-0">No Commitment. No Excuses.</p>
+        <span class="w-10 h-px bg-accent-orange/30 hidden sm:block"></span>
+      </div>
+      <h2 class="font-heading text-[clamp(2.5rem,5vw+1rem,5rem)] text-text-primary leading-[1.0] mb-12 reveal" style="transition-delay: 100ms;">
+        Your First Week Is <span class="text-gradient-warm">Free.</span>
       </h2>
-      <div class="reveal" style="transition-delay: 200ms;">
+      <div class="flex flex-col sm:flex-row gap-4 justify-center reveal" style="transition-delay: 200ms;">
         <a href="/contact" class="btn-primary">
           Claim Your Free Trial
+        </a>
+        <a href="/classes" class="btn-secondary">
+          Explore Classes
         </a>
       </div>
     </div>

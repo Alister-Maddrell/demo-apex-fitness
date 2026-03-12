@@ -4,72 +4,98 @@ import Layout from '../layouts/Layout.astro';
 
 <Layout title="Get Started — Apex Performance Studio">
 
-  <!-- Page Header -->
-  <section class="relative pt-36 pb-20 bg-bg-primary overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-accent-orange/3 to-transparent"></div>
+  <!-- ═══════════════════════════════════════
+       PAGE HEADER — Layered hero
+       ═══════════════════════════════════════ -->
+  <section class="relative pt-36 pb-24 bg-bg-primary overflow-hidden">
+    <!-- Background layers -->
+    <div class="absolute inset-0 bg-gradient-to-b from-accent-orange/[0.03] to-transparent"></div>
+    <div class="absolute inset-0 dot-grid"></div>
+    <div class="absolute top-0 left-[30%] w-[400px] h-[300px] bg-accent-orange/[0.02] blur-[100px] rounded-full pointer-events-none"></div>
+    <!-- Decorative elements -->
+    <div class="absolute top-1/3 right-8 w-16 h-16 border border-accent-orange/8 rotate-45 hidden lg:block rounded-sm"></div>
+    <div class="absolute bottom-1/4 left-12 h-24 deco-line-v hidden lg:block"></div>
+
     <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      <p class="section-overline reveal">Let's Talk</p>
-      <h1 class="font-heading text-[clamp(3rem,5vw+1rem,5.5rem)] text-text-primary leading-[0.95] mb-6 reveal" style="transition-delay: 100ms;">Get Started</h1>
+      <div class="flex items-center justify-center gap-4 mb-4 reveal">
+        <span class="w-8 h-px bg-accent-orange/40 hidden sm:block"></span>
+        <p class="section-overline !mb-0">Let's Talk</p>
+        <span class="w-8 h-px bg-accent-orange/40 hidden sm:block"></span>
+      </div>
+      <h1 class="font-heading text-[clamp(3rem,5vw+1rem,6rem)] text-text-primary leading-[0.92] mb-6 reveal" style="transition-delay: 100ms;">
+        Get <span class="text-gradient-warm">Started</span>
+      </h1>
       <div class="section-divider mx-auto reveal" style="transition-delay: 200ms;"></div>
-      <p class="font-body text-lg text-text-body max-w-2xl mx-auto mt-6 reveal" style="transition-delay: 300ms;">Walk in, call up, or fill out the form below. Your first week is on us.</p>
+      <p class="section-subtitle mt-8 reveal" style="transition-delay: 300ms;">Walk in, call up, or fill out the form below. Your first week is on us.</p>
     </div>
   </section>
 
-  <!-- Form + Contact Info -->
-  <section class="py-20 bg-bg-secondary angle-top">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
+  <!-- ═══════════════════════════════════════
+       FORM + CONTACT INFO
+       ═══════════════════════════════════════ -->
+  <section class="relative py-24 bg-bg-secondary angle-top overflow-hidden">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-1/3 right-[10%] w-[400px] h-[400px] bg-accent-orange/[0.015] blur-[100px] rounded-full"></div>
+      <div class="absolute bottom-1/4 left-[5%] w-[300px] h-[300px] bg-accent-amber/[0.01] blur-[80px] rounded-full"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 relative">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
 
         <!-- Multi-step Form -->
         <div class="card p-8 lg:p-10 reveal">
           <!-- Progress Indicator -->
-          <div class="flex items-center justify-between mb-10">
+          <div class="flex items-center justify-between mb-12">
             <div class="flex items-center gap-2" data-step-indicator="1">
-              <span class="w-9 h-9 rounded-full bg-accent-orange text-white flex items-center justify-center text-sm font-body font-bold transition-all duration-300">1</span>
-              <span class="text-text-primary text-xs font-body font-semibold hidden sm:inline transition-colors duration-300">Your Details</span>
+              <span class="w-10 h-10 rounded-full bg-accent-orange text-white flex items-center justify-center text-sm font-display font-bold transition-all duration-300 shadow-lg shadow-accent-orange/20">1</span>
+              <span class="text-text-primary text-xs font-display font-semibold hidden sm:inline transition-colors duration-300">Your Details</span>
             </div>
-            <div class="flex-1 h-px bg-white/10 mx-3"></div>
+            <div class="flex-1 h-px bg-white/8 mx-3 relative">
+              <div class="absolute inset-0 bg-gradient-to-r from-accent-orange/30 to-transparent" data-progress-line="1"></div>
+            </div>
             <div class="flex items-center gap-2" data-step-indicator="2">
-              <span class="w-9 h-9 rounded-full bg-white/10 text-text-muted flex items-center justify-center text-sm font-body font-bold transition-all duration-300">2</span>
-              <span class="text-text-muted text-xs font-body font-semibold hidden sm:inline transition-colors duration-300">Your Goals</span>
+              <span class="w-10 h-10 rounded-full bg-white/[0.06] text-text-muted flex items-center justify-center text-sm font-display font-bold transition-all duration-300 border border-white/8">2</span>
+              <span class="text-text-muted text-xs font-display font-semibold hidden sm:inline transition-colors duration-300">Your Goals</span>
             </div>
-            <div class="flex-1 h-px bg-white/10 mx-3"></div>
+            <div class="flex-1 h-px bg-white/8 mx-3"></div>
             <div class="flex items-center gap-2" data-step-indicator="3">
-              <span class="w-9 h-9 rounded-full bg-white/10 text-text-muted flex items-center justify-center text-sm font-body font-bold transition-all duration-300">3</span>
-              <span class="text-text-muted text-xs font-body font-semibold hidden sm:inline transition-colors duration-300">Almost There</span>
+              <span class="w-10 h-10 rounded-full bg-white/[0.06] text-text-muted flex items-center justify-center text-sm font-display font-bold transition-all duration-300 border border-white/8">3</span>
+              <span class="text-text-muted text-xs font-display font-semibold hidden sm:inline transition-colors duration-300">Almost There</span>
             </div>
           </div>
 
           <form id="enquiry-form" action="https://formspree.io/f/placeholder" method="POST">
             <!-- Step 1 -->
             <div class="form-step active" data-form-step="1">
-              <h3 class="font-heading text-2xl text-text-primary mb-6">Your Details</h3>
+              <h3 class="font-heading text-2xl text-text-primary mb-2">Your Details</h3>
+              <p class="text-text-muted text-sm font-body mb-8">We'll use this to get in touch about your free trial.</p>
               <div class="space-y-5">
                 <div>
-                  <label class="block text-sm font-body text-text-secondary font-medium mb-1.5">Full Name *</label>
-                  <input type="text" name="name" required class="w-full bg-bg-secondary border border-white/10 rounded-lg px-4 py-3.5 text-white font-body text-sm focus:outline-none focus:border-accent-orange focus:ring-1 focus:ring-accent-orange/30 transition-all duration-300 placeholder-text-muted" placeholder="Enter your full name" />
+                  <label class="block text-sm font-display text-text-secondary font-medium mb-2 tracking-wide">Full Name *</label>
+                  <input type="text" name="name" required class="w-full bg-bg-primary/60 border border-white/8 rounded-xl px-4 py-3.5 text-white font-body text-sm focus:outline-none focus:border-accent-orange/60 focus:ring-2 focus:ring-accent-orange/15 transition-all duration-300 placeholder-text-muted backdrop-blur-sm" placeholder="Enter your full name" />
                 </div>
                 <div>
-                  <label class="block text-sm font-body text-text-secondary font-medium mb-1.5">Email *</label>
-                  <input type="email" name="email" required class="w-full bg-bg-secondary border border-white/10 rounded-lg px-4 py-3.5 text-white font-body text-sm focus:outline-none focus:border-accent-orange focus:ring-1 focus:ring-accent-orange/30 transition-all duration-300 placeholder-text-muted" placeholder="your@email.com" />
+                  <label class="block text-sm font-display text-text-secondary font-medium mb-2 tracking-wide">Email *</label>
+                  <input type="email" name="email" required class="w-full bg-bg-primary/60 border border-white/8 rounded-xl px-4 py-3.5 text-white font-body text-sm focus:outline-none focus:border-accent-orange/60 focus:ring-2 focus:ring-accent-orange/15 transition-all duration-300 placeholder-text-muted backdrop-blur-sm" placeholder="your@email.com" />
                 </div>
                 <div>
-                  <label class="block text-sm font-body text-text-secondary font-medium mb-1.5">Phone *</label>
-                  <input type="tel" name="phone" required class="w-full bg-bg-secondary border border-white/10 rounded-lg px-4 py-3.5 text-white font-body text-sm focus:outline-none focus:border-accent-orange focus:ring-1 focus:ring-accent-orange/30 transition-all duration-300 placeholder-text-muted" placeholder="04XX XXX XXX" />
+                  <label class="block text-sm font-display text-text-secondary font-medium mb-2 tracking-wide">Phone *</label>
+                  <input type="tel" name="phone" required class="w-full bg-bg-primary/60 border border-white/8 rounded-xl px-4 py-3.5 text-white font-body text-sm focus:outline-none focus:border-accent-orange/60 focus:ring-2 focus:ring-accent-orange/15 transition-all duration-300 placeholder-text-muted backdrop-blur-sm" placeholder="04XX XXX XXX" />
                 </div>
               </div>
               <button type="button" class="btn-primary w-full mt-8" data-next-step>
-                Next
+                Next Step
               </button>
             </div>
 
             <!-- Step 2 -->
             <div class="form-step" data-form-step="2">
-              <h3 class="font-heading text-2xl text-text-primary mb-6">Your Goals</h3>
+              <h3 class="font-heading text-2xl text-text-primary mb-2">Your Goals</h3>
+              <p class="text-text-muted text-sm font-body mb-8">Help us match you with the right program and coach.</p>
               <div class="space-y-5">
                 <div>
-                  <label class="block text-sm font-body text-text-secondary font-medium mb-1.5">Fitness Goal</label>
-                  <select name="goal" class="w-full bg-bg-secondary border border-white/10 rounded-lg px-4 py-3.5 text-white font-body text-sm focus:outline-none focus:border-accent-orange focus:ring-1 focus:ring-accent-orange/30 transition-all duration-300">
+                  <label class="block text-sm font-display text-text-secondary font-medium mb-2 tracking-wide">Fitness Goal</label>
+                  <select name="goal" class="w-full bg-bg-primary/60 border border-white/8 rounded-xl px-4 py-3.5 text-white font-body text-sm focus:outline-none focus:border-accent-orange/60 focus:ring-2 focus:ring-accent-orange/15 transition-all duration-300 backdrop-blur-sm">
                     <option value="">Select your goal</option>
                     <option value="lose-weight">Lose Weight</option>
                     <option value="build-muscle">Build Muscle</option>
@@ -80,8 +106,8 @@ import Layout from '../layouts/Layout.astro';
                   </select>
                 </div>
                 <div>
-                  <label class="block text-sm font-body text-text-secondary font-medium mb-1.5">Experience Level</label>
-                  <select name="experience" class="w-full bg-bg-secondary border border-white/10 rounded-lg px-4 py-3.5 text-white font-body text-sm focus:outline-none focus:border-accent-orange focus:ring-1 focus:ring-accent-orange/30 transition-all duration-300">
+                  <label class="block text-sm font-display text-text-secondary font-medium mb-2 tracking-wide">Experience Level</label>
+                  <select name="experience" class="w-full bg-bg-primary/60 border border-white/8 rounded-xl px-4 py-3.5 text-white font-body text-sm focus:outline-none focus:border-accent-orange/60 focus:ring-2 focus:ring-accent-orange/15 transition-all duration-300 backdrop-blur-sm">
                     <option value="">Select your level</option>
                     <option value="beginner">Complete Beginner</option>
                     <option value="some">Some Experience</option>
@@ -90,8 +116,8 @@ import Layout from '../layouts/Layout.astro';
                   </select>
                 </div>
                 <div>
-                  <label class="block text-sm font-body text-text-secondary font-medium mb-1.5">Preferred Class</label>
-                  <select name="class" class="w-full bg-bg-secondary border border-white/10 rounded-lg px-4 py-3.5 text-white font-body text-sm focus:outline-none focus:border-accent-orange focus:ring-1 focus:ring-accent-orange/30 transition-all duration-300">
+                  <label class="block text-sm font-display text-text-secondary font-medium mb-2 tracking-wide">Preferred Class</label>
+                  <select name="class" class="w-full bg-bg-primary/60 border border-white/8 rounded-xl px-4 py-3.5 text-white font-body text-sm focus:outline-none focus:border-accent-orange/60 focus:ring-2 focus:ring-accent-orange/15 transition-all duration-300 backdrop-blur-sm">
                     <option value="">Select a class</option>
                     <option value="hiit">HIIT</option>
                     <option value="strength">Strength</option>
@@ -108,22 +134,23 @@ import Layout from '../layouts/Layout.astro';
                   Back
                 </button>
                 <button type="button" class="btn-primary flex-1" data-next-step>
-                  Next
+                  Next Step
                 </button>
               </div>
             </div>
 
             <!-- Step 3 -->
             <div class="form-step" data-form-step="3">
-              <h3 class="font-heading text-2xl text-text-primary mb-6">Almost There</h3>
+              <h3 class="font-heading text-2xl text-text-primary mb-2">Almost There</h3>
+              <p class="text-text-muted text-sm font-body mb-8">Just a few more details and we'll be in touch within 24 hours.</p>
               <div class="space-y-5">
                 <div>
-                  <label class="block text-sm font-body text-text-secondary font-medium mb-1.5">Preferred Start Date</label>
-                  <input type="date" name="start_date" class="w-full bg-bg-secondary border border-white/10 rounded-lg px-4 py-3.5 text-white font-body text-sm focus:outline-none focus:border-accent-orange focus:ring-1 focus:ring-accent-orange/30 transition-all duration-300" />
+                  <label class="block text-sm font-display text-text-secondary font-medium mb-2 tracking-wide">Preferred Start Date</label>
+                  <input type="date" name="start_date" class="w-full bg-bg-primary/60 border border-white/8 rounded-xl px-4 py-3.5 text-white font-body text-sm focus:outline-none focus:border-accent-orange/60 focus:ring-2 focus:ring-accent-orange/15 transition-all duration-300 backdrop-blur-sm" />
                 </div>
                 <div>
-                  <label class="block text-sm font-body text-text-secondary font-medium mb-1.5">How Did You Hear About Us?</label>
-                  <select name="referral" class="w-full bg-bg-secondary border border-white/10 rounded-lg px-4 py-3.5 text-white font-body text-sm focus:outline-none focus:border-accent-orange focus:ring-1 focus:ring-accent-orange/30 transition-all duration-300">
+                  <label class="block text-sm font-display text-text-secondary font-medium mb-2 tracking-wide">How Did You Hear About Us?</label>
+                  <select name="referral" class="w-full bg-bg-primary/60 border border-white/8 rounded-xl px-4 py-3.5 text-white font-body text-sm focus:outline-none focus:border-accent-orange/60 focus:ring-2 focus:ring-accent-orange/15 transition-all duration-300 backdrop-blur-sm">
                     <option value="">Select an option</option>
                     <option value="google">Google</option>
                     <option value="instagram">Instagram</option>
@@ -133,8 +160,8 @@ import Layout from '../layouts/Layout.astro';
                   </select>
                 </div>
                 <div>
-                  <label class="block text-sm font-body text-text-secondary font-medium mb-1.5">Message (optional)</label>
-                  <textarea name="message" rows="4" class="w-full bg-bg-secondary border border-white/10 rounded-lg px-4 py-3.5 text-white font-body text-sm focus:outline-none focus:border-accent-orange focus:ring-1 focus:ring-accent-orange/30 transition-all duration-300 placeholder-text-muted resize-none" placeholder="Tell us anything else you'd like us to know..."></textarea>
+                  <label class="block text-sm font-display text-text-secondary font-medium mb-2 tracking-wide">Message (optional)</label>
+                  <textarea name="message" rows="4" class="w-full bg-bg-primary/60 border border-white/8 rounded-xl px-4 py-3.5 text-white font-body text-sm focus:outline-none focus:border-accent-orange/60 focus:ring-2 focus:ring-accent-orange/15 transition-all duration-300 placeholder-text-muted resize-none backdrop-blur-sm" placeholder="Tell us anything else you'd like us to know..."></textarea>
                 </div>
               </div>
               <div class="flex gap-3 mt-8">
@@ -142,7 +169,7 @@ import Layout from '../layouts/Layout.astro';
                   Back
                 </button>
                 <button type="submit" class="btn-primary flex-1">
-                  Submit
+                  Submit Enquiry
                 </button>
               </div>
             </div>
@@ -151,55 +178,64 @@ import Layout from '../layouts/Layout.astro';
 
         <!-- Contact Info -->
         <div class="space-y-8 reveal" style="transition-delay: 150ms;">
-          <div class="card p-8 lg:p-10">
-            <h3 class="font-heading text-2xl text-text-primary mb-8">Contact Information</h3>
+          <div class="card p-8 lg:p-10 relative corner-deco">
+            <h3 class="font-heading text-2xl text-text-primary mb-3">Contact Information</h3>
+            <p class="text-text-muted text-sm mb-8">Prefer a personal touch? Reach out directly.</p>
             <div class="space-y-6 font-body text-sm">
               <div class="flex items-start gap-4">
-                <div class="w-10 h-10 rounded-lg bg-accent-orange-subtle flex items-center justify-center flex-shrink-0">
+                <div class="icon-container">
                   <svg class="w-5 h-5 text-accent-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                 </div>
                 <div>
-                  <p class="text-text-primary font-semibold">Address</p>
+                  <p class="text-text-primary font-display font-semibold">Address</p>
                   <p class="text-text-body mt-0.5">115 Elizabeth Street, Sydney NSW 2000</p>
                 </div>
               </div>
+              <div class="hr-gradient"></div>
               <div class="flex items-start gap-4">
-                <div class="w-10 h-10 rounded-lg bg-accent-orange-subtle flex items-center justify-center flex-shrink-0">
+                <div class="icon-container">
                   <svg class="w-5 h-5 text-accent-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
                 </div>
                 <div>
-                  <p class="text-text-primary font-semibold">Phone</p>
+                  <p class="text-text-primary font-display font-semibold">Phone</p>
                   <a href="tel:0431555290" class="text-text-body hover:text-accent-orange transition-colors duration-300 mt-0.5 inline-block">0431 555 290</a>
                 </div>
               </div>
+              <div class="hr-gradient"></div>
               <div class="flex items-start gap-4">
-                <div class="w-10 h-10 rounded-lg bg-accent-orange-subtle flex items-center justify-center flex-shrink-0">
+                <div class="icon-container">
                   <svg class="w-5 h-5 text-accent-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                 </div>
                 <div>
-                  <p class="text-text-primary font-semibold">Email</p>
+                  <p class="text-text-primary font-display font-semibold">Email</p>
                   <a href="mailto:info@apexperformance.com.au" class="text-text-body hover:text-accent-orange transition-colors duration-300 mt-0.5 inline-block">info@apexperformance.com.au</a>
                 </div>
               </div>
+              <div class="hr-gradient"></div>
               <div class="flex items-start gap-4">
-                <div class="w-10 h-10 rounded-lg bg-accent-orange-subtle flex items-center justify-center flex-shrink-0">
+                <div class="icon-container">
                   <svg class="w-5 h-5 text-accent-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
                 </div>
                 <div>
-                  <p class="text-text-primary font-semibold">Hours</p>
-                  <p class="text-text-body mt-0.5">Mon–Fri: 5am–9pm</p>
-                  <p class="text-text-body">Saturday: 6am–5pm</p>
-                  <p class="text-text-body">Sunday: 7am–2pm</p>
+                  <p class="text-text-primary font-display font-semibold">Hours</p>
+                  <div class="mt-1 space-y-0.5">
+                    <p class="text-text-body flex justify-between gap-8"><span>Mon–Fri</span><span class="text-text-secondary">5am–9pm</span></p>
+                    <p class="text-text-body flex justify-between gap-8"><span>Saturday</span><span class="text-text-secondary">6am–5pm</span></p>
+                    <p class="text-text-body flex justify-between gap-8"><span>Sunday</span><span class="text-text-secondary">7am–2pm</span></p>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="mt-8 pt-6 border-t border-white/5">
-              <p class="text-xs text-text-muted">Free parking at 50 Elizabeth Street car park. 2 minute walk from St James station.</p>
+              <p class="text-xs text-text-muted flex items-start gap-2">
+                <span class="text-accent-orange mt-0.5 flex-shrink-0">&#9432;</span>
+                Free parking at 50 Elizabeth Street car park. 2 minute walk from St James station.
+              </p>
             </div>
           </div>
 
           <!-- Google Maps -->
-          <div class="rounded-xl overflow-hidden border border-white/6 h-64 card">
+          <div class="rounded-2xl overflow-hidden border border-white/6 h-64 card">
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.8!2d151.2093!3d-33.8719!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12ae3f3b6f1d1d%3A0x8c3a7c9c3c4b5e1e!2s115%20Elizabeth%20St%2C%20Sydney%20NSW%202000!5e0!3m2!1sen!2sau!4v1700000000000"
               width="100%"
@@ -216,20 +252,26 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- FAQ Section -->
-  <section class="py-24 bg-bg-primary">
-    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-14 reveal">
+  <!-- ═══════════════════════════════════════
+       FAQ SECTION — Enhanced accordion
+       ═══════════════════════════════════════ -->
+  <section class="relative py-28 bg-bg-primary overflow-hidden">
+    <div class="absolute inset-0 dot-grid"></div>
+    <div class="absolute top-1/4 right-[10%] w-[400px] h-[300px] bg-accent-orange/[0.015] blur-[100px] rounded-full pointer-events-none"></div>
+
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+      <div class="text-center mb-16 reveal">
         <p class="section-overline">FAQ</p>
         <h2 class="section-title">Common Questions</h2>
         <div class="section-divider mx-auto"></div>
+        <p class="section-subtitle mt-6">Everything you need to know before your first session.</p>
       </div>
 
-      <div class="space-y-3">
+      <div class="space-y-4">
         <div class="accordion-item reveal stagger-1" data-faq>
-          <button class="w-full flex items-center justify-between p-6 text-left hover:bg-white/3 transition-colors duration-300" data-faq-toggle>
-            <span class="font-body font-semibold text-text-primary text-sm pr-4">What does the free trial include?</span>
-            <span class="text-accent-orange text-xl transition-transform duration-300 flex-shrink-0" data-faq-icon>+</span>
+          <button class="w-full flex items-center justify-between p-6 text-left hover:bg-white/[0.02] transition-colors duration-300 rounded-t-[14px]" data-faq-toggle>
+            <span class="font-display font-semibold text-text-primary text-sm pr-4">What does the free trial include?</span>
+            <span class="text-accent-orange text-xl transition-transform duration-300 flex-shrink-0 font-display" data-faq-icon>+</span>
           </button>
           <div class="accordion-body" data-faq-content>
             <div class="px-6 pb-6">
@@ -239,9 +281,9 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <div class="accordion-item reveal stagger-2" data-faq>
-          <button class="w-full flex items-center justify-between p-6 text-left hover:bg-white/3 transition-colors duration-300" data-faq-toggle>
-            <span class="font-body font-semibold text-text-primary text-sm pr-4">Do I need to be fit to start?</span>
-            <span class="text-accent-orange text-xl transition-transform duration-300 flex-shrink-0" data-faq-icon>+</span>
+          <button class="w-full flex items-center justify-between p-6 text-left hover:bg-white/[0.02] transition-colors duration-300 rounded-t-[14px]" data-faq-toggle>
+            <span class="font-display font-semibold text-text-primary text-sm pr-4">Do I need to be fit to start?</span>
+            <span class="text-accent-orange text-xl transition-transform duration-300 flex-shrink-0 font-display" data-faq-icon>+</span>
           </button>
           <div class="accordion-body" data-faq-content>
             <div class="px-6 pb-6">
@@ -251,9 +293,9 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <div class="accordion-item reveal stagger-3" data-faq>
-          <button class="w-full flex items-center justify-between p-6 text-left hover:bg-white/3 transition-colors duration-300" data-faq-toggle>
-            <span class="font-body font-semibold text-text-primary text-sm pr-4">What should I bring?</span>
-            <span class="text-accent-orange text-xl transition-transform duration-300 flex-shrink-0" data-faq-icon>+</span>
+          <button class="w-full flex items-center justify-between p-6 text-left hover:bg-white/[0.02] transition-colors duration-300 rounded-t-[14px]" data-faq-toggle>
+            <span class="font-display font-semibold text-text-primary text-sm pr-4">What should I bring?</span>
+            <span class="text-accent-orange text-xl transition-transform duration-300 flex-shrink-0 font-display" data-faq-icon>+</span>
           </button>
           <div class="accordion-body" data-faq-content>
             <div class="px-6 pb-6">
@@ -263,9 +305,9 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <div class="accordion-item reveal stagger-4" data-faq>
-          <button class="w-full flex items-center justify-between p-6 text-left hover:bg-white/3 transition-colors duration-300" data-faq-toggle>
-            <span class="font-body font-semibold text-text-primary text-sm pr-4">Can I freeze my membership?</span>
-            <span class="text-accent-orange text-xl transition-transform duration-300 flex-shrink-0" data-faq-icon>+</span>
+          <button class="w-full flex items-center justify-between p-6 text-left hover:bg-white/[0.02] transition-colors duration-300 rounded-t-[14px]" data-faq-toggle>
+            <span class="font-display font-semibold text-text-primary text-sm pr-4">Can I freeze my membership?</span>
+            <span class="text-accent-orange text-xl transition-transform duration-300 flex-shrink-0 font-display" data-faq-icon>+</span>
           </button>
           <div class="accordion-body" data-faq-content>
             <div class="px-6 pb-6">
@@ -275,9 +317,9 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <div class="accordion-item reveal stagger-5" data-faq>
-          <button class="w-full flex items-center justify-between p-6 text-left hover:bg-white/3 transition-colors duration-300" data-faq-toggle>
-            <span class="font-body font-semibold text-text-primary text-sm pr-4">Do you offer nutrition coaching?</span>
-            <span class="text-accent-orange text-xl transition-transform duration-300 flex-shrink-0" data-faq-icon>+</span>
+          <button class="w-full flex items-center justify-between p-6 text-left hover:bg-white/[0.02] transition-colors duration-300 rounded-t-[14px]" data-faq-toggle>
+            <span class="font-display font-semibold text-text-primary text-sm pr-4">Do you offer nutrition coaching?</span>
+            <span class="text-accent-orange text-xl transition-transform duration-300 flex-shrink-0 font-display" data-faq-icon>+</span>
           </button>
           <div class="accordion-body" data-faq-content>
             <div class="px-6 pb-6">
@@ -289,18 +331,31 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-  <!-- CTA Banner -->
-  <section class="relative py-28 glow-bg-cta angle-top overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-r from-accent-orange/5 to-accent-lime/3"></div>
+  <!-- ═══════════════════════════════════════
+       CTA BANNER
+       ═══════════════════════════════════════ -->
+  <section class="relative py-32 glow-bg-cta angle-top overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-r from-accent-orange/[0.04] to-accent-lime/[0.02]"></div>
+    <div class="absolute inset-0 dot-grid"></div>
+    <div class="absolute -top-10 -right-10 w-60 h-60 border border-accent-orange/5 rotate-45 rounded-3xl hidden lg:block"></div>
+    <div class="absolute -bottom-10 -left-10 w-48 h-48 border border-accent-lime/5 rotate-12 rounded-3xl hidden lg:block"></div>
+
     <div class="relative max-w-4xl mx-auto px-4 text-center pt-8">
-      <p class="section-overline reveal">Don't Wait</p>
-      <h2 class="font-heading text-[clamp(2rem,4vw+1rem,4rem)] text-text-primary leading-[1.05] mb-10 reveal" style="transition-delay: 100ms;">
+      <div class="flex items-center justify-center gap-4 mb-4 reveal">
+        <span class="w-10 h-px bg-accent-orange/30 hidden sm:block"></span>
+        <p class="section-overline !mb-0">Don't Wait</p>
+        <span class="w-10 h-px bg-accent-orange/30 hidden sm:block"></span>
+      </div>
+      <h2 class="font-heading text-[clamp(2rem,4vw+1rem,4.5rem)] text-text-primary leading-[1.0] mb-12 reveal" style="transition-delay: 100ms;">
         Stop Thinking About It.<br />
-        <span class="text-accent-orange">Start Your Free Trial Today.</span>
+        <span class="text-gradient-warm">Start Your Free Trial Today.</span>
       </h2>
-      <div class="reveal" style="transition-delay: 200ms;">
+      <div class="flex flex-col sm:flex-row gap-4 justify-center reveal" style="transition-delay: 200ms;">
         <a href="/contact#enquiry-form" class="btn-primary">
           Claim Your Free Trial
+        </a>
+        <a href="/classes" class="btn-secondary">
+          View Classes
         </a>
       </div>
     </div>
@@ -324,13 +379,13 @@ import Layout from '../layouts/Layout.astro';
         const label = el.querySelector('span:last-child') as HTMLElement;
 
         if (indicatorStep <= step) {
-          circle?.classList.remove('bg-white/10', 'text-text-muted');
-          circle?.classList.add('bg-accent-orange', 'text-white');
+          circle?.classList.remove('bg-white/[0.06]', 'text-text-muted', 'border', 'border-white/8');
+          circle?.classList.add('bg-accent-orange', 'text-white', 'shadow-lg', 'shadow-accent-orange/20');
           label?.classList.remove('text-text-muted');
           label?.classList.add('text-text-primary');
         } else {
-          circle?.classList.add('bg-white/10', 'text-text-muted');
-          circle?.classList.remove('bg-accent-orange', 'text-white');
+          circle?.classList.add('bg-white/[0.06]', 'text-text-muted', 'border', 'border-white/8');
+          circle?.classList.remove('bg-accent-orange', 'text-white', 'shadow-lg', 'shadow-accent-orange/20');
           label?.classList.add('text-text-muted');
           label?.classList.remove('text-text-primary');
         }

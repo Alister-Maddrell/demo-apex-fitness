@@ -1,38 +1,48 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
 
 /* ============================================
-   DESIGN TOKENS
+   DESIGN TOKENS — Refined Colour Theory
+   Warm neutrals replace pure grays for depth.
+   Analogous accent palette (orange → amber → copper).
+   Complementary lime kept for high-contrast pops.
    ============================================ */
 @theme {
-  /* Surfaces / Backgrounds */
-  --color-bg-primary: #0D0D0D;
-  --color-bg-secondary: #141414;
-  --color-bg-elevated: #1A1A1A;
-  --color-bg-surface: #222222;
-  --color-bg-footer: #080808;
+  /* Surfaces / Backgrounds — warm-tinted darks */
+  --color-bg-primary: #0B0B0F;
+  --color-bg-secondary: #111116;
+  --color-bg-elevated: #18181F;
+  --color-bg-surface: #1F1F28;
+  --color-bg-footer: #07070A;
 
-  /* Accent: Orange */
+  /* Accent: Orange (primary CTA) */
   --color-accent-orange: #FF6B2C;
   --color-accent-orange-hover: #FF8957;
   --color-accent-orange-subtle: #FF6B2C1a;
 
-  /* Accent: Lime */
+  /* Accent: Amber (secondary warmth) */
+  --color-accent-amber: #F59E0B;
+
+  /* Accent: Copper (tertiary depth) */
+  --color-accent-copper: #C97B3A;
+
+  /* Accent: Lime (contrast pop) */
   --color-accent-lime: #AAFF00;
 
-  /* Text */
-  --color-text-primary: #FFFFFF;
-  --color-text-secondary: #E0E0E0;
-  --color-text-body: #B0B0B0;
-  --color-text-muted: #7A7A7A;
+  /* Text — warm-shifted for cohesion */
+  --color-text-primary: #F5F5F0;
+  --color-text-secondary: #D8D8D0;
+  --color-text-body: #A8A8A0;
+  --color-text-muted: #6A6A65;
 
-  /* Typography */
+  /* Typography — three-tier system */
   --font-heading: 'Bebas Neue', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
   --font-body: 'Inter', sans-serif;
 }
 
 /* ============================================
-   BASE STYLES
+   BASE STYLES — Improved typographic rhythm
    ============================================ */
 html {
   scroll-behavior: smooth;
@@ -41,7 +51,7 @@ html {
 body {
   font-family: var(--font-body);
   font-size: clamp(1rem, 0.25vw + 0.94rem, 1.125rem);
-  line-height: 1.65;
+  line-height: 1.7;
   background-color: var(--color-bg-primary);
   color: var(--color-text-body);
   overflow-x: hidden;
@@ -54,53 +64,73 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   color: var(--color-text-primary);
   text-transform: uppercase;
-  line-height: 1.1;
+  line-height: 1.05;
 }
 
-h1 { letter-spacing: -0.02em; }
-h2 { letter-spacing: -0.01em; }
-h3 { letter-spacing: 0em; }
-h4, h5, h6 { letter-spacing: 0.02em; }
+h1 { letter-spacing: -0.03em; }
+h2 { letter-spacing: -0.02em; }
+h3 { letter-spacing: -0.01em; }
+h4, h5, h6 { letter-spacing: 0.01em; }
 
 /* ============================================
-   SCROLLBAR
+   SCROLLBAR — Refined
    ============================================ */
-::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar { width: 5px; }
 ::-webkit-scrollbar-track { background: var(--color-bg-primary); }
 ::-webkit-scrollbar-thumb { background: #2A2A2A; border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-accent-orange); }
 
 /* ============================================
-   BUTTONS
+   NOISE / GRAIN TEXTURE OVERLAY
+   Adds tactile, analog depth to surfaces
+   ============================================ */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.025;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 256px 256px;
+}
+
+/* ============================================
+   BUTTONS — Enhanced with more depth
    ============================================ */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 16px 36px;
-  font-family: var(--font-body);
-  font-size: 0.875rem;
+  padding: 16px 38px;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   color: #fff;
-  background: linear-gradient(135deg, #FF6B2C, #E85A1E);
+  background: linear-gradient(135deg, #FF6B2C 0%, #E85A1E 50%, #D14E15 100%);
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 24px rgba(255, 107, 44, 0.3);
+  box-shadow:
+    0 4px 24px rgba(255, 107, 44, 0.3),
+    0 1px 0 rgba(255, 255, 255, 0.1) inset;
   transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
               box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
   text-decoration: none;
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 32px rgba(255, 107, 44, 0.45),
-              0 0 60px rgba(255, 107, 44, 0.12);
+  transform: translateY(-3px);
+  box-shadow:
+    0 12px 40px rgba(255, 107, 44, 0.4),
+    0 0 80px rgba(255, 107, 44, 0.1),
+    0 1px 0 rgba(255, 255, 255, 0.15) inset;
 }
 
 .btn-primary:active {
@@ -116,8 +146,8 @@ h4, h5, h6 { letter-spacing: 0.02em; }
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
-  transition: left 0.5s ease;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
+  transition: left 0.6s ease;
 }
 .btn-primary:hover::after {
   left: 100%;
@@ -128,24 +158,28 @@ h4, h5, h6 { letter-spacing: 0.02em; }
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 14px 34px;
-  font-family: var(--font-body);
-  font-size: 0.875rem;
+  padding: 14px 36px;
+  font-family: var(--font-display);
+  font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #fff;
-  background: transparent;
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
+  color: var(--color-text-secondary);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 10px;
   cursor: pointer;
   text-decoration: none;
-  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.06);
-  border-color: rgba(255, 255, 255, 0.45);
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: var(--color-text-primary);
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.03);
 }
 
 .btn-secondary:active {
@@ -155,40 +189,61 @@ h4, h5, h6 { letter-spacing: 0.02em; }
 }
 
 /* ============================================
-   GLOW EFFECTS
+   GLOW EFFECTS — Layered depth
    ============================================ */
 .glow-orange {
-  box-shadow: 0 4px 24px rgba(255, 107, 44, 0.3), 0 0 48px rgba(255, 107, 44, 0.08);
+  box-shadow:
+    0 4px 24px rgba(255, 107, 44, 0.3),
+    0 0 48px rgba(255, 107, 44, 0.08),
+    0 0 1px rgba(255, 107, 44, 0.6);
 }
 .glow-orange-hover:hover {
-  box-shadow: 0 8px 32px rgba(255, 107, 44, 0.45), 0 0 60px rgba(255, 107, 44, 0.15);
+  box-shadow:
+    0 8px 32px rgba(255, 107, 44, 0.45),
+    0 0 60px rgba(255, 107, 44, 0.15),
+    0 0 1px rgba(255, 107, 44, 0.8);
 }
 
 /* ============================================
-   CARDS
+   CARDS — Glassmorphism + layered depth
    ============================================ */
 .card {
-  background: var(--color-bg-elevated);
+  background: linear-gradient(
+    165deg,
+    rgba(24, 24, 31, 0.95) 0%,
+    rgba(18, 18, 24, 0.9) 100%
+  );
   border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 12px;
-  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
-              box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1),
-              border-color 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  border-radius: 16px;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow:
+    0 4px 24px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.02) inset;
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              border-color 0.35s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .card:hover {
   transform: translateY(-8px) scale(1.01);
-  box-shadow: 0 0 32px rgba(255, 107, 44, 0.12), 0 24px 48px rgba(0, 0, 0, 0.35);
-  border-color: rgba(255, 107, 44, 0.2);
+  box-shadow:
+    0 0 40px rgba(255, 107, 44, 0.08),
+    0 24px 48px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 107, 44, 0.1) inset;
+  border-color: rgba(255, 107, 44, 0.15);
 }
 
 .card-featured {
-  border: 2px solid var(--color-accent-orange);
-  box-shadow: 0 0 24px rgba(255, 107, 44, 0.2), 0 0 48px rgba(255, 107, 44, 0.06);
+  border: 1px solid rgba(255, 107, 44, 0.4);
+  box-shadow:
+    0 0 30px rgba(255, 107, 44, 0.15),
+    0 0 60px rgba(255, 107, 44, 0.05),
+    0 0 0 1px rgba(255, 107, 44, 0.2) inset;
 }
 
 /* ============================================
-   SECTION DIVIDERS (angled clip-paths)
+   SECTION DIVIDERS — Refined angles
    ============================================ */
 .angle-top {
   clip-path: polygon(0 clamp(30px, 4vw, 80px), 100% 0, 100% 100%, 0 100%);
@@ -203,13 +258,13 @@ h4, h5, h6 { letter-spacing: 0.02em; }
 }
 
 /* ============================================
-   SECTION HEADING SYSTEM
+   SECTION HEADING SYSTEM — Enhanced hierarchy
    ============================================ */
 .section-overline {
-  font-family: var(--font-body);
+  font-family: var(--font-display);
   font-size: clamp(0.7rem, 0.5vw + 0.6rem, 0.8rem);
   font-weight: 600;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--color-accent-orange);
   margin-bottom: 0.75rem;
@@ -217,18 +272,69 @@ h4, h5, h6 { letter-spacing: 0.02em; }
 
 .section-title {
   font-family: var(--font-heading);
-  font-size: clamp(2.25rem, 3.2vw + 1.4rem, 3.75rem);
-  line-height: 1.05;
+  font-size: clamp(2.5rem, 3.5vw + 1.4rem, 4.25rem);
+  line-height: 1.0;
   letter-spacing: -0.02em;
   color: var(--color-text-primary);
   text-transform: uppercase;
 }
 
+.section-subtitle {
+  font-family: var(--font-body);
+  font-size: clamp(0.95rem, 0.3vw + 0.85rem, 1.1rem);
+  color: var(--color-text-body);
+  max-width: 36rem;
+  margin-inline: auto;
+  line-height: 1.7;
+}
+
 .section-divider {
-  width: 48px;
+  width: 56px;
   height: 3px;
-  background: linear-gradient(90deg, var(--color-accent-orange), transparent);
+  background: linear-gradient(90deg, var(--color-accent-orange), var(--color-accent-amber), transparent);
   margin-top: 1.25rem;
+  border-radius: 2px;
+}
+
+/* Text gradient utility for hero headings */
+.text-gradient-warm {
+  background: linear-gradient(135deg, #FF6B2C 0%, #FF8957 40%, #F59E0B 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-cool {
+  background: linear-gradient(135deg, var(--color-text-primary) 0%, var(--color-text-secondary) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ============================================
+   DOT GRID PATTERN — Subtle texture layer
+   ============================================ */
+.dot-grid::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+/* ============================================
+   DECORATIVE LINE ELEMENTS
+   ============================================ */
+.deco-line-v {
+  width: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(255, 107, 44, 0.3), transparent);
+}
+
+.deco-line-h {
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255, 107, 44, 0.2), transparent);
 }
 
 /* ============================================
@@ -240,7 +346,7 @@ h4, h5, h6 { letter-spacing: 0.02em; }
   cursor: col-resize;
   user-select: none;
   -webkit-user-select: none;
-  border-radius: 12px;
+  border-radius: 16px;
 }
 
 .ba-slider .ba-after {
@@ -274,7 +380,7 @@ h4, h5, h6 { letter-spacing: 0.02em; }
   background: #fff;
   cursor: col-resize;
   z-index: 10;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
 }
 
 .ba-slider .ba-handle::after {
@@ -283,53 +389,55 @@ h4, h5, h6 { letter-spacing: 0.02em; }
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 40px;
-  height: 40px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: #fff;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
 }
 
 .ba-label {
   position: absolute;
-  bottom: 12px;
-  padding: 4px 12px;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  bottom: 14px;
+  padding: 5px 14px;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   color: #fff;
-  font-family: var(--font-body);
-  font-size: 0.65rem;
+  font-family: var(--font-display);
+  font-size: 0.6rem;
   font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  border-radius: 4px;
+  letter-spacing: 0.15em;
+  border-radius: 6px;
   z-index: 15;
   pointer-events: none;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* ============================================
-   FAQ ACCORDION (grid-based smooth height)
+   FAQ ACCORDION — Grid-based smooth height
    ============================================ */
 .accordion-item {
   display: grid;
   grid-template-rows: min-content 0fr;
   transition: grid-template-rows 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
   overflow: hidden;
+  background: linear-gradient(165deg, rgba(24, 24, 31, 0.6), rgba(18, 18, 24, 0.4));
 }
 
 .accordion-item.open {
   grid-template-rows: min-content 1fr;
   border-color: rgba(255, 107, 44, 0.2);
+  background: linear-gradient(165deg, rgba(30, 28, 35, 0.8), rgba(22, 20, 28, 0.6));
 }
 
 .accordion-body {
   overflow: hidden;
 }
 
-/* Legacy fallback for browsers without grid animation support */
 .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
 .faq-content.open { max-height: 300px; }
 
@@ -340,14 +448,13 @@ h4, h5, h6 { letter-spacing: 0.02em; }
 .form-step.active { display: block; }
 
 /* ============================================
-   SCROLL-TRIGGERED ANIMATIONS
+   SCROLL-TRIGGERED ANIMATIONS — Punchy reveals
    ============================================ */
-/* Punchy, fast reveal — momentum and snap (200-300ms) */
 .reveal {
   opacity: 0;
-  transform: translateY(28px);
-  transition: opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(32px);
+  transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .reveal.visible {
@@ -355,32 +462,34 @@ h4, h5, h6 { letter-spacing: 0.02em; }
   transform: translateY(0);
 }
 
-/* Tight stagger — elements snap in fast */
 .stagger-1 { transition-delay: 0ms; }
-.stagger-2 { transition-delay: 60ms; }
-.stagger-3 { transition-delay: 120ms; }
-.stagger-4 { transition-delay: 180ms; }
-.stagger-5 { transition-delay: 240ms; }
-.stagger-6 { transition-delay: 300ms; }
+.stagger-2 { transition-delay: 70ms; }
+.stagger-3 { transition-delay: 140ms; }
+.stagger-4 { transition-delay: 210ms; }
+.stagger-5 { transition-delay: 280ms; }
+.stagger-6 { transition-delay: 350ms; }
 
 /* ============================================
-   AMBIENT BACKGROUNDS
+   AMBIENT BACKGROUNDS — Multi-layer depth
    ============================================ */
 .glow-bg-hero {
   background:
-    radial-gradient(ellipse 80% 50% at 70% 20%, rgba(255, 107, 44, 0.06) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 40% at 15% 80%, rgba(170, 255, 0, 0.03) 0%, transparent 60%),
+    radial-gradient(ellipse 70% 45% at 65% 15%, rgba(255, 107, 44, 0.07) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 35% at 10% 85%, rgba(170, 255, 0, 0.025) 0%, transparent 60%),
+    radial-gradient(ellipse 30% 30% at 90% 70%, rgba(197, 123, 58, 0.04) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 50% at 50% 50%, rgba(255, 107, 44, 0.015) 0%, transparent 80%),
     var(--color-bg-primary);
 }
 
 .glow-bg-cta {
   background:
-    radial-gradient(ellipse at 50% 50%, rgba(255, 107, 44, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 30% 50%, rgba(255, 107, 44, 0.07) 0%, transparent 50%),
+    radial-gradient(ellipse at 70% 50%, rgba(245, 158, 11, 0.04) 0%, transparent 50%),
     var(--color-bg-secondary);
 }
 
 /* ============================================
-   ANIMATIONS
+   ANIMATIONS — More organic motion
    ============================================ */
 @keyframes float {
   0%, 100% { transform: translateY(0) rotate(0deg); }
@@ -388,32 +497,59 @@ h4, h5, h6 { letter-spacing: 0.02em; }
   66% { transform: translateY(10px) rotate(-3deg); }
 }
 
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
+  50% { transform: translateY(-15px) rotate(3deg) scale(1.05); }
+}
+
 @keyframes pulse-glow {
   0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 0.7; transform: scale(1.15); }
+  50% { opacity: 0.8; transform: scale(1.2); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes border-glow {
+  0%, 100% { border-color: rgba(255, 107, 44, 0.15); }
+  50% { border-color: rgba(255, 107, 44, 0.35); }
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .animate-float { animation: float 6s ease-in-out infinite; }
 .animate-float-delayed { animation: float 8s ease-in-out 2s infinite; }
+.animate-float-slow { animation: float-slow 10s ease-in-out infinite; }
 .animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+.animate-shimmer {
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+.animate-border-glow { animation: border-glow 3s ease-in-out infinite; }
 
 /* ============================================
-   TIMETABLE CLASS COLOURS
+   TIMETABLE CLASS COLOURS — Refined
    ============================================ */
-.class-hiit { background-color: rgba(255, 107, 44, 0.12); border-left: 3px solid #FF6B2C; }
-.class-strength { background-color: rgba(59, 130, 246, 0.12); border-left: 3px solid #3B82F6; }
-.class-boxing { background-color: rgba(239, 68, 68, 0.12); border-left: 3px solid #EF4444; }
-.class-yoga { background-color: rgba(170, 255, 0, 0.08); border-left: 3px solid #AAFF00; }
-.class-olympic { background-color: rgba(168, 85, 247, 0.12); border-left: 3px solid #A855F7; }
-.class-pt { background-color: rgba(245, 158, 11, 0.12); border-left: 3px solid #F59E0B; }
+.class-hiit { background-color: rgba(255, 107, 44, 0.1); border-left: 3px solid #FF6B2C; }
+.class-strength { background-color: rgba(59, 130, 246, 0.1); border-left: 3px solid #3B82F6; }
+.class-boxing { background-color: rgba(239, 68, 68, 0.1); border-left: 3px solid #EF4444; }
+.class-yoga { background-color: rgba(170, 255, 0, 0.06); border-left: 3px solid #AAFF00; }
+.class-olympic { background-color: rgba(168, 85, 247, 0.1); border-left: 3px solid #A855F7; }
+.class-pt { background-color: rgba(245, 158, 11, 0.1); border-left: 3px solid #F59E0B; }
 
 /* ============================================
-   DARK SURFACE DEPTH SYSTEM
+   DARK SURFACE DEPTH SYSTEM — Warm tinted
    ============================================ */
-.surface-base { background: #0A0A0A; }
-.surface-1 { background: #111111; }
-.surface-2 { background: #1A1A1A; }
-.surface-3 { background: #222222; }
+.surface-base { background: #08080C; }
+.surface-1 { background: #0E0E14; }
+.surface-2 { background: #16161E; }
+.surface-3 { background: #1E1E28; }
 
 /* ============================================
    SPEED LINES TEXTURE
@@ -434,13 +570,15 @@ h4, h5, h6 { letter-spacing: 0.02em; }
 }
 
 /* ============================================
-   SECTION NUMBER LABEL
+   SECTION NUMBER LABEL — Improved
    ============================================ */
 .section-number {
-  font-family: 'SF Mono', 'Fira Code', monospace;
-  font-size: 0.6875rem;
-  letter-spacing: 0.15em;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
+  opacity: 0.5;
 }
 
 /* ============================================
@@ -456,32 +594,33 @@ h4, h5, h6 { letter-spacing: 0.02em; }
    GLOW BORDER ON HOVER
    ============================================ */
 .glow-hover {
-  transition: all 0.25s ease;
+  transition: all 0.35s ease;
 }
 .glow-hover:hover {
-  box-shadow: 0 0 20px rgba(239,68,68,0.15), 0 0 40px rgba(239,68,68,0.05);
+  box-shadow: 0 0 24px rgba(255,107,44,0.15), 0 0 48px rgba(255,107,44,0.05);
 }
 
 /* ============================================
-   POPULAR BADGE RIBBON
+   POPULAR BADGE RIBBON — Refined
    ============================================ */
 .popular-ribbon {
   position: absolute;
   top: -1px;
   right: -1px;
-  background: linear-gradient(135deg, #F97316, #EF4444);
+  background: linear-gradient(135deg, #FF6B2C, #E85A1E);
   color: white;
-  font-size: 0.625rem;
+  font-family: var(--font-display);
+  font-size: 0.6rem;
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  padding: 6px 16px;
-  border-radius: 0 8px 0 12px;
-  box-shadow: 0 2px 8px rgba(249,115,22,0.3);
+  padding: 7px 18px;
+  border-radius: 0 12px 0 14px;
+  box-shadow: 0 4px 12px rgba(255,107,44,0.3);
 }
 
 /* ============================================
-   PULSING LIVE DOT
+   PULSING LIVE DOT — Enhanced
    ============================================ */
 .live-dot {
   width: 8px;
@@ -494,32 +633,166 @@ h4, h5, h6 { letter-spacing: 0.02em; }
 
 @keyframes live-pulse {
   0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 8px rgba(34,197,94,0.4); }
-  50% { opacity: 0.6; transform: scale(0.8); box-shadow: 0 0 16px rgba(34,197,94,0.6); }
+  50% { opacity: 0.6; transform: scale(0.8); box-shadow: 0 0 20px rgba(34,197,94,0.6); }
 }
 
 /* ============================================
-   GRADIENT MESH BACKGROUND
+   GRADIENT MESH BACKGROUND — Multi-layer
    ============================================ */
 .gradient-mesh {
   background:
-    radial-gradient(ellipse at 20% 50%, rgba(239,68,68,0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(249,115,22,0.06) 0%, transparent 50%),
-    radial-gradient(ellipse at 60% 80%, rgba(139,92,246,0.04) 0%, transparent 50%);
+    radial-gradient(ellipse at 20% 50%, rgba(255,107,44,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(245,158,11,0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 60% 80%, rgba(139,92,246,0.03) 0%, transparent 50%),
+    radial-gradient(ellipse at 40% 30%, rgba(197,123,58,0.03) 0%, transparent 50%);
 }
 
 /* ============================================
-   TRAINER CARD OVERLAY
+   TRAINER CARD OVERLAY — Improved gradient
    ============================================ */
 .trainer-overlay {
-  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 40%, transparent 100%);
+  background: linear-gradient(
+    to top,
+    rgba(11, 11, 15, 0.9) 0%,
+    rgba(11, 11, 15, 0.4) 35%,
+    rgba(11, 11, 15, 0.1) 60%,
+    transparent 100%
+  );
   transition: opacity 0.3s ease;
 }
 .group:hover .trainer-overlay {
-  opacity: 0.6;
+  opacity: 0.7;
 }
 
 /* ============================================
-   REDUCED MOTION
+   GLASSMORPHISM CARD VARIANT
+   ============================================ */
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 16px;
+}
+
+/* ============================================
+   BADGE / PILL — Refined
+   ============================================ */
+.badge-orange {
+  background: linear-gradient(135deg, rgba(255,107,44,0.15), rgba(255,107,44,0.08));
+  color: var(--color-accent-orange);
+  border: 1px solid rgba(255,107,44,0.2);
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 4px 14px;
+  border-radius: 100px;
+}
+
+.badge-lime {
+  background: linear-gradient(135deg, rgba(170,255,0,0.12), rgba(170,255,0,0.06));
+  color: var(--color-accent-lime);
+  border: 1px solid rgba(170,255,0,0.2);
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  padding: 4px 14px;
+  border-radius: 100px;
+}
+
+/* ============================================
+   ICON CONTAINER — Gradient-backed
+   ============================================ */
+.icon-container {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, rgba(255,107,44,0.15), rgba(255,107,44,0.05));
+  border: 1px solid rgba(255,107,44,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   STAR RATING
+   ============================================ */
+.star-rating {
+  color: #F59E0B;
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+}
+
+/* ============================================
+   DECORATIVE CORNER ELEMENT
+   ============================================ */
+.corner-deco::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 60px;
+  height: 60px;
+  border-top: 1px solid rgba(255, 107, 44, 0.15);
+  border-left: 1px solid rgba(255, 107, 44, 0.15);
+  border-radius: 16px 0 0 0;
+  pointer-events: none;
+}
+
+.corner-deco::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 60px;
+  height: 60px;
+  border-bottom: 1px solid rgba(255, 107, 44, 0.15);
+  border-right: 1px solid rgba(255, 107, 44, 0.15);
+  border-radius: 0 0 16px 0;
+  pointer-events: none;
+}
+
+/* ============================================
+   HORIZONTAL RULE — Gradient fade
+   ============================================ */
+.hr-gradient {
+  height: 1px;
+  border: none;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+}
+
+/* ============================================
+   SECTION TRANSITION — Layered divider
+   ============================================ */
+.section-transition {
+  position: relative;
+  height: 80px;
+  overflow: hidden;
+}
+
+.section-transition::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, var(--color-bg-primary) 0%, transparent 40%, transparent 60%, var(--color-bg-secondary) 100%);
+}
+
+.section-transition::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(255, 107, 44, 0.3), transparent);
+}
+
+/* ============================================
+   REDUCED MOTION — Accessibility
    ============================================ */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
