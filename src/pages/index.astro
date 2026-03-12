@@ -6,6 +6,8 @@ import Layout from '../layouts/Layout.astro';
 
   <!-- Hero Section -->
   <section class="relative min-h-screen flex items-center justify-center overflow-hidden glow-bg-hero">
+    <div class="absolute inset-0 gradient-mesh"></div>
+    <div class="absolute inset-0 speed-lines"></div>
     <div class="absolute inset-0 opacity-25">
       <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&h=1080&fit=crop&q=80" alt="Dark atmospheric gym interior with dramatic lighting on training equipment" class="w-full h-full object-cover" />
     </div>
@@ -51,7 +53,7 @@ import Layout from '../layouts/Layout.astro';
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
       <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 text-center">
         <div class="reveal stagger-1">
-          <span class="font-heading text-[clamp(3rem,4vw,4.5rem)] text-accent-orange leading-none" data-count="500" data-suffix="+">0</span>
+          <span class="font-heading text-[clamp(3rem,4vw,4.5rem)] text-accent-orange leading-none" data-count="500" data-suffix="+">0</span><span class="live-dot inline-block ml-2"></span>
           <p class="section-overline mt-3 !mb-0 !text-text-secondary">Members</p>
         </div>
         <div class="reveal stagger-2">
@@ -70,10 +72,16 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- Diagonal Stripe Transition -->
+  <div class="relative h-16 overflow-hidden">
+    <div class="absolute inset-0 speed-lines"></div>
+  </div>
+
   <!-- Class Types Section -->
   <section class="py-28 lg:py-40 bg-bg-primary">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 reveal">
+        <p class="section-number text-red-500/60 mb-2">01 // CLASSES</p>
         <p class="section-overline">Training Programs</p>
         <h2 class="section-title">What We Offer</h2>
         <div class="section-divider mx-auto"></div>
@@ -171,6 +179,7 @@ import Layout from '../layouts/Layout.astro';
   <section id="pricing" class="relative py-28 lg:py-36 bg-bg-secondary angle-top">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
       <div class="text-center mb-16 reveal">
+        <p class="section-number text-red-500/60 mb-2">02 // PRICING</p>
         <p class="section-overline">Investment</p>
         <h2 class="section-title">Membership Options</h2>
         <div class="section-divider mx-auto"></div>
@@ -201,7 +210,8 @@ import Layout from '../layouts/Layout.astro';
         </div>
 
         <!-- Monthly (Featured) -->
-        <div class="card-featured card p-8 lg:p-10 flex flex-col relative md:scale-105 reveal stagger-2" data-pricing-card>
+        <div class="card-featured card glow-hover p-8 lg:p-10 flex flex-col relative md:scale-105 reveal stagger-2" data-pricing-card style="box-shadow: 0 0 30px rgba(249,115,22,0.15), 0 8px 32px rgba(0,0,0,0.3);">
+          <span class="popular-ribbon">Most Popular</span>
           <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent-lime text-bg-primary font-body font-bold text-[0.65rem] uppercase tracking-[0.15em] px-5 py-1.5 rounded-full whitespace-nowrap">Most Popular</span>
           <h3 class="font-heading text-3xl text-text-primary mb-2">Monthly</h3>
           <div class="mb-6">
@@ -263,10 +273,16 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
+  <!-- Diagonal Stripe Transition -->
+  <div class="relative h-16 overflow-hidden">
+    <div class="absolute inset-0 speed-lines"></div>
+  </div>
+
   <!-- Transformations Section -->
   <section class="py-28 lg:py-40 bg-bg-primary">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="text-center mb-16 reveal">
+        <p class="section-number text-red-500/60 mb-2">03 // TRANSFORMATIONS</p>
         <p class="section-overline">Success Stories</p>
         <h2 class="section-title">Real Results</h2>
         <div class="section-divider mx-auto"></div>
@@ -340,6 +356,7 @@ import Layout from '../layouts/Layout.astro';
   <section class="py-28 lg:py-40 bg-bg-secondary angle-top-reverse">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
       <div class="text-center mb-16 reveal">
+        <p class="section-number text-red-500/60 mb-2">04 // TESTIMONIALS</p>
         <p class="section-overline">Testimonials</p>
         <h2 class="section-title">What Our Members Say</h2>
         <div class="section-divider mx-auto"></div>
@@ -375,6 +392,11 @@ import Layout from '../layouts/Layout.astro';
       </div>
     </div>
   </section>
+
+  <!-- Diagonal Stripe Transition -->
+  <div class="relative h-16 overflow-hidden">
+    <div class="absolute inset-0 speed-lines"></div>
+  </div>
 
   <!-- CTA Banner -->
   <section class="relative py-28 lg:py-36 glow-bg-cta overflow-hidden">

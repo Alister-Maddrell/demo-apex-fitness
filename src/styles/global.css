@@ -408,6 +408,117 @@ h4, h5, h6 { letter-spacing: 0.02em; }
 .class-pt { background-color: rgba(245, 158, 11, 0.12); border-left: 3px solid #F59E0B; }
 
 /* ============================================
+   DARK SURFACE DEPTH SYSTEM
+   ============================================ */
+.surface-base { background: #0A0A0A; }
+.surface-1 { background: #111111; }
+.surface-2 { background: #1A1A1A; }
+.surface-3 { background: #222222; }
+
+/* ============================================
+   SPEED LINES TEXTURE
+   ============================================ */
+.speed-lines::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.03;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 20px,
+    rgba(255,255,255,0.5) 20px,
+    rgba(255,255,255,0.5) 21px
+  );
+}
+
+/* ============================================
+   SECTION NUMBER LABEL
+   ============================================ */
+.section-number {
+  font-family: 'SF Mono', 'Fira Code', monospace;
+  font-size: 0.6875rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* ============================================
+   CLASS TYPE COLOUR ACCENTS
+   ============================================ */
+.class-accent-hiit { border-left-color: #EF4444; }
+.class-accent-strength { border-left-color: #F59E0B; }
+.class-accent-yoga { border-left-color: #8B5CF6; }
+.class-accent-boxing { border-left-color: #10B981; }
+.class-accent-cycle { border-left-color: #06B6D4; }
+
+/* ============================================
+   GLOW BORDER ON HOVER
+   ============================================ */
+.glow-hover {
+  transition: all 0.25s ease;
+}
+.glow-hover:hover {
+  box-shadow: 0 0 20px rgba(239,68,68,0.15), 0 0 40px rgba(239,68,68,0.05);
+}
+
+/* ============================================
+   POPULAR BADGE RIBBON
+   ============================================ */
+.popular-ribbon {
+  position: absolute;
+  top: -1px;
+  right: -1px;
+  background: linear-gradient(135deg, #F97316, #EF4444);
+  color: white;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 6px 16px;
+  border-radius: 0 8px 0 12px;
+  box-shadow: 0 2px 8px rgba(249,115,22,0.3);
+}
+
+/* ============================================
+   PULSING LIVE DOT
+   ============================================ */
+.live-dot {
+  width: 8px;
+  height: 8px;
+  background: #22C55E;
+  border-radius: 50%;
+  animation: live-pulse 2s ease-in-out infinite;
+  box-shadow: 0 0 8px rgba(34,197,94,0.4);
+}
+
+@keyframes live-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 8px rgba(34,197,94,0.4); }
+  50% { opacity: 0.6; transform: scale(0.8); box-shadow: 0 0 16px rgba(34,197,94,0.6); }
+}
+
+/* ============================================
+   GRADIENT MESH BACKGROUND
+   ============================================ */
+.gradient-mesh {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(239,68,68,0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(249,115,22,0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 60% 80%, rgba(139,92,246,0.04) 0%, transparent 50%);
+}
+
+/* ============================================
+   TRAINER CARD OVERLAY
+   ============================================ */
+.trainer-overlay {
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.3) 40%, transparent 100%);
+  transition: opacity 0.3s ease;
+}
+.group:hover .trainer-overlay {
+  opacity: 0.6;
+}
+
+/* ============================================
    REDUCED MOTION
    ============================================ */
 @media (prefers-reduced-motion: reduce) {
