@@ -358,5 +358,11 @@ const navLinks = [
 
     document.querySelectorAll('[data-count]').forEach(el => counterObserver.observe(el));
   </script>
+  <script>
+    if (new URLSearchParams(window.location.search).has('preview')) {
+      document.querySelectorAll('img[loading="lazy"]').forEach(img => img.loading = 'eager');
+      document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => el.classList.add('visible'));
+    }
+  </script>
 </body>
 </html>
