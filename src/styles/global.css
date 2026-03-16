@@ -1,48 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Syne:wght@400;500;600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 /* ============================================
-   DESIGN TOKENS — Refined Colour Theory
-   Warm neutrals replace pure grays for depth.
-   Analogous accent palette (orange → amber → copper).
-   Complementary lime kept for high-contrast pops.
+   DESIGN TOKENS — Kinetic Brutalism
+   Raw athletic surfaces. High contrast.
+   Orange is surgical, not ambient.
    ============================================ */
 @theme {
-  /* Surfaces / Backgrounds — warm-tinted darks */
-  --color-bg-primary: #0B0B0F;
-  --color-bg-secondary: #111116;
-  --color-bg-elevated: #18181F;
-  --color-bg-surface: #1F1F28;
-  --color-bg-footer: #07070A;
+  --color-bg-primary: #050505;
+  --color-bg-secondary: #0A0A0A;
+  --color-bg-elevated: #111111;
+  --color-bg-surface: #181818;
+  --color-bg-footer: #030303;
 
-  /* Accent: Orange (primary CTA) */
-  --color-accent-orange: #FF6B2C;
-  --color-accent-orange-hover: #FF8957;
-  --color-accent-orange-subtle: #FF6B2C1a;
+  --color-accent-orange: #FF5A1F;
+  --color-accent-orange-hover: #FF7A47;
+  --color-accent-orange-subtle: #FF5A1F12;
+  --color-accent-amber: #E8A000;
+  --color-accent-copper: #B86E2B;
+  --color-accent-lime: #B8FF00;
 
-  /* Accent: Amber (secondary warmth) */
-  --color-accent-amber: #F59E0B;
+  --color-text-primary: #EDEDED;
+  --color-text-secondary: #C4C4C4;
+  --color-text-body: #8A8A8A;
+  --color-text-muted: #4A4A4A;
 
-  /* Accent: Copper (tertiary depth) */
-  --color-accent-copper: #C97B3A;
-
-  /* Accent: Lime (contrast pop) */
-  --color-accent-lime: #AAFF00;
-
-  /* Text — warm-shifted for cohesion */
-  --color-text-primary: #F5F5F0;
-  --color-text-secondary: #D8D8D0;
-  --color-text-body: #A8A8A0;
-  --color-text-muted: #6A6A65;
-
-  /* Typography — three-tier system */
   --font-heading: 'Bebas Neue', sans-serif;
-  --font-display: 'Space Grotesk', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'Outfit', sans-serif;
 }
 
 /* ============================================
-   BASE STYLES — Improved typographic rhythm
+   BASE — Raw, tight, intentional
    ============================================ */
 html {
   scroll-behavior: smooth;
@@ -50,39 +39,35 @@ html {
 
 body {
   font-family: var(--font-body);
-  font-size: clamp(1rem, 0.25vw + 0.94rem, 1.125rem);
-  line-height: 1.7;
+  font-size: clamp(0.95rem, 0.25vw + 0.9rem, 1.1rem);
+  line-height: 1.65;
   background-color: var(--color-bg-primary);
   color: var(--color-text-body);
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-rendering: optimizeLegibility;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   color: var(--color-text-primary);
   text-transform: uppercase;
-  line-height: 1.05;
+  line-height: 0.92;
 }
 
-h1 { letter-spacing: -0.03em; }
-h2 { letter-spacing: -0.02em; }
-h3 { letter-spacing: -0.01em; }
-h4, h5, h6 { letter-spacing: 0.01em; }
+h1 { letter-spacing: -0.02em; }
+h2 { letter-spacing: -0.01em; }
 
 /* ============================================
-   SCROLLBAR — Refined
+   SCROLLBAR
    ============================================ */
-::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: var(--color-bg-primary); }
-::-webkit-scrollbar-thumb { background: #2A2A2A; border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: #222; border-radius: 0; }
 ::-webkit-scrollbar-thumb:hover { background: var(--color-accent-orange); }
 
 /* ============================================
-   NOISE / GRAIN TEXTURE OVERLAY
-   Adds tactile, analog depth to surfaces
+   NOISE TEXTURE — Subtle grain
    ============================================ */
 body::before {
   content: '';
@@ -90,215 +75,167 @@ body::before {
   inset: 0;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.025;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
   background-repeat: repeat;
   background-size: 256px 256px;
 }
 
 /* ============================================
-   BUTTONS — Enhanced with more depth
+   BUTTONS — Hard, confident, physical
    ============================================ */
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 16px 38px;
+  gap: 10px;
+  padding: 18px 40px;
   font-family: var(--font-display);
-  font-size: 0.8rem;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
-  color: #fff;
-  background: linear-gradient(135deg, #FF6B2C 0%, #E85A1E 50%, #D14E15 100%);
+  letter-spacing: 0.14em;
+  color: #000;
+  background: var(--color-accent-orange);
   border: none;
-  border-radius: 10px;
+  border-radius: 0;
   cursor: pointer;
   position: relative;
   overflow: hidden;
-  box-shadow:
-    0 4px 24px rgba(255, 107, 44, 0.3),
-    0 1px 0 rgba(255, 255, 255, 0.1) inset;
-  transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1),
-              box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
   text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .btn-primary:hover {
-  transform: translateY(-3px);
-  box-shadow:
-    0 12px 40px rgba(255, 107, 44, 0.4),
-    0 0 80px rgba(255, 107, 44, 0.1),
-    0 1px 0 rgba(255, 255, 255, 0.15) inset;
+  background: #fff;
+  color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(255, 90, 31, 0.25);
 }
 
 .btn-primary:active {
   transform: translateY(1px);
-  box-shadow: 0 2px 12px rgba(255, 107, 44, 0.3);
-  transition-duration: 0.1s;
-}
-
-.btn-primary::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.18), transparent);
-  transition: left 0.6s ease;
-}
-.btn-primary:hover::after {
-  left: 100%;
+  transition-duration: 0.08s;
 }
 
 .btn-secondary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  padding: 14px 36px;
+  gap: 10px;
+  padding: 16px 38px;
   font-family: var(--font-display);
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--color-text-secondary);
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  border-radius: 10px;
+  color: var(--color-text-primary);
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  border-radius: 0;
   cursor: pointer;
   text-decoration: none;
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(255, 255, 255, 0.3);
-  color: var(--color-text-primary);
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.03);
+  border-color: var(--color-accent-orange);
+  color: var(--color-accent-orange);
+  background: rgba(255, 90, 31, 0.05);
 }
 
 .btn-secondary:active {
-  background: rgba(255, 255, 255, 0.1);
   transform: scale(0.98);
-  transition-duration: 0.1s;
+  transition-duration: 0.08s;
 }
 
 /* ============================================
-   GLOW EFFECTS — Layered depth
-   ============================================ */
-.glow-orange {
-  box-shadow:
-    0 4px 24px rgba(255, 107, 44, 0.3),
-    0 0 48px rgba(255, 107, 44, 0.08),
-    0 0 1px rgba(255, 107, 44, 0.6);
-}
-.glow-orange-hover:hover {
-  box-shadow:
-    0 8px 32px rgba(255, 107, 44, 0.45),
-    0 0 60px rgba(255, 107, 44, 0.15),
-    0 0 1px rgba(255, 107, 44, 0.8);
-}
-
-/* ============================================
-   CARDS — Glassmorphism + layered depth
+   CARDS — Solid panels, physical depth
+   No glass morphism. Nested containment.
    ============================================ */
 .card {
-  background: linear-gradient(
-    165deg,
-    rgba(24, 24, 31, 0.95) 0%,
-    rgba(18, 18, 24, 0.9) 100%
-  );
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 16px;
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  box-shadow:
-    0 4px 24px rgba(0, 0, 0, 0.2),
-    0 0 0 1px rgba(255, 255, 255, 0.02) inset;
-  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
-              border-color 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  background: var(--color-bg-elevated);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 2px;
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              border-color 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-8px) scale(1.01);
-  box-shadow:
-    0 0 40px rgba(255, 107, 44, 0.08),
-    0 24px 48px rgba(0, 0, 0, 0.4),
-    0 0 0 1px rgba(255, 107, 44, 0.1) inset;
-  border-color: rgba(255, 107, 44, 0.15);
+  transform: translateY(-4px);
+  border-color: rgba(255, 90, 31, 0.3);
 }
 
 .card-featured {
-  border: 1px solid rgba(255, 107, 44, 0.4);
-  box-shadow:
-    0 0 30px rgba(255, 107, 44, 0.15),
-    0 0 60px rgba(255, 107, 44, 0.05),
-    0 0 0 1px rgba(255, 107, 44, 0.2) inset;
+  border: 2px solid var(--color-accent-orange);
+  box-shadow: 0 0 0 1px rgba(255, 90, 31, 0.1);
 }
 
 /* ============================================
-   SECTION DIVIDERS — Refined angles
+   SECTION DIVIDERS — Hard diagonal cuts
    ============================================ */
 .angle-top {
-  clip-path: polygon(0 clamp(30px, 4vw, 80px), 100% 0, 100% 100%, 0 100%);
-  margin-top: calc(clamp(30px, 4vw, 80px) * -1);
-  padding-top: calc(clamp(30px, 4vw, 80px) + 3rem);
+  clip-path: polygon(0 clamp(40px, 5vw, 100px), 100% 0, 100% 100%, 0 100%);
+  margin-top: calc(clamp(40px, 5vw, 100px) * -1);
+  padding-top: calc(clamp(40px, 5vw, 100px) + 3rem);
 }
 
 .angle-top-reverse {
-  clip-path: polygon(0 0, 100% clamp(30px, 4vw, 80px), 100% 100%, 0 100%);
-  margin-top: calc(clamp(30px, 4vw, 80px) * -1);
-  padding-top: calc(clamp(30px, 4vw, 80px) + 3rem);
+  clip-path: polygon(0 0, 100% clamp(40px, 5vw, 100px), 100% 100%, 0 100%);
+  margin-top: calc(clamp(40px, 5vw, 100px) * -1);
+  padding-top: calc(clamp(40px, 5vw, 100px) + 3rem);
 }
 
 /* ============================================
-   SECTION HEADING SYSTEM — Enhanced hierarchy
+   SECTION HEADING SYSTEM — Brutal hierarchy
    ============================================ */
 .section-overline {
   font-family: var(--font-display);
-  font-size: clamp(0.7rem, 0.5vw + 0.6rem, 0.8rem);
-  font-weight: 600;
-  letter-spacing: 0.2em;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--color-accent-orange);
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.section-overline::before {
+  content: '//';
+  margin-right: 0.5em;
+  opacity: 0.4;
 }
 
 .section-title {
   font-family: var(--font-heading);
-  font-size: clamp(2.5rem, 3.5vw + 1.4rem, 4.25rem);
-  line-height: 1.0;
-  letter-spacing: -0.02em;
+  font-size: clamp(3rem, 5vw + 1rem, 6rem);
+  line-height: 0.9;
   color: var(--color-text-primary);
   text-transform: uppercase;
 }
 
 .section-subtitle {
   font-family: var(--font-body);
-  font-size: clamp(0.95rem, 0.3vw + 0.85rem, 1.1rem);
+  font-size: clamp(0.9rem, 0.3vw + 0.85rem, 1.05rem);
   color: var(--color-text-body);
-  max-width: 36rem;
+  max-width: 38rem;
   margin-inline: auto;
   line-height: 1.7;
 }
 
 .section-divider {
-  width: 56px;
+  width: 48px;
   height: 3px;
-  background: linear-gradient(90deg, var(--color-accent-orange), var(--color-accent-amber), transparent);
-  margin-top: 1.25rem;
-  border-radius: 2px;
+  background: var(--color-accent-orange);
+  margin-top: 1.5rem;
+  border-radius: 0;
 }
 
-/* Text gradient utility for hero headings */
+/* Text gradients */
 .text-gradient-warm {
-  background: linear-gradient(135deg, #FF6B2C 0%, #FF8957 40%, #F59E0B 100%);
+  background: linear-gradient(135deg, #FF5A1F 0%, #FF7A47 50%, #E8A000 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -312,29 +249,34 @@ body::before {
 }
 
 /* ============================================
-   DOT GRID PATTERN — Subtle texture layer
+   SCAN LINES — Athletic texture
    ============================================ */
 .dot-grid::after {
   content: '';
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.035;
-  background-image: radial-gradient(circle, rgba(255,255,255,0.8) 1px, transparent 1px);
-  background-size: 24px 24px;
+  opacity: 0.02;
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(255, 255, 255, 0.4) 2px,
+    rgba(255, 255, 255, 0.4) 3px
+  );
 }
 
 /* ============================================
-   DECORATIVE LINE ELEMENTS
+   DECORATIVE LINES
    ============================================ */
 .deco-line-v {
   width: 1px;
-  background: linear-gradient(to bottom, transparent, rgba(255, 107, 44, 0.3), transparent);
+  background: linear-gradient(to bottom, transparent, rgba(255, 90, 31, 0.25), transparent);
 }
 
 .deco-line-h {
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(255, 107, 44, 0.2), transparent);
+  background: linear-gradient(to right, transparent, rgba(255, 90, 31, 0.2), transparent);
 }
 
 /* ============================================
@@ -346,7 +288,7 @@ body::before {
   cursor: col-resize;
   user-select: none;
   -webkit-user-select: none;
-  border-radius: 16px;
+  border-radius: 2px;
 }
 
 .ba-slider .ba-after {
@@ -375,12 +317,11 @@ body::before {
 .ba-slider .ba-handle {
   position: absolute;
   top: 0;
-  width: 3px;
+  width: 2px;
   height: 100%;
-  background: #fff;
+  background: var(--color-accent-orange);
   cursor: col-resize;
   z-index: 10;
-  box-shadow: 0 0 16px rgba(0, 0, 0, 0.5);
 }
 
 .ba-slider .ba-handle::after {
@@ -389,54 +330,49 @@ body::before {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.35);
+  width: 40px;
+  height: 40px;
+  border: 2px solid var(--color-accent-orange);
+  background: var(--color-bg-primary);
+  border-radius: 0;
 }
 
 .ba-label {
   position: absolute;
   bottom: 14px;
-  padding: 5px 14px;
-  background: rgba(0, 0, 0, 0.65);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  color: #fff;
+  padding: 6px 16px;
+  background: var(--color-bg-primary);
+  color: var(--color-text-primary);
   font-family: var(--font-display);
   font-size: 0.6rem;
-  font-weight: 600;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
-  border-radius: 6px;
+  letter-spacing: 0.2em;
+  border-radius: 0;
   z-index: 15;
   pointer-events: none;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 /* ============================================
-   FAQ ACCORDION — Grid-based smooth height
+   FAQ ACCORDION
    ============================================ */
 .accordion-item {
   display: grid;
   grid-template-rows: min-content 0fr;
   transition: grid-template-rows 0.4s cubic-bezier(0.22, 1, 0.36, 1);
   border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 14px;
+  border-radius: 2px;
   overflow: hidden;
-  background: linear-gradient(165deg, rgba(24, 24, 31, 0.6), rgba(18, 18, 24, 0.4));
+  background: var(--color-bg-elevated);
 }
 
 .accordion-item.open {
   grid-template-rows: min-content 1fr;
-  border-color: rgba(255, 107, 44, 0.2);
-  background: linear-gradient(165deg, rgba(30, 28, 35, 0.8), rgba(22, 20, 28, 0.6));
+  border-color: rgba(255, 90, 31, 0.25);
 }
 
-.accordion-body {
-  overflow: hidden;
-}
+.accordion-body { overflow: hidden; }
 
 .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
 .faq-content.open { max-height: 300px; }
@@ -448,13 +384,13 @@ body::before {
 .form-step.active { display: block; }
 
 /* ============================================
-   SCROLL-TRIGGERED ANIMATIONS — Punchy reveals
+   SCROLL ANIMATIONS — Hard reveals
    ============================================ */
 .reveal {
   opacity: 0;
-  transform: translateY(32px);
-  transition: opacity 0.45s cubic-bezier(0.22, 1, 0.36, 1),
-              transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: translateY(40px);
+  transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .reveal.visible {
@@ -462,165 +398,147 @@ body::before {
   transform: translateY(0);
 }
 
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.reveal-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 .stagger-1 { transition-delay: 0ms; }
-.stagger-2 { transition-delay: 70ms; }
-.stagger-3 { transition-delay: 140ms; }
-.stagger-4 { transition-delay: 210ms; }
-.stagger-5 { transition-delay: 280ms; }
-.stagger-6 { transition-delay: 350ms; }
+.stagger-2 { transition-delay: 80ms; }
+.stagger-3 { transition-delay: 160ms; }
+.stagger-4 { transition-delay: 240ms; }
+.stagger-5 { transition-delay: 320ms; }
+.stagger-6 { transition-delay: 400ms; }
 
 /* ============================================
-   AMBIENT BACKGROUNDS — Multi-layer depth
+   AMBIENT BACKGROUNDS — Restrained glow
    ============================================ */
 .glow-bg-hero {
   background:
-    radial-gradient(ellipse 70% 45% at 65% 15%, rgba(255, 107, 44, 0.07) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 35% at 10% 85%, rgba(170, 255, 0, 0.025) 0%, transparent 60%),
-    radial-gradient(ellipse 30% 30% at 90% 70%, rgba(197, 123, 58, 0.04) 0%, transparent 60%),
-    radial-gradient(ellipse 50% 50% at 50% 50%, rgba(255, 107, 44, 0.015) 0%, transparent 80%),
+    radial-gradient(ellipse 60% 40% at 70% 20%, rgba(255, 90, 31, 0.06) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 40% at 10% 80%, rgba(184, 255, 0, 0.02) 0%, transparent 60%),
     var(--color-bg-primary);
 }
 
 .glow-bg-cta {
   background:
-    radial-gradient(ellipse at 30% 50%, rgba(255, 107, 44, 0.07) 0%, transparent 50%),
-    radial-gradient(ellipse at 70% 50%, rgba(245, 158, 11, 0.04) 0%, transparent 50%),
+    radial-gradient(ellipse at 30% 50%, rgba(255, 90, 31, 0.06) 0%, transparent 50%),
     var(--color-bg-secondary);
 }
 
 /* ============================================
-   ANIMATIONS — More organic motion
+   TIMETABLE COLOURS
    ============================================ */
-@keyframes float {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  33% { transform: translateY(-20px) rotate(5deg); }
-  66% { transform: translateY(10px) rotate(-3deg); }
-}
-
-@keyframes float-slow {
-  0%, 100% { transform: translateY(0) rotate(0deg) scale(1); }
-  50% { transform: translateY(-15px) rotate(3deg) scale(1.05); }
-}
-
-@keyframes pulse-glow {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.2); }
-}
-
-@keyframes shimmer {
-  0% { background-position: -200% center; }
-  100% { background-position: 200% center; }
-}
-
-@keyframes border-glow {
-  0%, 100% { border-color: rgba(255, 107, 44, 0.15); }
-  50% { border-color: rgba(255, 107, 44, 0.35); }
-}
-
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-.animate-float { animation: float 6s ease-in-out infinite; }
-.animate-float-delayed { animation: float 8s ease-in-out 2s infinite; }
-.animate-float-slow { animation: float-slow 10s ease-in-out infinite; }
-.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
-.animate-shimmer {
-  background-size: 200% 100%;
-  animation: shimmer 3s ease-in-out infinite;
-}
-.animate-border-glow { animation: border-glow 3s ease-in-out infinite; }
+.class-hiit { background-color: rgba(255, 90, 31, 0.08); border-left: 3px solid #FF5A1F; }
+.class-strength { background-color: rgba(59, 130, 246, 0.08); border-left: 3px solid #3B82F6; }
+.class-boxing { background-color: rgba(239, 68, 68, 0.08); border-left: 3px solid #EF4444; }
+.class-yoga { background-color: rgba(184, 255, 0, 0.05); border-left: 3px solid #B8FF00; }
+.class-olympic { background-color: rgba(168, 85, 247, 0.08); border-left: 3px solid #A855F7; }
+.class-pt { background-color: rgba(232, 160, 0, 0.08); border-left: 3px solid #E8A000; }
 
 /* ============================================
-   TIMETABLE CLASS COLOURS — Refined
+   SURFACE DEPTH SYSTEM
    ============================================ */
-.class-hiit { background-color: rgba(255, 107, 44, 0.1); border-left: 3px solid #FF6B2C; }
-.class-strength { background-color: rgba(59, 130, 246, 0.1); border-left: 3px solid #3B82F6; }
-.class-boxing { background-color: rgba(239, 68, 68, 0.1); border-left: 3px solid #EF4444; }
-.class-yoga { background-color: rgba(170, 255, 0, 0.06); border-left: 3px solid #AAFF00; }
-.class-olympic { background-color: rgba(168, 85, 247, 0.1); border-left: 3px solid #A855F7; }
-.class-pt { background-color: rgba(245, 158, 11, 0.1); border-left: 3px solid #F59E0B; }
+.surface-base { background: #040404; }
+.surface-1 { background: #0A0A0A; }
+.surface-2 { background: #111111; }
+.surface-3 { background: #181818; }
 
 /* ============================================
-   DARK SURFACE DEPTH SYSTEM — Warm tinted
-   ============================================ */
-.surface-base { background: #08080C; }
-.surface-1 { background: #0E0E14; }
-.surface-2 { background: #16161E; }
-.surface-3 { background: #1E1E28; }
-
-/* ============================================
-   SPEED LINES TEXTURE
+   SPEED LINES — Sharper, more aggressive
    ============================================ */
 .speed-lines::before {
   content: '';
   position: absolute;
   inset: 0;
   pointer-events: none;
-  opacity: 0.03;
+  opacity: 0.025;
   background-image: repeating-linear-gradient(
-    -45deg,
+    -60deg,
     transparent,
-    transparent 20px,
-    rgba(255,255,255,0.5) 20px,
-    rgba(255,255,255,0.5) 21px
+    transparent 30px,
+    rgba(255,255,255,0.3) 30px,
+    rgba(255,255,255,0.3) 31px
   );
 }
 
 /* ============================================
-   SECTION NUMBER LABEL — Improved
+   GRADIENT MESH
    ============================================ */
-.section-number {
+.gradient-mesh {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(255, 90, 31, 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(232, 160, 0, 0.03) 0%, transparent 50%);
+}
+
+/* ============================================
+   BADGES — Blunt, no-nonsense
+   ============================================ */
+.badge-orange {
+  background: rgba(255, 90, 31, 0.12);
+  color: var(--color-accent-orange);
+  border: 1px solid rgba(255, 90, 31, 0.25);
   font-family: var(--font-display);
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.2em;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  opacity: 0.5;
+  padding: 5px 14px;
+  border-radius: 0;
+}
+
+.badge-lime {
+  background: rgba(184, 255, 0, 0.08);
+  color: var(--color-accent-lime);
+  border: 1px solid rgba(184, 255, 0, 0.2);
+  font-family: var(--font-display);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 0;
 }
 
 /* ============================================
-   CLASS TYPE COLOUR ACCENTS
-   ============================================ */
-.class-accent-hiit { border-left-color: #EF4444; }
-.class-accent-strength { border-left-color: #F59E0B; }
-.class-accent-yoga { border-left-color: #8B5CF6; }
-.class-accent-boxing { border-left-color: #10B981; }
-.class-accent-cycle { border-left-color: #06B6D4; }
-
-/* ============================================
-   GLOW BORDER ON HOVER
-   ============================================ */
-.glow-hover {
-  transition: all 0.35s ease;
-}
-.glow-hover:hover {
-  box-shadow: 0 0 24px rgba(255,107,44,0.15), 0 0 48px rgba(255,107,44,0.05);
-}
-
-/* ============================================
-   POPULAR BADGE RIBBON — Refined
+   POPULAR RIBBON
    ============================================ */
 .popular-ribbon {
   position: absolute;
-  top: -1px;
-  right: -1px;
-  background: linear-gradient(135deg, #FF6B2C, #E85A1E);
-  color: white;
+  top: 0;
+  right: 0;
+  background: var(--color-accent-orange);
+  color: #000;
   font-family: var(--font-display);
   font-size: 0.6rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
+  font-weight: 800;
+  letter-spacing: 0.15em;
   text-transform: uppercase;
-  padding: 7px 18px;
-  border-radius: 0 12px 0 14px;
-  box-shadow: 0 4px 12px rgba(255,107,44,0.3);
+  padding: 8px 20px;
+  border-radius: 0;
 }
 
 /* ============================================
-   PULSING LIVE DOT — Enhanced
+   LIVE DOT
    ============================================ */
 .live-dot {
   width: 8px;
@@ -628,148 +546,64 @@ body::before {
   background: #22C55E;
   border-radius: 50%;
   animation: live-pulse 2s ease-in-out infinite;
-  box-shadow: 0 0 8px rgba(34,197,94,0.4);
 }
 
 @keyframes live-pulse {
-  0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 8px rgba(34,197,94,0.4); }
-  50% { opacity: 0.6; transform: scale(0.8); box-shadow: 0 0 20px rgba(34,197,94,0.6); }
-}
-
-/* ============================================
-   GRADIENT MESH BACKGROUND — Multi-layer
-   ============================================ */
-.gradient-mesh {
-  background:
-    radial-gradient(ellipse at 20% 50%, rgba(255,107,44,0.06) 0%, transparent 50%),
-    radial-gradient(ellipse at 80% 20%, rgba(245,158,11,0.04) 0%, transparent 50%),
-    radial-gradient(ellipse at 60% 80%, rgba(139,92,246,0.03) 0%, transparent 50%),
-    radial-gradient(ellipse at 40% 30%, rgba(197,123,58,0.03) 0%, transparent 50%);
-}
-
-/* ============================================
-   TRAINER CARD OVERLAY — Improved gradient
-   ============================================ */
-.trainer-overlay {
-  background: linear-gradient(
-    to top,
-    rgba(11, 11, 15, 0.9) 0%,
-    rgba(11, 11, 15, 0.4) 35%,
-    rgba(11, 11, 15, 0.1) 60%,
-    transparent 100%
-  );
-  transition: opacity 0.3s ease;
-}
-.group:hover .trainer-overlay {
-  opacity: 0.7;
-}
-
-/* ============================================
-   GLASSMORPHISM CARD VARIANT
-   ============================================ */
-.glass-card {
-  background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  border-radius: 16px;
-}
-
-/* ============================================
-   BADGE / PILL — Refined
-   ============================================ */
-.badge-orange {
-  background: linear-gradient(135deg, rgba(255,107,44,0.15), rgba(255,107,44,0.08));
-  color: var(--color-accent-orange);
-  border: 1px solid rgba(255,107,44,0.2);
-  font-family: var(--font-display);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  padding: 4px 14px;
-  border-radius: 100px;
-}
-
-.badge-lime {
-  background: linear-gradient(135deg, rgba(170,255,0,0.12), rgba(170,255,0,0.06));
-  color: var(--color-accent-lime);
-  border: 1px solid rgba(170,255,0,0.2);
-  font-family: var(--font-display);
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.05em;
-  padding: 4px 14px;
-  border-radius: 100px;
-}
-
-/* ============================================
-   ICON CONTAINER — Gradient-backed
-   ============================================ */
-.icon-container {
-  width: 44px;
-  height: 44px;
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(255,107,44,0.15), rgba(255,107,44,0.05));
-  border: 1px solid rgba(255,107,44,0.15);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.7); }
 }
 
 /* ============================================
    STAR RATING
    ============================================ */
 .star-rating {
-  color: #F59E0B;
+  color: #E8A000;
   font-size: 0.75rem;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.12em;
 }
 
 /* ============================================
-   DECORATIVE CORNER ELEMENT
+   CORNER DECORATION — Hard angle marks
    ============================================ */
 .corner-deco::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 60px;
-  height: 60px;
-  border-top: 1px solid rgba(255, 107, 44, 0.15);
-  border-left: 1px solid rgba(255, 107, 44, 0.15);
-  border-radius: 16px 0 0 0;
+  top: -1px;
+  left: -1px;
+  width: 24px;
+  height: 24px;
+  border-top: 2px solid var(--color-accent-orange);
+  border-left: 2px solid var(--color-accent-orange);
   pointer-events: none;
 }
 
 .corner-deco::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  right: 0;
-  width: 60px;
-  height: 60px;
-  border-bottom: 1px solid rgba(255, 107, 44, 0.15);
-  border-right: 1px solid rgba(255, 107, 44, 0.15);
-  border-radius: 0 0 16px 0;
+  bottom: -1px;
+  right: -1px;
+  width: 24px;
+  height: 24px;
+  border-bottom: 2px solid var(--color-accent-orange);
+  border-right: 2px solid var(--color-accent-orange);
   pointer-events: none;
 }
 
 /* ============================================
-   HORIZONTAL RULE — Gradient fade
+   HORIZONTAL RULE
    ============================================ */
 .hr-gradient {
   height: 1px;
   border: none;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.08), transparent);
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.08), transparent);
 }
 
 /* ============================================
-   SECTION TRANSITION — Layered divider
+   SECTION TRANSITION
    ============================================ */
 .section-transition {
   position: relative;
-  height: 80px;
+  height: 100px;
   overflow: hidden;
 }
 
@@ -784,15 +618,101 @@ body::before {
   content: '';
   position: absolute;
   top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 200px;
+  left: 0;
+  width: 100%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 107, 44, 0.3), transparent);
+  background: linear-gradient(90deg, transparent 5%, rgba(255, 90, 31, 0.2) 50%, transparent 95%);
 }
 
 /* ============================================
-   REDUCED MOTION — Accessibility
+   GLASS CARD (for compatibility)
+   ============================================ */
+.glass-card {
+  background: var(--color-bg-elevated);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 2px;
+}
+
+/* ============================================
+   ICON CONTAINER
+   ============================================ */
+.icon-container {
+  width: 48px;
+  height: 48px;
+  border-radius: 0;
+  background: rgba(255, 90, 31, 0.1);
+  border: 1px solid rgba(255, 90, 31, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   TRAINER OVERLAY
+   ============================================ */
+.trainer-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(5, 5, 5, 0.95) 0%,
+    rgba(5, 5, 5, 0.4) 40%,
+    transparent 100%
+  );
+  transition: opacity 0.3s ease;
+}
+.group:hover .trainer-overlay {
+  opacity: 0.8;
+}
+
+/* ============================================
+   GLOW EFFECTS
+   ============================================ */
+.glow-orange {
+  box-shadow: 0 0 0 1px rgba(255, 90, 31, 0.3);
+}
+.glow-orange-hover:hover {
+  box-shadow: 0 0 24px rgba(255, 90, 31, 0.15);
+}
+.glow-hover {
+  transition: all 0.3s ease;
+}
+.glow-hover:hover {
+  box-shadow: 0 0 24px rgba(255, 90, 31, 0.12);
+}
+.animate-border-glow {
+  animation: border-glow 3s ease-in-out infinite;
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+@keyframes float-slow {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-10px) scale(1.02); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes border-glow {
+  0%, 100% { border-color: rgba(255, 90, 31, 0.15); }
+  50% { border-color: rgba(255, 90, 31, 0.4); }
+}
+
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-float-delayed { animation: float 8s ease-in-out 2s infinite; }
+.animate-float-slow { animation: float-slow 10s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
+
+/* ============================================
+   REDUCED MOTION
    ============================================ */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -801,5 +721,5 @@ body::before {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
-  .reveal { opacity: 1; transform: none; }
+  .reveal, .reveal-left, .reveal-right { opacity: 1; transform: none; }
 }

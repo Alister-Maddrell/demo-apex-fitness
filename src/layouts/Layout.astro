@@ -101,41 +101,41 @@ const navLinks = [
 <body class="bg-bg-primary text-text-body">
 
   <!-- Skip to content -->
-  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-accent-orange focus:text-white focus:px-4 focus:py-2 focus:rounded-lg focus:text-sm focus:font-display focus:font-semibold">Skip to main content</a>
+  <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-accent-orange focus:text-black focus:px-4 focus:py-2 focus:text-sm focus:font-display focus:font-700">Skip to main content</a>
 
-  <!-- Navigation -->
-  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 bg-transparent" style="will-change: transform, background-color;">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20 lg:h-24 transition-all duration-500">
+  <!-- Navigation — Hard, minimal -->
+  <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-400 bg-transparent" style="will-change: background-color;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20 lg:h-24 transition-all duration-400">
       <!-- Logo -->
       <a href="/" class="font-heading text-2xl lg:text-3xl text-text-primary tracking-wider uppercase relative z-60 group">
-        <span class="text-gradient-warm">APEX</span> <span class="text-text-secondary group-hover:text-text-primary transition-colors duration-300">PERFORMANCE</span>
+        <span class="text-accent-orange">APEX</span><span class="text-text-muted group-hover:text-text-primary transition-colors duration-300 ml-1">PERFORMANCE</span>
       </a>
 
-      <!-- Desktop Nav Links -->
-      <div class="hidden md:flex items-center gap-10">
+      <!-- Desktop Nav -->
+      <div class="hidden md:flex items-center gap-12">
         {navLinks.map(link => (
           <a
             href={link.href}
-            class={`font-display text-[0.75rem] uppercase tracking-[0.18em] font-semibold transition-all duration-300 hover:text-accent-orange relative ${
-              currentPath === link.href || currentPath === link.href + '/' ? 'text-accent-orange' : 'text-text-secondary'
+            class={`font-display text-[0.7rem] uppercase tracking-[0.2em] font-700 transition-all duration-300 hover:text-accent-orange relative ${
+              currentPath === link.href || currentPath === link.href + '/' ? 'text-accent-orange' : 'text-text-muted'
             }`}
           >
             {link.label}
             {(currentPath === link.href || currentPath === link.href + '/') && (
-              <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-gradient-to-r from-accent-orange to-transparent rounded-full"></span>
+              <span class="absolute -bottom-1 left-0 w-full h-[2px] bg-accent-orange"></span>
             )}
           </a>
         ))}
       </div>
 
-      <!-- CTA Button (desktop) -->
-      <a href="/contact" class="hidden md:inline-flex btn-primary !py-3 !px-7 !text-xs">
+      <!-- CTA (desktop) -->
+      <a href="/contact" class="hidden md:inline-flex btn-primary !py-3 !px-7 !text-[0.65rem]">
         Start Your Free Week
       </a>
 
       <!-- Mobile Hamburger -->
       <button id="mobile-menu-btn" class="md:hidden relative z-60 w-10 h-10 flex items-center justify-center" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
-        <div id="hamburger-lines" class="w-6 flex flex-col gap-[5px] transition-all duration-300">
+        <div id="hamburger-lines" class="w-6 flex flex-col gap-[6px] transition-all duration-300">
           <span class="block h-[2px] w-full bg-text-primary transition-all duration-300 origin-center"></span>
           <span class="block h-[2px] w-full bg-text-primary transition-all duration-300"></span>
           <span class="block h-[2px] w-full bg-text-primary transition-all duration-300 origin-center"></span>
@@ -143,28 +143,24 @@ const navLinks = [
       </button>
     </div>
 
-    <!-- Mobile Menu (full-screen overlay) -->
-    <div id="mobile-menu" class="fixed inset-0 bg-bg-primary/98 backdrop-blur-xl z-50 flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-400 md:hidden">
-      <!-- Decorative background for mobile menu -->
-      <div class="absolute inset-0 overflow-hidden">
-        <div class="absolute top-1/4 right-10 w-64 h-64 rounded-full bg-accent-orange/3 blur-3xl"></div>
-        <div class="absolute bottom-1/3 left-10 w-48 h-48 rounded-full bg-accent-lime/2 blur-3xl"></div>
-      </div>
-      <div class="relative flex flex-col items-center gap-8">
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-bg-primary z-50 flex flex-col items-start justify-center opacity-0 pointer-events-none transition-opacity duration-300 md:hidden px-10">
+      <div class="flex flex-col gap-6">
         {navLinks.map((link, i) => (
           <a
             href={link.href}
-            class={`font-heading text-5xl uppercase tracking-wider transition-all duration-300 hover:text-accent-orange mobile-nav-link opacity-0 translate-y-4`}
+            class={`font-heading text-5xl uppercase tracking-wider transition-all duration-300 hover:text-accent-orange mobile-nav-link opacity-0 translate-x-[-20px]`}
             style={`transition-delay: ${100 + i * 80}ms;`}
           >
             {currentPath === link.href || currentPath === link.href + '/' ? (
-              <span class="text-gradient-warm">{link.label}</span>
+              <span class="text-accent-orange">{link.label}</span>
             ) : (
               <span class="text-text-primary">{link.label}</span>
             )}
           </a>
         ))}
-        <a href="/contact" class="btn-primary mt-6 mobile-nav-link opacity-0 translate-y-4" style="transition-delay: 340ms;">
+        <div class="w-12 h-[2px] bg-accent-orange mt-4 mobile-nav-link opacity-0 translate-x-[-20px]" style="transition-delay: 340ms;"></div>
+        <a href="/contact" class="btn-primary mt-2 mobile-nav-link opacity-0 translate-x-[-20px]" style="transition-delay: 420ms;">
           Start Your Free Week
         </a>
       </div>
@@ -175,48 +171,45 @@ const navLinks = [
     <slot />
   </main>
 
-  <!-- Footer -->
-  <footer class="relative bg-bg-footer pt-24 pb-8 border-t border-white/5 overflow-hidden">
-    <!-- Ambient glow -->
-    <div class="absolute top-0 left-1/4 w-96 h-48 bg-accent-orange/3 blur-[100px] pointer-events-none"></div>
-
+  <!-- Footer — Clean, structured -->
+  <footer class="relative bg-bg-footer pt-20 pb-8 border-t border-white/5 overflow-hidden">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-      <!-- Footer top: Logo + tagline -->
-      <div class="mb-16">
+      <!-- Footer top -->
+      <div class="mb-14">
         <a href="/" class="font-heading text-3xl text-text-primary tracking-wider uppercase">
-          <span class="text-gradient-warm">APEX</span> PERFORMANCE
+          <span class="text-accent-orange">APEX</span> PERFORMANCE
         </a>
         <p class="text-text-muted text-sm mt-3 max-w-sm leading-relaxed">Helping Sydney transform since 2014. Expert coaching, proven results, and a community that keeps you coming back. 115 Elizabeth Street, near St James Station.</p>
-        <div class="w-16 h-px bg-gradient-to-r from-accent-orange/40 to-transparent mt-6"></div>
+        <div class="w-12 h-[2px] bg-accent-orange mt-6"></div>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-16">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 mb-14">
         <!-- Quick Links -->
         <div>
-          <h4 class="font-display text-xs font-semibold uppercase tracking-[0.18em] text-text-secondary mb-6">Quick Links</h4>
+          <h4 class="font-display text-xs font-700 uppercase tracking-[0.2em] text-text-secondary mb-6">Quick Links</h4>
           <ul class="space-y-3.5 font-body text-sm">
-            <li><a href="/" class="text-text-muted hover:text-accent-orange transition-all duration-300 hover:translate-x-1 inline-block">Home</a></li>
-            <li><a href="/classes" class="text-text-muted hover:text-accent-orange transition-all duration-300 hover:translate-x-1 inline-block">Gym Classes & Coaching</a></li>
-            <li><a href="/contact" class="text-text-muted hover:text-accent-orange transition-all duration-300 hover:translate-x-1 inline-block">Contact</a></li>
-            <li><a href="/contact" class="text-text-muted hover:text-accent-orange transition-all duration-300 hover:translate-x-1 inline-block">Start Your Free Week</a></li>
+            <li><a href="/" class="text-text-muted hover:text-accent-orange transition-colors duration-300">Home</a></li>
+            <li><a href="/classes" class="text-text-muted hover:text-accent-orange transition-colors duration-300">Gym Classes & Coaching</a></li>
+            <li><a href="/contact" class="text-text-muted hover:text-accent-orange transition-colors duration-300">Contact</a></li>
+            <li><a href="/contact" class="text-text-muted hover:text-accent-orange transition-colors duration-300">Start Your Free Week</a></li>
           </ul>
         </div>
 
-        <!-- Class Schedule -->
+        <!-- Schedule -->
         <div>
-          <h4 class="font-display text-xs font-semibold uppercase tracking-[0.18em] text-text-secondary mb-6">Class Schedule</h4>
+          <h4 class="font-display text-xs font-700 uppercase tracking-[0.2em] text-text-secondary mb-6">Class Schedule</h4>
           <ul class="space-y-3.5 font-body text-sm">
-            <li class="text-text-muted flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-orange/60"></span>HIIT — Daily 6am & 12pm</li>
-            <li class="text-text-muted flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-red-500/60"></span>Boxing — Mon/Wed/Fri</li>
-            <li class="text-text-muted flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-blue-500/60"></span>Strength — Daily</li>
-            <li class="text-text-muted flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent-lime/60"></span>Yoga — Mon/Wed/Fri/Sat/Sun</li>
-            <li class="text-text-muted flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-purple-500/60"></span>Olympic Lifting — Tue/Thu/Sat</li>
+            <li class="text-text-muted flex items-center gap-2"><span class="w-1.5 h-1.5 bg-accent-orange"></span>HIIT — Daily 6am & 12pm</li>
+            <li class="text-text-muted flex items-center gap-2"><span class="w-1.5 h-1.5 bg-red-500"></span>Boxing — Mon/Wed/Fri</li>
+            <li class="text-text-muted flex items-center gap-2"><span class="w-1.5 h-1.5 bg-blue-500"></span>Strength — Daily</li>
+            <li class="text-text-muted flex items-center gap-2"><span class="w-1.5 h-1.5 bg-accent-lime"></span>Yoga — Mon/Wed/Fri/Sat/Sun</li>
+            <li class="text-text-muted flex items-center gap-2"><span class="w-1.5 h-1.5 bg-purple-500"></span>Olympic Lifting — Tue/Thu/Sat</li>
           </ul>
         </div>
 
-        <!-- Contact Info -->
+        <!-- Contact -->
         <div>
-          <h4 class="font-display text-xs font-semibold uppercase tracking-[0.18em] text-text-secondary mb-6">Contact Info</h4>
+          <h4 class="font-display text-xs font-700 uppercase tracking-[0.2em] text-text-secondary mb-6">Contact Info</h4>
           <ul class="space-y-3.5 font-body text-sm">
             <li class="text-text-muted">115 Elizabeth Street, Sydney NSW 2000</li>
             <li><a href="tel:0431555290" class="text-text-muted hover:text-accent-orange transition-colors duration-300">0431 555 290</a></li>
@@ -226,20 +219,20 @@ const navLinks = [
           </ul>
         </div>
 
-        <!-- Social & Newsletter -->
+        <!-- Newsletter -->
         <div>
-          <h4 class="font-display text-xs font-semibold uppercase tracking-[0.18em] text-text-secondary mb-6">Stay Connected</h4>
+          <h4 class="font-display text-xs font-700 uppercase tracking-[0.2em] text-text-secondary mb-6">Stay Connected</h4>
           <p class="text-sm text-text-muted mb-3">Follow us <a href="https://instagram.com/apexperformancesydney" target="_blank" rel="noopener" class="text-accent-orange hover:underline">@apexperformancesydney</a></p>
           <p class="text-sm text-text-muted mb-5">Weekly training tips, member spotlights & exclusive deals:</p>
-          <form class="flex gap-2" onsubmit="event.preventDefault();">
-            <input type="email" placeholder="Your email" aria-label="Email address for newsletter" class="bg-white/[0.04] border border-white/8 rounded-xl px-4 py-3 text-sm text-white placeholder-text-muted flex-1 focus:outline-none focus:border-accent-orange/60 focus:ring-1 focus:ring-accent-orange/20 transition-all duration-300 backdrop-blur-sm" />
-            <button type="submit" class="bg-gradient-to-r from-accent-orange to-[#E85A1E] text-white font-display font-bold text-xs uppercase tracking-wider px-5 py-3 rounded-xl hover:brightness-110 transition-all duration-300 hover:shadow-lg hover:shadow-accent-orange/20">Join</button>
+          <form class="flex gap-0" onsubmit="event.preventDefault();">
+            <input type="email" placeholder="Your email" aria-label="Email address for newsletter" class="bg-white/[0.04] border border-white/8 border-r-0 px-4 py-3 text-sm text-white placeholder-text-muted flex-1 focus:outline-none focus:border-accent-orange/60 transition-all duration-300" />
+            <button type="submit" class="bg-accent-orange text-black font-display font-700 text-xs uppercase tracking-wider px-5 py-3 hover:bg-white transition-all duration-200">Join</button>
           </form>
         </div>
       </div>
 
       <!-- Bottom bar -->
-      <div class="hr-gradient mb-8"></div>
+      <div class="h-px bg-white/5 mb-8"></div>
       <div class="flex flex-col md:flex-row justify-between items-center gap-3 text-xs text-text-muted">
         <p>&copy; 2014–2026 Apex Performance Studio. All rights reserved.</p>
         <p class="font-display tracking-wider">ABN: 55 123 987 654</p>
@@ -249,22 +242,22 @@ const navLinks = [
 
   <!-- Scripts -->
   <script>
-    // ── Nav scroll effect ──
+    // ── Nav scroll ──
     const navbar = document.getElementById('navbar');
     const navInner = navbar?.querySelector(':scope > div') as HTMLElement;
 
     const updateNav = () => {
       if (!navbar || !navInner) return;
       if (window.scrollY > 60) {
-        navbar.classList.add('shadow-lg', 'shadow-black/20');
+        navbar.classList.add('shadow-lg', 'shadow-black/30');
         navbar.classList.remove('bg-transparent');
-        navbar.style.backgroundColor = 'rgba(11, 11, 15, 0.92)';
-        navbar.style.backdropFilter = 'blur(16px)';
-        navbar.style.webkitBackdropFilter = 'blur(16px)';
+        navbar.style.backgroundColor = 'rgba(5, 5, 5, 0.95)';
+        navbar.style.backdropFilter = 'blur(8px)';
+        navbar.style.webkitBackdropFilter = 'blur(8px)';
         navbar.style.borderBottom = '1px solid rgba(255,255,255,0.04)';
         navInner.style.height = '64px';
       } else {
-        navbar.classList.remove('shadow-lg', 'shadow-black/20');
+        navbar.classList.remove('shadow-lg', 'shadow-black/30');
         navbar.classList.add('bg-transparent');
         navbar.style.backgroundColor = '';
         navbar.style.backdropFilter = '';
@@ -276,7 +269,7 @@ const navLinks = [
     window.addEventListener('scroll', updateNav, { passive: true });
     updateNav();
 
-    // ── Mobile menu toggle ──
+    // ── Mobile menu ──
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     const hamburgerLines = document.getElementById('hamburger-lines');
@@ -287,7 +280,6 @@ const navLinks = [
       if (!mobileMenu || !hamburgerLines) return;
 
       const spans = hamburgerLines.querySelectorAll('span');
-
       mobileMenuBtn?.setAttribute('aria-expanded', String(menuOpen));
 
       if (menuOpen) {
@@ -295,13 +287,13 @@ const navLinks = [
         mobileMenu.classList.add('opacity-100', 'pointer-events-auto');
         document.body.style.overflow = 'hidden';
 
-        if (spans[0]) { spans[0].style.transform = 'translateY(7px) rotate(45deg)'; }
+        if (spans[0]) { spans[0].style.transform = 'translateY(8px) rotate(45deg)'; }
         if (spans[1]) { spans[1].style.opacity = '0'; }
-        if (spans[2]) { spans[2].style.transform = 'translateY(-7px) rotate(-45deg)'; }
+        if (spans[2]) { spans[2].style.transform = 'translateY(-8px) rotate(-45deg)'; }
 
         mobileMenu.querySelectorAll('.mobile-nav-link').forEach(link => {
-          link.classList.remove('opacity-0', 'translate-y-4');
-          link.classList.add('opacity-100', 'translate-y-0');
+          link.classList.remove('opacity-0', 'translate-x-[-20px]');
+          link.classList.add('opacity-100', 'translate-x-0');
         });
       } else {
         mobileMenu.classList.add('opacity-0', 'pointer-events-none');
@@ -311,8 +303,8 @@ const navLinks = [
         spans.forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
 
         mobileMenu.querySelectorAll('.mobile-nav-link').forEach(link => {
-          link.classList.add('opacity-0', 'translate-y-4');
-          link.classList.remove('opacity-100', 'translate-y-0');
+          link.classList.add('opacity-0', 'translate-x-[-20px]');
+          link.classList.remove('opacity-100', 'translate-x-0');
         });
       }
     });
@@ -323,7 +315,7 @@ const navLinks = [
       });
     });
 
-    // ── Scroll-triggered reveal animations ──
+    // ── Scroll reveals ──
     const revealObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
@@ -336,9 +328,9 @@ const navLinks = [
       { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
     );
 
-    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => revealObserver.observe(el));
 
-    // ── Animated counter ──
+    // ── Animated counters ──
     const counterObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach(entry => {
