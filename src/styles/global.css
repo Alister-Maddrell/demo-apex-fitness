@@ -779,8 +779,29 @@ footer > div > div:first-child p {
 }
 
 /* ============================================
-   ORANGE BANNER CTA REFINEMENTS
+   ORANGE BANNER CTA — Gradient texture
    ============================================ */
+section.bg-accent-orange {
+  background:
+    linear-gradient(135deg, #FF6A2F 0%, #FF5A1F 30%, #E84A10 70%, #FF6A2F 100%);
+  position: relative;
+}
+
+section.bg-accent-orange::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  pointer-events: none;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    transparent,
+    transparent 8px,
+    rgba(0, 0, 0, 0.15) 8px,
+    rgba(0, 0, 0, 0.15) 9px
+  );
+}
+
 .btn-secondary[class*="border-black"] {
   background: rgba(0, 0, 0, 0.15);
   border-color: rgba(0, 0, 0, 0.5);
@@ -807,7 +828,28 @@ footer > div > div:first-child p {
 }
 
 #pricing .card-featured {
-  box-shadow: 0 8px 40px rgba(255, 90, 31, 0.12), 0 0 0 1px rgba(255, 90, 31, 0.2);
+  border-width: 2px;
+  border-color: #FF6A2F;
+  box-shadow:
+    0 0 0 1px rgba(255, 90, 31, 0.25),
+    0 0 24px rgba(255, 90, 31, 0.18),
+    0 0 60px rgba(255, 90, 31, 0.08),
+    0 12px 48px rgba(0, 0, 0, 0.5);
+  background:
+    linear-gradient(180deg, rgba(255, 90, 31, 0.04) 0%, transparent 30%),
+    linear-gradient(180deg, rgba(255,255,255,0.02) 0%, transparent 40%, transparent 100%),
+    var(--color-bg-elevated);
+}
+
+#pricing .card-featured::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #FF6A2F, #FF8A4F, #FF6A2F);
+  z-index: 2;
 }
 
 /* ============================================
@@ -920,6 +962,20 @@ section.bg-bg-secondary {
    ============================================ */
 .icon-container {
   border-radius: 4px;
+}
+
+/* ============================================
+   MOBILE BUTTON SIZING — Comfortable tap targets
+   ============================================ */
+@media (max-width: 639px) {
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    min-height: 48px;
+    justify-content: center;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
