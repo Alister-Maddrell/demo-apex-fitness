@@ -994,6 +994,29 @@ section.bg-bg-secondary {
 }
 
 /* ============================================
+   FULL HD VIEWPORT — Ensure hero fills 1920×1080
+   ============================================ */
+@media (min-width: 1200px) and (min-height: 960px) {
+  /* Hero already min-h-screen — ensure content is well centered */
+  section.relative.min-h-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  /* Hero heading — slightly larger for big screens */
+  section.relative.min-h-screen h1 {
+    font-size: clamp(5rem, 8vw + 1rem, 10rem);
+  }
+
+  /* Give stats bar a touch more breathing room */
+  section.relative.bg-bg-elevated .py-10 {
+    padding-top: 3.5rem;
+    padding-bottom: 3.5rem;
+  }
+}
+
+/* ============================================
    LAPTOP VIEWPORT — Tighter spacing for ≤900px height
    ============================================ */
 @media (min-width: 1024px) and (max-height: 900px) {
