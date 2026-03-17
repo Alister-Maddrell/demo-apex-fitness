@@ -316,19 +316,31 @@ const navLinks = [
     });
 
     // ── Scroll reveals ──
-    const revealObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('visible');
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
-    );
+    const revealEls = document.querySelectorAll('.reveal, .reveal-left, .reveal-right');
 
-    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => revealObserver.observe(el));
+    if ('IntersectionObserver' in window) {
+      const revealObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              revealObserver.unobserve(entry.target);
+            }
+          });
+        },
+        { threshold: 0.01, rootMargin: '50px 0px -10px 0px' }
+      );
+
+      revealEls.forEach(el => revealObserver.observe(el));
+
+      // Safety net: force all reveals visible after 3 seconds
+      setTimeout(() => {
+        revealEls.forEach(el => el.classList.add('visible'));
+      }, 3000);
+    } else {
+      // No IntersectionObserver support — show everything immediately
+      revealEls.forEach(el => el.classList.add('visible'));
+    }
 
     // ── Animated counters ──
     const counterObserver = new IntersectionObserver(
