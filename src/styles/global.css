@@ -993,6 +993,56 @@ section.bg-bg-secondary {
   }
 }
 
+/* ============================================
+   LAPTOP VIEWPORT — Tighter spacing for ≤900px height
+   ============================================ */
+@media (min-width: 1024px) and (max-height: 900px) {
+  /* Hero shouldn't exceed viewport */
+  section.relative.min-h-screen {
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  /* Tighter section padding */
+  section {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+
+  section.relative.min-h-screen,
+  section.relative.bg-bg-elevated.border-y,
+  section.relative.py-4 {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .section-title {
+    font-size: clamp(2.5rem, 4vw + 0.5rem, 4.5rem);
+  }
+
+  /* Reduce card image heights */
+  .card .h-52 {
+    height: 11rem;
+  }
+
+  /* Reduce hero heading */
+  h1 {
+    font-size: clamp(3.5rem, 7vw + 0.5rem, 8rem);
+  }
+
+  /* Stats bar tighter */
+  section.relative.bg-bg-elevated .py-10 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+
+  /* Reduce pricing section */
+  #pricing {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
