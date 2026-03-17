@@ -22,8 +22,8 @@
 
   --color-text-primary: #EDEDED;
   --color-text-secondary: #C4C4C4;
-  --color-text-body: #8A8A8A;
-  --color-text-muted: #4A4A4A;
+  --color-text-body: #A0A0A0;
+  --color-text-muted: #606060;
 
   --font-heading: 'Bebas Neue', sans-serif;
   --font-display: 'Syne', sans-serif;
@@ -155,16 +155,18 @@ body::before {
    ============================================ */
 .card {
   background: var(--color-bg-elevated);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 2px;
   position: relative;
   transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-              border-color 0.3s ease;
+              border-color 0.3s ease,
+              box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-4px);
   border-color: rgba(255, 90, 31, 0.3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 90, 31, 0.08);
 }
 
 .card-featured {
@@ -507,9 +509,9 @@ body::before {
 }
 
 .badge-lime {
-  background: rgba(184, 255, 0, 0.08);
-  color: var(--color-accent-lime);
-  border: 1px solid rgba(184, 255, 0, 0.2);
+  background: rgba(255, 90, 31, 0.12);
+  color: var(--color-accent-orange);
+  border: 1px solid rgba(255, 90, 31, 0.25);
   font-family: var(--font-display);
   font-size: 0.65rem;
   font-weight: 700;
@@ -603,7 +605,7 @@ body::before {
    ============================================ */
 .section-transition {
   position: relative;
-  height: 100px;
+  height: 60px;
   overflow: hidden;
 }
 
@@ -712,8 +714,112 @@ body::before {
 .animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
 
 /* ============================================
+   HERO REFINEMENTS
+   ============================================ */
+.hero-description,
+section:first-of-type p.font-body {
+  font-size: clamp(1.05rem, 0.4vw + 1rem, 1.25rem);
+  line-height: 1.8;
+  color: var(--color-text-secondary);
+}
+
+/* ============================================
+   FOOTER REFINEMENTS
+   ============================================ */
+footer {
+  padding-top: 5rem;
+  padding-bottom: 2.5rem;
+}
+
+footer h4 {
+  font-size: 0.85rem;
+  color: var(--color-text-primary);
+  margin-bottom: 1.75rem;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+}
+
+footer ul {
+  gap: 1rem;
+}
+
+footer ul li,
+footer ul li a,
+footer p {
+  color: #B0B0B0;
+  font-size: 0.925rem;
+  line-height: 1.75;
+}
+
+footer ul li a:hover {
+  color: var(--color-accent-orange);
+}
+
+footer > div > div:first-child p {
+  color: #999;
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* ============================================
+   ORANGE BANNER CTA REFINEMENTS
+   ============================================ */
+.btn-secondary[class*="border-black"] {
+  background: rgba(0, 0, 0, 0.15);
+  border-color: rgba(0, 0, 0, 0.5);
+  font-weight: 800;
+}
+
+/* ============================================
    REDUCED MOTION
    ============================================ */
+/* ============================================
+   PRICING SECTION — Visual separation
+   ============================================ */
+#pricing {
+  background:
+    radial-gradient(ellipse 50% 50% at 50% 0%, rgba(255, 90, 31, 0.04) 0%, transparent 60%),
+    var(--color-bg-secondary);
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+#pricing .card,
+[data-pricing-card] {
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+#pricing .card-featured {
+  box-shadow: 0 8px 40px rgba(255, 90, 31, 0.12), 0 0 0 1px rgba(255, 90, 31, 0.2);
+}
+
+/* ============================================
+   SECTION TITLE ACCENT BAR
+   ============================================ */
+.section-title {
+  position: relative;
+  display: inline-block;
+}
+
+/* ============================================
+   BUTTON HOVER ENHANCEMENTS — Consistent
+   ============================================ */
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 90, 31, 0.15);
+}
+
+.btn-secondary:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* ============================================
+   CARD RESTING SHADOW — Depth on dark bg
+   ============================================ */
+.card {
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.3);
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration: 0.01ms !important;
