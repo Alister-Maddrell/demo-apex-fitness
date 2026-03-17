@@ -8,6 +8,17 @@ import Layout from '../layouts/Layout.astro';
        HERO — Split asymmetric layout
        ═══════════════════════════════════════ -->
   <section class="relative min-h-screen flex items-stretch overflow-hidden">
+    <!-- Full-bleed background image -->
+    <div class="absolute inset-0">
+      <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&h=1080&fit=crop&q=80" alt="Dark atmospheric gym interior with dramatic lighting on training equipment" class="w-full h-full object-cover" />
+      <!-- Dark overlay gradient for text readability -->
+      <div class="absolute inset-0 bg-gradient-to-r from-bg-primary via-bg-primary/85 to-bg-primary/40 lg:to-transparent"></div>
+      <!-- Bottom fade -->
+      <div class="absolute inset-0 bg-gradient-to-t from-bg-primary via-transparent to-bg-primary/30"></div>
+      <!-- Extra darken for mobile -->
+      <div class="absolute inset-0 bg-bg-primary/30 lg:bg-transparent"></div>
+    </div>
+
     <!-- Left content panel -->
     <div class="relative z-10 flex flex-col justify-center w-full lg:w-[55%] px-6 sm:px-10 lg:px-16 xl:px-24 py-32 lg:py-20">
       <!-- Vertical accent line -->
@@ -45,23 +56,6 @@ import Layout from '../layouts/Layout.astro';
           </a>
         </div>
       </div>
-    </div>
-
-    <!-- Right image panel -->
-    <div class="hidden lg:block absolute right-0 top-0 w-[50%] h-full">
-      <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&h=1080&fit=crop&q=80" alt="Dark atmospheric gym interior with dramatic lighting on training equipment" class="w-full h-full object-cover" />
-      <!-- Fade overlay from left -->
-      <div class="absolute inset-0 bg-gradient-to-r from-bg-primary via-bg-primary/70 to-transparent"></div>
-      <!-- Darken overlay -->
-      <div class="absolute inset-0 bg-bg-primary/30"></div>
-      <!-- Bottom fade -->
-      <div class="absolute inset-0 bg-gradient-to-t from-bg-primary via-transparent to-bg-primary/40"></div>
-    </div>
-
-    <!-- Mobile background image -->
-    <div class="absolute inset-0 lg:hidden">
-      <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&h=1080&fit=crop&q=80" alt="Dark atmospheric gym interior with dramatic lighting on training equipment" class="w-full h-full object-cover opacity-15" />
-      <div class="absolute inset-0 bg-gradient-to-t from-bg-primary via-bg-primary/80 to-bg-primary/60"></div>
     </div>
 
     <!-- Ambient glow -->
@@ -280,7 +274,6 @@ import Layout from '../layouts/Layout.astro';
         <!-- Monthly (Featured) -->
         <div class="card-featured card glow-hover p-8 lg:p-10 flex flex-col relative reveal stagger-2" data-pricing-card>
           <span class="popular-ribbon">Most Popular</span>
-          <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-accent-amber text-black font-display font-800 text-[0.6rem] uppercase tracking-[0.15em] px-6 py-1.5 whitespace-nowrap">Most Popular</span>
           <div class="flex items-center gap-3 mb-8">
             <div class="w-12 h-12 bg-accent-orange/10 border border-accent-orange/20 flex items-center justify-center">
               <span class="text-lg">&#128293;</span>
