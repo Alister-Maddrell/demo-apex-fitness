@@ -994,6 +994,39 @@ section.bg-bg-secondary {
 }
 
 /* ============================================
+   MOBILE NAV & HERO — Compact header, tighter hero
+   Target: ~56px nav, H1 at ~20vh, CTAs within 75vh
+   ============================================ */
+@media (max-width: 767px) {
+  /* Reduce nav height from 80px (h-20) to 56px */
+  #navbar > div {
+    height: 56px !important;
+  }
+
+  /* Compact hero content padding — less top padding to
+     keep H1 near 20% of viewport with shorter nav */
+  section.relative.min-h-screen > .relative.z-10 {
+    padding-top: 100px;
+    padding-bottom: 80px;
+  }
+
+  /* Tighten hero spacing so CTAs land within 75vh */
+  section.relative.min-h-screen h1 {
+    margin-bottom: 1.25rem;
+  }
+
+  section.relative.min-h-screen p.font-body {
+    margin-bottom: 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  /* Compact trust badge spacing */
+  section.relative.min-h-screen .badge-lime {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* ============================================
    FULL HD VIEWPORT — Ensure hero fills 1920×1080
    ============================================ */
 @media (min-width: 1200px) and (min-height: 960px) {
