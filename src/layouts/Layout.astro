@@ -119,9 +119,6 @@ const navLinks = [
       }
 
       #mobile-menu-btn {
-        position: fixed !important;
-        top: 8px !important;
-        right: 16px !important;
         z-index: 1001 !important;
       }
 
@@ -328,7 +325,18 @@ const navLinks = [
     // Move menu to body level so it escapes nav's stacking context
     if (mobileMenu) document.body.appendChild(mobileMenu);
 
-    mobileMenuBtn?.addEventListener('click', () => {
+    // Inject a close button inside the menu (hamburger can't escape nav stacking context)
+    if (mobileMenu) {
+      const closeBtn = document.createElement('button');
+      closeBtn.id = 'menu-close-btn';
+      closeBtn.setAttribute('aria-label', 'Close menu');
+      closeBtn.innerHTML = '<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round"><path d="M18 6L6 18M6 6l12 12"/></svg>';
+      closeBtn.style.cssText = 'position:absolute;top:18px;right:18px;z-index:10;background:none;border:none;cursor:pointer;padding:8px;';
+      mobileMenu.appendChild(closeBtn);
+      closeBtn.addEventListener('click', () => { if (menuOpen) toggleMenu(); });
+    }
+
+    function toggleMenu() {
       menuOpen = !menuOpen;
       if (!mobileMenu || !hamburgerLines) return;
 
@@ -360,11 +368,13 @@ const navLinks = [
           link.classList.remove('opacity-100', 'translate-x-0');
         });
       }
-    });
+    }
+
+    mobileMenuBtn?.addEventListener('click', toggleMenu);
 
     mobileMenu?.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', () => {
-        if (menuOpen) mobileMenuBtn?.click();
+        if (menuOpen) toggleMenu();
       });
     });
 
