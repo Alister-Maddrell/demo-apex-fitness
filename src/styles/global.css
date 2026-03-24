@@ -998,6 +998,12 @@ section.bg-bg-secondary {
    Target: ~56px nav, H1 at ~20vh, CTAs within 75vh
    ============================================ */
 @media (max-width: 767px) {
+  /* Hide header CTA on mobile — .btn-primary's unlayered display:inline-flex
+     overrides Tailwind's layered `hidden` utility, so we force it here */
+  #navbar > div > a.btn-primary {
+    display: none !important;
+  }
+
   /* Reduce nav height from 80px (h-20) to 56px */
   #navbar > div {
     height: 56px !important;
