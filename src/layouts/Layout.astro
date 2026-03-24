@@ -322,6 +322,9 @@ const navLinks = [
     const hamburgerLines = document.getElementById('hamburger-lines');
     let menuOpen = false;
 
+    // Move menu to body level so it escapes nav's stacking context
+    if (mobileMenu) document.body.appendChild(mobileMenu);
+
     mobileMenuBtn?.addEventListener('click', () => {
       menuOpen = !menuOpen;
       if (!mobileMenu || !hamburgerLines) return;
