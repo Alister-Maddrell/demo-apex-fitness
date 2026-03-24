@@ -1044,26 +1044,67 @@ section.bg-bg-secondary {
     z-index: 1000 !important;
   }
 
-  /* Compact hero content padding — less top padding to
-     keep H1 near 20% of viewport with shorter nav */
-  section.relative.min-h-screen > .relative.z-10 {
-    padding-top: 100px;
-    padding-bottom: 80px;
+  /* Hero banner: tight on mobile */
+  .hero-banner {
+    margin-top: 56px !important;
   }
 
-  /* Tighten hero spacing so CTAs land within 75vh */
-  section.relative.min-h-screen h1 {
-    margin-bottom: 1.25rem;
+  .hero-banner > div {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
   }
 
-  section.relative.min-h-screen p.font-body {
-    margin-bottom: 1.25rem;
-    font-size: 0.9rem;
+  .hero-banner p {
+    font-size: 0.55rem !important;
+    letter-spacing: 0.12em !important;
   }
 
-  /* Compact trust badge spacing */
-  section.relative.min-h-screen .badge-lime {
-    margin-bottom: 1.5rem;
+  /* Hero section: no min-height on mobile, content-driven */
+  #hero-section {
+    min-height: auto !important;
+  }
+
+  /* Hero content: remove centering, tight padding */
+  #hero-section .hero-content-area {
+    justify-content: flex-start !important;
+    padding-top: 14px !important;
+    padding-bottom: 24px !important;
+    flex: none !important;
+  }
+
+  #hero-section h1 {
+    font-size: 2.8rem !important;
+    line-height: 0.88 !important;
+    margin-bottom: 10px !important;
+  }
+
+  #hero-section p.font-body {
+    margin-bottom: 12px !important;
+    font-size: 0.78rem !important;
+    line-height: 1.4 !important;
+  }
+
+  /* CTAs side by side, compact */
+  #hero-section .btn-primary,
+  #hero-section .btn-secondary {
+    padding: 11px 18px !important;
+    font-size: 0.6rem !important;
+  }
+
+  #hero-section .btn-primary,
+  #hero-section .btn-secondary {
+    flex: 1 !important;
+  }
+
+  /* Force CTAs into a row */
+  #hero-ctas {
+    flex-direction: row !important;
+    gap: 10px !important;
+  }
+
+  /* Hide scroll indicator on mobile */
+  #hero-section > .absolute.bottom-8 {
+    display: none !important;
   }
 }
 
