@@ -5,56 +5,55 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Gym Sydney CBD | Apex Performance Studio — Free Trial" description="Sydney CBD's top-rated gym at 115 Elizabeth Street. HIIT, boxing, strength, yoga and personal training with 15 expert coaches. Try your first week free — no lock-in. Start today.">
 
   <!-- ═══════════════════════════════════════
-       HERO — Split asymmetric layout
+       HERO — Frosted glass containers
        ═══════════════════════════════════════ -->
-  <section class="relative min-h-screen flex items-stretch overflow-hidden">
+  <section id="hero" class="relative min-h-screen flex items-stretch overflow-hidden">
     <!-- Full-bleed background image -->
     <div class="absolute inset-0">
       <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=1920&h=1080&fit=crop&q=80" alt="Dark atmospheric gym interior with dramatic lighting on training equipment" class="w-full h-full object-cover" />
       <!-- Dark overlay gradient for text readability -->
-      <div class="absolute inset-0 bg-gradient-to-r from-bg-primary via-bg-primary/85 to-bg-primary/40 lg:to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-bg-primary/90 via-bg-primary/70 to-bg-primary/30"></div>
       <!-- Bottom fade -->
-      <div class="absolute inset-0 bg-gradient-to-t from-bg-primary via-transparent to-bg-primary/30"></div>
-      <!-- Extra darken for mobile -->
-      <div class="absolute inset-0 bg-bg-primary/30 lg:bg-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-t from-bg-primary via-transparent to-bg-primary/20"></div>
     </div>
 
-    <!-- Left content panel -->
-    <div class="relative z-10 flex flex-col justify-center w-full lg:w-[55%] px-6 sm:px-10 lg:px-16 xl:px-24 py-32 lg:py-20">
-      <!-- Vertical accent line -->
-      <div class="absolute left-0 top-[15%] bottom-[15%] w-[3px] bg-gradient-to-b from-transparent via-accent-orange to-transparent hidden lg:block"></div>
+    <!-- Content layer -->
+    <div id="hero-content" class="relative z-10 flex flex-col justify-center w-full px-6 sm:px-10 lg:px-16 xl:px-24 py-32 lg:py-20">
+      <div class="hero-containers max-w-[600px]">
 
-      <div class="max-w-2xl">
-        <!-- Overline -->
-        <div class="flex items-center gap-3 mb-6 reveal">
-          <div class="w-10 h-[2px] bg-accent-orange"></div>
-          <p class="font-display text-[0.65rem] font-700 uppercase tracking-[0.3em] text-text-muted">Sydney CBD — Est. 2014</p>
+        <!-- Main card — dark frosted glass -->
+        <div class="hero-glass-card hero-main-card reveal">
+          <div class="flex items-center gap-3 mb-4">
+            <div class="w-8 h-[2px] bg-accent-orange"></div>
+            <p class="font-display text-[0.6rem] font-700 uppercase tracking-[0.3em] text-text-muted">Sydney CBD — Est. 2014</p>
+          </div>
+          <h1 class="font-heading text-[clamp(3.5rem,8vw+0.5rem,7rem)] text-text-primary leading-[0.88] mb-4">
+            Your Strongest<br /><span class="text-gradient-warm">Self.</span>
+          </h1>
+          <p class="font-body text-sm text-text-body leading-relaxed max-w-md">
+            15 expert coaches. 50+ weekly classes. 500+ members seeing results at 115 Elizabeth Street.
+          </p>
         </div>
 
-        <h1 class="font-heading text-[clamp(4rem,9vw+1rem,11rem)] text-text-primary leading-[0.85] mb-8 reveal" style="transition-delay: 100ms;">
-          Your<br />
-          Strongest<br />
-          <span class="text-gradient-warm">Self.</span>
-        </h1>
-
-        <p class="font-body text-base lg:text-lg text-text-body max-w-lg mb-8 reveal leading-relaxed" style="transition-delay: 200ms;">
-          Whether you want to lose weight, build muscle, or just feel unstoppable, our 15 expert coaches and 50+ weekly classes will get you there. Join <span class="text-text-secondary font-medium">500+</span> members already seeing results at 115 Elizabeth Street.
-        </p>
-
-        <!-- Trust badge -->
-        <div class="inline-flex items-center gap-3 badge-lime mb-10 reveal" style="transition-delay: 260ms;">
-          <span class="text-accent-orange text-xs">&#9733;</span>
-          <span class="font-display text-accent-orange text-[0.65rem] font-700 uppercase tracking-[0.15em]">First week FREE — no credit card, no lock-in</span>
+        <!-- CTA card -->
+        <div class="hero-glass-card hero-cta-card reveal" style="transition-delay: 150ms;">
+          <div class="flex flex-row items-center gap-3">
+            <a href="/contact" class="btn-primary !py-3.5 !px-8 !text-[0.7rem]">
+              Start Your Free Trial
+            </a>
+            <a href="/classes" class="btn-secondary !py-3 !px-6 !text-[0.7rem]">
+              Explore Classes
+            </a>
+          </div>
         </div>
 
-        <div class="flex flex-col sm:flex-row gap-4 reveal" style="transition-delay: 320ms;">
-          <a href="/contact" class="btn-primary">
-            Start Your Free Trial
-          </a>
-          <a href="/classes" class="btn-secondary">
-            Explore Classes
-          </a>
+        <!-- Trust banner — accent cell -->
+        <div class="hero-trust-banner reveal" style="transition-delay: 280ms;">
+          <span class="text-[0.65rem] font-display font-700 uppercase tracking-[0.15em] text-accent-orange">
+            &#9733;&ensp;First Week Free — No Credit Card, No Lock-In
+          </span>
         </div>
+
       </div>
     </div>
 
