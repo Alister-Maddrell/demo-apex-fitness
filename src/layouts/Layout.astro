@@ -122,11 +122,12 @@ const navLinks = [
         z-index: 1000 !important;
       }
 
-      /* Nav always has dark background */
+      /* Nav always has dark background, z-index high enough for menu to cover hero */
       #navbar {
         background-color: rgba(5, 5, 5, 0.9) !important;
         backdrop-filter: blur(10px) !important;
         -webkit-backdrop-filter: blur(10px) !important;
+        z-index: 999 !important;
       }
 
       #hamburger-lines span {
