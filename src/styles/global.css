@@ -1009,6 +1009,19 @@ section.bg-bg-secondary {
     height: 56px !important;
   }
 
+  /* Give nav a dark backdrop so hamburger is always visible */
+  #navbar {
+    background-color: rgba(5, 5, 5, 0.85) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+  }
+
+  /* Make hamburger lines bright white */
+  #hamburger-lines span {
+    background-color: #ffffff !important;
+    height: 2.5px !important;
+  }
+
   /* Compact hero content padding — less top padding to
      keep H1 near 20% of viewport with shorter nav */
   section.relative.min-h-screen > .relative.z-10 {
