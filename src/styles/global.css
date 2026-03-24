@@ -1044,56 +1044,26 @@ section.bg-bg-secondary {
     z-index: 1000 !important;
   }
 
-  /* Compact hero content padding */
-  #hero-content {
-    padding-top: 80px !important;
-    padding-bottom: 60px !important;
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+  /* Compact hero content padding — less top padding to
+     keep H1 near 20% of viewport with shorter nav */
+  section.relative.min-h-screen > .relative.z-10 {
+    padding-top: 100px;
+    padding-bottom: 80px;
   }
 
-  /* Tighter glass cards on mobile */
-  .hero-glass-card {
-    padding: 20px 20px !important;
+  /* Tighten hero spacing so CTAs land within 75vh */
+  section.relative.min-h-screen h1 {
+    margin-bottom: 1.25rem;
   }
 
-  .hero-main-card {
-    padding: 22px 22px 18px !important;
+  section.relative.min-h-screen p.font-body {
+    margin-bottom: 1.25rem;
+    font-size: 0.9rem;
   }
 
-  .hero-main-card h1 {
-    font-size: clamp(2.8rem, 12vw, 4rem) !important;
-    margin-bottom: 0.5rem !important;
-  }
-
-  .hero-main-card p {
-    font-size: 0.8rem !important;
-  }
-
-  .hero-cta-card {
-    padding: 16px 20px !important;
-  }
-
-  .hero-cta-card .btn-primary {
-    padding: 12px 20px !important;
-    font-size: 0.6rem !important;
-  }
-
-  .hero-cta-card .btn-secondary {
-    padding: 10px 16px !important;
-    font-size: 0.6rem !important;
-  }
-
-  .hero-trust-banner {
-    padding: 10px 16px !important;
-  }
-
-  .hero-trust-banner span {
-    font-size: 0.55rem !important;
-  }
-
-  .hero-containers {
-    gap: 8px !important;
+  /* Compact trust badge spacing */
+  section.relative.min-h-screen .badge-lime {
+    margin-bottom: 1.5rem;
   }
 }
 
