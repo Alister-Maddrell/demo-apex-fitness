@@ -5,7 +5,8 @@ import Layout from '../layouts/Layout.astro';
 <Layout title="Gym Sydney CBD | Apex Performance Studio — Free Trial" description="Sydney CBD's top-rated gym at 115 Elizabeth Street. HIIT, boxing, strength, yoga and personal training with 15 expert coaches. Try your first week free — no lock-in. Start today.">
 
   <!-- ═══════════════════════════════════════
-       HERO — Boxing poster layout
+       HERO — Brutalist poster layout
+       Three zones: top banner, middle heading, bottom CTAs
        ═══════════════════════════════════════ -->
   <section id="hero-section" class="relative min-h-screen flex flex-col overflow-hidden">
     <!-- Full-bleed background image -->
@@ -19,48 +20,52 @@ import Layout from '../layouts/Layout.astro';
       <div class="absolute inset-0 bg-bg-primary/30 lg:bg-transparent"></div>
     </div>
 
-    <!-- Orange accent strip — the hook -->
-    <div class="hero-banner relative z-10 bg-accent-orange mt-20 lg:mt-24">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 lg:py-3.5">
-        <p class="font-display text-[0.7rem] lg:text-[0.75rem] font-700 uppercase tracking-[0.2em] text-black text-center">First Week Free — No Credit Card, No Lock-In</p>
+    <!-- ── ZONE 1: TOP — Trust banner + accent line ── -->
+    <div class="hero-zone-top relative z-10">
+      <div class="hero-banner bg-accent-orange">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 lg:py-3.5">
+          <p class="font-display text-[0.7rem] lg:text-[0.75rem] font-700 uppercase tracking-[0.2em] text-black text-center">First Week Free — No Credit Card</p>
+        </div>
       </div>
+      <div class="hero-accent-line w-full h-[2px] bg-gradient-to-r from-transparent via-accent-orange/60 to-transparent"></div>
     </div>
 
-    <!-- Content panel -->
-    <div class="relative z-10 flex flex-col justify-center flex-1 w-full lg:w-[55%] px-6 sm:px-10 lg:px-16 xl:px-24 hero-content-area">
+    <!-- ── ZONE 2: MIDDLE — Massive heading + description ── -->
+    <div class="hero-zone-middle relative z-10 flex flex-col justify-center flex-1 w-full lg:w-[55%] px-6 sm:px-10 lg:px-16 xl:px-24">
       <!-- Vertical accent line (desktop) -->
       <div class="absolute left-0 top-[15%] bottom-[15%] w-[3px] bg-gradient-to-b from-transparent via-accent-orange to-transparent hidden lg:block"></div>
 
       <div class="max-w-2xl">
-        <h1 class="font-heading text-[clamp(4.5rem,10vw+1rem,11rem)] text-text-primary leading-[0.85] mb-8 reveal" style="transition-delay: 100ms;">
+        <h1 class="hero-heading font-heading text-text-primary leading-[0.85] mb-6 reveal" style="transition-delay: 100ms;">
           Your<br />
           Strongest<br />
           <span class="text-gradient-warm">Self.</span>
         </h1>
 
-        <p class="font-body text-base lg:text-lg text-text-body max-w-lg mb-8 reveal leading-relaxed" style="transition-delay: 200ms;">
-          15 expert coaches. 50+ weekly classes. 500+ members strong. Sydney CBD's most results-driven gym.
+        <p class="hero-desc font-body text-text-body max-w-lg reveal leading-relaxed" style="transition-delay: 200ms;">
+          Sydney CBD's most results-driven gym. 15 expert coaches, 50+ weekly classes.
         </p>
-
-        <div id="hero-ctas" class="flex flex-col sm:flex-row gap-4 reveal" style="transition-delay: 320ms;">
-          <a href="/contact" class="btn-primary">
-            Start Your Free Trial
-          </a>
-          <a href="/classes" class="btn-secondary">
-            Explore Classes
-          </a>
-        </div>
       </div>
+    </div>
+
+    <!-- ── ZONE 3: BOTTOM — CTAs + accent line + location ── -->
+    <div class="hero-zone-bottom relative z-10 px-6 sm:px-10 lg:px-16 xl:px-24 pb-8 lg:pb-12">
+      <div id="hero-ctas" class="flex flex-row gap-3 sm:gap-4 reveal mb-5" style="transition-delay: 320ms;">
+        <a href="/contact" class="btn-primary">
+          Start Free Trial
+        </a>
+        <a href="/classes" class="btn-secondary">
+          Explore Classes
+        </a>
+      </div>
+      <div class="hero-accent-line w-full h-[2px] bg-gradient-to-r from-accent-orange/60 via-accent-orange/30 to-transparent mb-4"></div>
+      <p class="hero-location font-display text-[0.65rem] lg:text-[0.7rem] font-600 uppercase tracking-[0.2em] text-text-muted reveal" style="transition-delay: 500ms;">
+        115 Elizabeth St · Sydney CBD
+      </p>
     </div>
 
     <!-- Ambient glow -->
     <div class="absolute inset-0 glow-bg-hero pointer-events-none"></div>
-
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-6 sm:left-10 lg:left-16 flex items-center gap-4 reveal" style="transition-delay: 700ms;">
-      <div class="w-[2px] h-12 bg-gradient-to-b from-accent-orange to-transparent"></div>
-      <span class="text-text-muted text-[0.6rem] uppercase tracking-[0.3em] font-display font-600 -rotate-90 origin-left translate-y-1">Scroll</span>
-    </div>
   </section>
 
   <!-- Thin orange accent line between hero and stats -->

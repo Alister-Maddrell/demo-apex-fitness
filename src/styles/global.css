@@ -1044,7 +1044,9 @@ section.bg-bg-secondary {
     z-index: 1000 !important;
   }
 
-  /* Hero banner: tight on mobile */
+  /* ── Hero: Brutalist poster — fills viewport, 3 zones ── */
+
+  /* Hero banner sits below 56px nav */
   .hero-banner {
     margin-top: 56px !important;
   }
@@ -1056,56 +1058,68 @@ section.bg-bg-secondary {
 
   .hero-banner p {
     font-size: 0.55rem !important;
-    letter-spacing: 0.12em !important;
+    letter-spacing: 0.15em !important;
   }
 
-  /* Hero section: full viewport on mobile */
+  /* Full viewport, distributed layout */
   #hero-section {
     min-height: 100vh !important;
     min-height: 100dvh !important;
+    justify-content: space-between !important;
   }
 
-  /* Hero content: vertically centered within full-height hero */
-  #hero-section .hero-content-area {
+  /* Zone 1: Top — banner + accent, flush to top */
+  .hero-zone-top {
+    flex-shrink: 0;
+  }
+
+  /* Zone 2: Middle — heading IS the composition */
+  .hero-zone-middle {
+    flex: 1 !important;
     justify-content: center !important;
     padding-top: 0 !important;
-    padding-bottom: 24px !important;
-    flex: 1 !important;
+    padding-bottom: 0 !important;
   }
 
-  #hero-section h1 {
-    font-size: 2.8rem !important;
+  /* MASSIVE heading — fight poster scale */
+  .hero-heading {
+    font-size: clamp(4rem, 15vw, 7rem) !important;
     line-height: 0.88 !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 12px !important;
   }
 
-  #hero-section p.font-body {
-    margin-bottom: 12px !important;
-    font-size: 0.78rem !important;
-    line-height: 1.4 !important;
+  /* Short description line */
+  .hero-desc {
+    font-size: 0.8rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 0 !important;
+    max-width: 320px !important;
+  }
+
+  /* Zone 3: Bottom — CTAs + location, pinned to bottom */
+  .hero-zone-bottom {
+    flex-shrink: 0;
+    padding-bottom: 24px !important;
   }
 
   /* CTAs side by side, compact */
-  #hero-section .btn-primary,
-  #hero-section .btn-secondary {
-    padding: 11px 18px !important;
-    font-size: 0.6rem !important;
-  }
-
-  #hero-section .btn-primary,
-  #hero-section .btn-secondary {
-    flex: 1 !important;
-  }
-
-  /* Force CTAs into a row */
   #hero-ctas {
     flex-direction: row !important;
     gap: 10px !important;
+    margin-bottom: 12px !important;
   }
 
-  /* Hide scroll indicator on mobile */
-  #hero-section > .absolute.bottom-8 {
-    display: none !important;
+  #hero-section .btn-primary,
+  #hero-section .btn-secondary {
+    padding: 13px 20px !important;
+    font-size: 0.6rem !important;
+    flex: 1 !important;
+  }
+
+  /* Location line */
+  .hero-location {
+    font-size: 0.58rem !important;
+    letter-spacing: 0.18em !important;
   }
 }
 
