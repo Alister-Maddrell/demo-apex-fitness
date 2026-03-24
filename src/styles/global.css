@@ -1059,17 +1059,18 @@ section.bg-bg-secondary {
     letter-spacing: 0.12em !important;
   }
 
-  /* Hero section: no min-height on mobile, content-driven */
+  /* Hero section: full viewport on mobile */
   #hero-section {
-    min-height: auto !important;
+    min-height: 100vh !important;
+    min-height: 100dvh !important;
   }
 
-  /* Hero content: remove centering, tight padding */
+  /* Hero content: vertically centered within full-height hero */
   #hero-section .hero-content-area {
-    justify-content: flex-start !important;
-    padding-top: 14px !important;
+    justify-content: center !important;
+    padding-top: 0 !important;
     padding-bottom: 24px !important;
-    flex: none !important;
+    flex: 1 !important;
   }
 
   #hero-section h1 {
