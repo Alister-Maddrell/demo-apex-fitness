@@ -1022,6 +1022,28 @@ section.bg-bg-secondary {
     height: 2.5px !important;
   }
 
+  /* Mobile menu: solid background, proper positioning */
+  #mobile-menu {
+    background-color: #050505 !important;
+    z-index: 999 !important;
+    justify-content: flex-start !important;
+    padding-top: 100px !important;
+  }
+
+  /* Menu links: smaller so they all fit, properly visible */
+  #mobile-menu .mobile-nav-link {
+    font-size: 2.5rem !important;
+  }
+
+  #mobile-menu a span {
+    color: #EDEDED !important;
+  }
+
+  /* Hamburger button above the menu */
+  #mobile-menu-btn {
+    z-index: 1000 !important;
+  }
+
   /* Compact hero content padding — less top padding to
      keep H1 near 20% of viewport with shorter nav */
   section.relative.min-h-screen > .relative.z-10 {
